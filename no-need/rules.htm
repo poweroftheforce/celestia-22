@@ -1,0 +1,45 @@
+<div class="rules">
+	<style>#hg-we .rules {margin-top:14px;}</style>
+	<div class="rules-list">
+		<p><strong>Lorem ipsum</strong>: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	</div>
+</div>
+<script>
+({
+	
+	name : 'Rules (with sponsor list)',
+	
+	init: function() {
+		C.sortable('.rules-list');
+	},
+	
+	sections : [{
+		name		: 'Rules Section',
+		elements	: [{
+			name		: 'Rules List',
+			selector	: "$({m}).find('.rules-list')",
+			markup		: '<p><strong>Lorem ipsum</strong>: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>',
+			elements	: [{
+				name		: 'Rule {x} (strong)',
+				selector	: "$({m}).find('.rules-list').find('strong').eq({x})",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: 'Lorem ipsum.'
+					}
+				}]
+			}, {
+				name		: 'Rule {x}',
+				selector	: "$({m}).find('.rules-list').find('p').eq({x})",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+});
+</script>

@@ -1,0 +1,61 @@
+<div id="dyn_carousel" class="crsl-w-four">
+	<div class="hd">
+		<h3>MPC-title</h3>
+		<p>MPC-copy</p>
+	</div>
+	<div class="bd crsl">
+		<ul>
+			<li>
+				<ul>
+					<li>
+						<a href="MPC-thumb1-href"><img src="MPC-thumb1-image" width="120" height="90" alt="MPC-thumb1-alt" /></a>
+						<p>MPC-thumb1-text</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="ft"></div>
+</div>
+<script>
+({
+	
+	name					: 'Carousel',
+
+	buttons: [{
+		'btn-add-thumb': {
+			html	: 'Add Thumb',
+			click	: function() {
+				/* can use option inside addHTML method to check for thumb addition on carousels */
+				addHTML({
+					btn					: this,
+					append				: '.crsl',
+					carousel_per_page	: 4,
+					html				: '<li><a href=""><img src="MPC-thumb#mpc_inc-image" width="120" height="90" alt="MPC-thumb#mpc_inc-alt" /></a><p>MPC-thumb#mpc_inc-text</p></li>',
+					smart_words			: {
+						'MPC-thumb#mpc_inc-text': {
+							append			: '.mpc-hgw-crslwfour-thumb-section',
+							default_value	: 'Thumb #mpc_inc',
+							type			: 'text',
+							label			: 'Thumb #mpc_inc Text'
+						},
+						'MPC-thumb#mpc_inc-image': {
+							append			: '.mpc-hgw-crslwfour-thumb-section',
+							default_value	: 'templates/hgtv/images/266x200.jpg',
+							type			: 'text',
+							label			: 'Thumb #mpc_inc Image'
+						},
+						'MPC-thumb#mpc_inc-alt': {
+							append			: '.mpc-hgw-crslwfour-thumb-section',
+							default_value	: 'Thumb #mpc_inc',
+							type			: 'text',
+							label			: 'Thumb #mpc_inc Alt'
+						}
+					}
+				});
+			}
+		}
+	}]
+	
+})
+</script>

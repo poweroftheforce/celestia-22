@@ -1,0 +1,65 @@
+<div class="pod ww-sponsors">
+	<style>.spnsr-list li {height: 32px;}</style>
+	<div class="hd"><h4>Sponsors</h4></div>
+	<div class="bd">
+		<ul class="spnsr-list">
+			<li><a href="#" target="_blank"><img src="http://hgtv.sndimg.com/webhgtv/hg20/pkgs/2012/urban-oasis/images/UO2012_Sweeps-Sponsor-Cabinets-To-Go-Logo_s88x31.gif" alt=""/></a></li>
+		</ul>
+	</div>
+	<div class="ft"></div>
+</div>
+<script>
+({
+	
+	name : 'Sponsor List (left rail)',
+	
+	init: function() {
+		C.sortable('.spnsr-list');
+	},
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('h4')",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Sponsors'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'List',
+			selector	: "$({m}).find('.spnsr-list')",
+			markup		: '<li><a href="#" target="_blank"><img src="http://hgtv.sndimg.com/webhgtv/hg20/pkgs/2012/urban-oasis/images/UO2012_Sweeps-Sponsor-Cabinets-To-Go-Logo_s88x31.gif" alt=""/></a></li>',
+			elements	: [{
+				name		: 'Image {x}',
+				selector	: "$({m}).find('.spnsr-list').find('img').eq({x})",
+				editables	: [{
+					alt : {
+						label	: 'Alt',
+						value	: ''
+					},
+					src : {
+						label	: 'Src',
+						value	: 'http://hgtv.sndimg.com/webhgtv/hg20/pkgs/2012/urban-oasis/images/UO2012_Sweeps-Sponsor-Cabinets-To-Go-Logo_s88x31.gif'
+					}
+				}]
+			}, {
+				name		: 'Call to Action {x}',
+				selector	: "$({m}).find('.spnsr-list').find('a').eq({x})",
+				editables	: [{
+					href : {
+						label	: 'URL',
+						value	: '#'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+});
+</script>

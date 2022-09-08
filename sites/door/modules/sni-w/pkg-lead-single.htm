@@ -1,0 +1,52 @@
+<div class="pkg-lead-single">
+	<div id="pkg-lead-inner" class="clrfix">
+		<h2>Header</h2>
+		<p class="img"><img src="../sites/door/images/400x300.jpg" width="400" height="300" alt=""/></p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	</div>
+</div>
+<script>
+({
+	name	: 'Package Lead / Simgle Lead',
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('h2')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Image',
+			selector	: "$({m}).find('img')",
+			editables	: [{
+				src	: {
+					label	: 'Src',
+					value	: '../sites/door/images/400x300.jpg'
+				},
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "$({m}).find('p').eq(1)",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

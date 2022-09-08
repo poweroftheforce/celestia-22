@@ -1,0 +1,33 @@
+<div id="sweeps-fineprint" class="short-rules">
+	<p>NO PURCHASE NECESSARY. Open to legal residents of the 50 United States and D.C., age 21 or older. Void where prohibited. Odds of winning depend on number of entries received.  Sweepstakes ends at 5:00 p.m. ET on March 11, 2013. For full official rules, visit www.hgtv.com/thatscool. Sponsored by Scripps Networks, LLC dba Home &amp; Garden Television.</p>
+</div>
+<script>
+({
+	name : 'Short Form Rules',
+	
+	init : function() {
+		C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+		/* we will just append the sort form rules where they need to go */
+		$('#hg-ww').after($(C.module.current).parent());
+		$(C.module.current).parent().css({
+			'position'	: 'relative',
+			'clear'		: 'both'
+		});
+	},
+	
+	sections : [{
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Copy',
+			selector	: "{m}.find('p')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'NO PURCHASE NECESSARY. Open to legal residents of the 50 United States and D.C., age 21 or older. Void where prohibited. Odds of winning depend on number of entries received.  Sweepstakes ends at 5:00 p.m. ET on March 11, 2013. For full official rules, visit www.hgtv.com/thatscool. Sponsored by Scripps Networks, LLC dba Home &amp; Garden Television.'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

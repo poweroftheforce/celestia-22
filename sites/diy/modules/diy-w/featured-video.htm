@@ -1,0 +1,41 @@
+<div id="featured-video" class="clrfix">
+	<div id="vplayer-1"></div>
+	<cscript type="text/javascript">SNI.DIY.Player.FullSize('vplayer-1', '31661', '', '', SNI.DIY.Player.NowPlaying);</cscript> 
+	<img class="temp-full-size-player" src="../sites/diy/images/temp-full-size-player.jpg"/>
+</div>
+<script>
+({
+	name			: 'Full Size Video Player',
+	
+	sections : [{
+		name		: 'Player Section',
+		elements	: [{
+			name		: 'Player Id',
+			selector	: "{m}.find('cscript')",
+			extract		: /\(\s*['"](.*?)['"]\s*,.*\)/,
+			editables		: [{
+				html		: {
+					label		: 'Id',
+					value		: 'vplayer-1',
+					max_width	: '150px',
+					callback	: function( btn, value, data ) {
+						$(C.module.current).find('div').eq(0).attr('id', value);
+					}
+				}
+			}]
+		}, {
+			name		: 'Player Channel',
+			selector	: "{m}.find('cscript')",
+			extract		: /\(.*?,\s*(?:'|")?(.*?)(?:'|")?\s*,.*\)/,
+			editables		: [{
+				html	: {
+					label		: 'Channel',
+					value		: '31661',
+					max_width	: '150px'
+				}
+			}]
+		}]
+	}]
+
+})
+</script>

@@ -1,0 +1,38 @@
+<div class="intro oops">
+	<style>.oops p {font-family: Trebuchet MS;font-size: 146.5%;}</style>
+	<p>Your request was unsuccessfully submitted. <a href="#">Please try again</a>.</p>
+</div>
+<script>
+({
+	
+	name : 'Sweeps Oops Message',
+	
+	sections : [{
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Copy',
+			selector	: "$({m}).find('p')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Your request was unsuccessfully submitted.'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "$({m}).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label	: 'Text',
+					value	: 'Please try again'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

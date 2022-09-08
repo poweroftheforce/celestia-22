@@ -1,0 +1,21 @@
+added <section id="sni-bd"> as wrapper
+lead in wrong place
+fixed multilogo
+leading and trailing spaces in attribute values
+
+
+
+
+removal of class [pb-current]
+
+--------------------------------------
+EMPTY TAGS
+
+(/ class="\s*?"/g, '')
+(/ title="\s*?"/g, '')
+(/ alt="\s*?"/g, '')
+
+--------------------------------------------
+
+(/http://www.hgtvremodels.com/g, '')
+(/<hr>/g, '<hr/>')

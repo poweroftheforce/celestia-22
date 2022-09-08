@@ -1,0 +1,103 @@
+<div class="lead plain">
+	<span class="sponsor-multi-logo"><img class="temp-multi-logo" src="../sites/hgrm/images/hg_multi_88x31.jpg"/></span>
+	<p>Nullam quis risus eget urna mollis ornare vel eu leo. Vivamuis saittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+	<div class="hr"><hr/></div>
+</div>
+<script>
+({
+	name	: 'Lead Plain',
+	
+	sections : [{
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Copy',
+			selector	: "{m}.find('p')",
+			editables	: [{
+				html	: {
+					label	: 'Copy',
+					value	: 'Nullam quis risus eget urna mollis ornare vel eu leo. Vivamuis saittis lacus vel augue laoreet rutrum faucibus dolor auctor.'
+				}
+			}]
+		}]
+	}],
+
+	controlsDrawn : function() {
+		$.data(C.module.current, 'data').checkIntro();
+	},
+		
+	checkIntro : function() {
+		$('#sel-logos option[value="' + $(C.module.current).find('.sponsor-multi-logo img').attr('src') + '"]').attr('selected', 'selected');
+	},
+	
+	menu : [{
+		nodeName	: 'ul',
+		addClass	: 'clrfix',
+		append		: [{
+			nodeName	: 'li',
+			addClass	: 'logos-wrap',
+			append		: [{
+				nodeName	: 'label',
+				html		: 'Preview with Logo (select size): ',
+				append		: [{
+					nodeName	: 'select',
+					id			: 'sel-logos',
+					append		: [
+						{ nodeName : 'option', val : '', html : 'Select Option' },
+						{ nodeName : 'option', val : '../sites/hgtv/images/hg_multi_88x31.jpg', html : '88 x 31' },
+						{ nodeName : 'option', val : '../sites/hgtv/images/hg_multi_68x40.jpg', html : '68 x 40' },
+						{ nodeName : 'option', val : '../sites/hgtv/images/hg_multi_115x24.jpg', html : '115 x 24' },
+						{ nodeName : 'option', val : '../sites/hgtv/images/hg_multi_135x20.jpg', html : '135 x 20' },
+						{ nodeName : 'option', val : '', html : 'No Logo' }
+					],
+					change : function() {
+						if ( $(this).val() == '' ) {
+							$(C.module.current).find('.sponsor-multi-logo').html('');
+						} else {
+							$(C.module.current).find('.sponsor-multi-logo').html('<img class="temp-multi-logo" src="' + $(this).val() + '"/>');
+						}
+						C.save();
+					}
+				}]
+			}]
+		}]
+	}]/*,
+	
+	buttons: [{
+		'btn-nologo': {
+			html	: 'No Logo',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('');
+				$('.temp', '#hgtvIntro').find('img').parent().html('');
+			}
+		},
+		'btn-88x31': {
+			html	: '88 x 31',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('<img class="temp-multi-logo" src="../sites/hgrm/images/hg_multi_88x31.jpg"/>');
+				$('.temp', '#hgtvIntro').find('img').parent().html('<img class="temp-multi-logo" src="../sites/hgrm/images/hg_multi_88x31.jpg"/>');
+			}
+		},
+		'btn-68x40': {
+			html	: '68 x 40',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('<img class="temp-multi-logo" src="../sites/hgrm/images/hg_multi_68x40.jpg"/>');
+				$('.temp', '#hgtvIntro').find('img').parent().html('<img class="temp-multi-logo" src="../sites/hgrm/images/hg_multi_68x40.jpg"/>');
+			}
+		},
+		'btn-115x24': {
+			html	: '115 x 24',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('<img class="temp-multi-logo" src="../sites/hgrm/images/hg_multi_115x24.jpg"/>');
+				$('.temp', '#hgtvIntro').find('img').parent().html('<img class="temp-multi-logo" src="../sites/hgrm/images/hg_multi_115x24.jpg"/>');
+			}
+		},
+		'btn-135x20': {
+			html	: '135 x 20',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('<img class="temp-multi-logo" src="../sites/hgrm/images/hg_multi_135x20.jpg"/>');
+				$('.temp', '#hgtvIntro').find('img').parent().html('<img class="temp-multi-logo" src="../sites/hgrm/images/hg_multi_135x20.jpg"/>');
+			}
+		}
+	}]*/
+})
+</script>

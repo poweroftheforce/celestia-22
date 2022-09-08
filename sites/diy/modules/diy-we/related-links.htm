@@ -1,0 +1,80 @@
+<div class="pod related-links clrfix">
+	<h3 class="sub-header"><a href="#">Header</a></h3>
+	<div class="image"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg" alt="" height="69" width="92"/></a></div>
+	<div class="story">
+		<ul class="list">
+			<li><a href="#" class="featured">List Item 1</a></li>
+		</ul>
+	</div>
+</div>
+<script>
+({
+	name			: 'Related Links',
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('h3').find('a')",
+			affects		: "$({m}).find('.image').find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				}
+			}, {
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "$({m}).find('img')",
+			editables	: [{
+				alt		: {
+					label	: 'Alt',
+					value	: ''
+				}
+			}, {
+				src		: {
+					label	: 'Src',
+					value	: '../sites/diy/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'List',
+			selector	: "$({m}).find('.list')",
+			markup		: '<li><a href="#">List Item {x}</a></li>',
+			elements	: [{
+				name		: 'List Item {x}',
+				selector	: "$({module}).find('.list').children().eq({x}).find('a')",
+				editables	: [{
+					class	: {
+						label	: 'Class',
+						value	: ''
+					},
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+})
+</script>

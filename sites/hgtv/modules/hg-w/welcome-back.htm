@@ -1,0 +1,26 @@
+<div class="welcome-back">
+	<div class="bd">
+		<h3>Welcome Back!</h3>
+		<p>It looks like you have done this before. Would you like to enter as <span class="enter-as"></span>?</p>
+	</div>
+	<img clas="dummy-image" src="../sites/hgtv/images/welcome-back.jpg"/>
+</div>
+<script>
+({
+	name	: 'Sweeps Welcome Back message',
+	help : 'help-sweeps-welcome-back',
+	init : function() {
+		C.loadAssets({
+			'sweeps-css' : '../sites/hgtv/const/sweeps.css'
+		});
+		$(C.module.current).css('display', 'block').find('.bd').css('display', 'none');
+		$(C.module.current).find('img').css({
+			'border'			: 'none',
+			'background-color'	: 'transparent',
+			'display'			: 'inline',
+			'padding'			: '0'
+		});
+	},
+	editable : false
+})
+</script>

@@ -1,0 +1,761 @@
+
+/* =============================================================================
+   Head
+   ========================================================================== */
+   
+#package-nav { margin:14px;}
+.intro h2, .small-lead h2 {font-size:161.6%;}
+
+/* Oops Large Text */
+.oops p { font-family:Trebuchet MS; font-size:146.5%;}
+
+
+/* =============================================================================
+   Sponsor Logos
+   ========================================================================== */
+   
+#spnsr-pod-full { padding-bottom:14px;}
+#spnsr-pod-full > div { margin-top:14px; padding:0 35px; display:inline-block; vertical-align:top; margin-right:-4px; zoom:1; *display:inline;}
+#spnsr-pod-full > div li { margin-top:14px;}
+#spnsr-pod-full > div a { display:block;}
+#spnsr-pod-full #tier-one { border-right:1px solid #DAE7E3;}
+#spnsr-pod-full #tier-two { width:318px;}
+#spnsr-pod-full #tier-two li { display:inline-block; vertical-align:top; margin-right:24px; zoom:1; *display:inline;}
+/*#spnsr-pod-full-top .spnsr-logo { margin:0 0 14px;}
+#spnsr-pod-full h4 {margin-bottom:0;}
+.spnsr-logo { float:none; margin:0; padding:0; display:inline-block; vertical-align:top; zoom:1; *display:inline;}
+.spnsr-logo + .spnsr-logo { margin-left:1em;}*/
+
+#sweeps-reminder { border:1px solid #C0D4CB; margin-top:14px; padding:7px 14px 14px; -webkit-border-radius:4px; border-radius:4px;}
+#sweeps-reminder h3 { font-size:161.5%; font-weight:normal;}
+#sweeps-reminder p { margin-bottom:7px;}
+.rounded-input { background:#fff; border:1px solid #C0D4CB; height:29px; padding:7px; -webkit-border-radius:3px; border-radius:3px;}
+#sweeps-reminder .input, #sweeps-reminder-thanks .input { float:left; width:297px;}
+#sweeps-reminder .input input, #sweeps-reminder-thanks .input input { border:0; color:#444; font-size:146.5%; height:24px; line-height:24px; padding:3px 0; width:100%;}
+#sweeps-reminder button, #sweeps-reminder-thanks button { margin-left:7px; white-space:nowrap; width:auto;}
+#sweeps-reminder input.input-hint, #sweeps-reminder-thanks input.input-hint {color:#9cbbb4;}
+#sweeps-reminder input.error, #sweeps-reminder-thanks input.error { border:1px solid #f00; color:#999; -webkit-border-radius:3px; border-radius:3px;}
+#sweeps-reminder .fail, #sweeps-reminder-thanks .fail { color:#f00;}
+#sweeps-reminder-thanks p { margin-bottom:14px;}
+#sweeps-reminder-thanks .input { width:477px;}
+
+
+/* =============================================================================
+   Enter Page
+   ========================================================================== */
+
+.small-lead { border-bottom:1px solid #DAE7E3; line-height:1.7; margin:0; padding:0 14px;}
+.small-lead a { font-size:100%;}
+
+#diy-we .nl-bd { border-bottom:none;}
+#diy-we .nl-bd legend, #diy-we .nl-bd .nl-optional h3 { color:#444; font:normal 161.6%/1 "Trebuchet MS",sans-serif; margin-bottom:7px; *text-indent:-3px;}
+#diy-we .nl-bd .ftnt, .spnsr-prize .ftnt { color:#ADADAD; font-size:77%;}
+
+.nl-bd .nl-your-info li { float:none; display:inline-block; vertical-align:top; margin-right:-4px; zoom:1; *display:inline;}
+#diy-we .nl-bd .nl-your-info { border-bottom:1px solid #DDD; padding-bottom:10px;}
+#diy-we .nl-bd .nl-optional { margin-bottom:0;}
+.nl-bd .nl-optional ul { float:left; width:210px;}
+.nl-bd .nl-optional .sponsor-offer { border-bottom:1px solid #DDDDDD; float:none; margin-bottom:14px; width:auto;}
+.nl-bd .nl-list li { border-bottom:none; margin-bottom:0;}
+.nl-bd .sponsor-offer li.last { padding-bottom:0;}
+.nl-bd .nl-cols { border-bottom:1px solid #DDDDDD; margin-bottom:14px;}
+#diy-we .nl-bd .nl-optional input { float:left; width:18px;}
+#diy-we .nl-bd .nl-optional label { float:left; width:161px;}
+#diy-we .nl-bd .nl-optional .sponsor-offer label { float:none; width:auto;}
+.nl-bd p { margin-bottom:7px;}
+.nl-bd .nl-optional .sponsor-dropdowns { display:none; float:none; margin:8px 0 0 18px; width:auto;}
+.nl-bd .nl-optional .sponsor-dropdowns .text-box { margin-top:3px;}
+
+
+/* =============================================================================
+   Center Mod and Dropdown Menu
+   ========================================================================== */
+
+.center-mod { background:#F1F6F2; clear:both; margin:7px auto; position:relative; -webkit-border-radius:4px; border-radius:4px; _width:406px;}
+.fieldset .center-mod .hd { background:none; padding:0;}
+#sweepsEntryForm .center-mod .bd { border:none; padding:4px 14px;}
+.user-alert { color:#444;}
+.futon-menu {/* float:left; margin-top:21px;*/ line-height:26px; position:relative; z-index:200;}
+.futon-menu .dd20 { left:auto; right:0; line-height:1.7;}
+.futon-menu .dd20 .dd20-hd, .futon-menu .dd20 .dd20-ft { width:368px;}
+.futon-menu .dd20 .dd20-hd .c, .futon-menu .dd20 .dd20-ft .c {width:348px;}
+.futon-menu .dd20 .dd20-bd-outer { width:359px;}
+.futon-menu .dd20 .dd20-bd .content { padding:6px 13px 13px;}
+.futon-menu .dd20 .dd20-bd .content p { margin-bottom:7px;}
+.futon-menu .dd20 .dd20-bd h3 a.close { background:url("http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups-200.png") no-repeat scroll 0 0 transparent; cursor:pointer; display:block; height:12px; position:absolute; right:16px; top:18px; width:12px; z-index:3;}
+
+
+/* =============================================================================
+   Select Dropdown Menu
+   ========================================================================== */
+   
+.dd-list dt.dd-dt a.focus {color:#EF4141;}
+.dd-list dd .dd-bd ul.dd-ul li.dd-li a.hilite{color: #fff;background-color: #EF4141;text-decoration:none;margin-top: -3px;margin-bottom: -1px;padding-top:3px;padding-bottom:1px;}
+
+#diy-we .nl-bd .dd-list { width:189px;}
+#diy-we .nl-bd .futon-select { width:87px;}
+.dd-list dd { display:none; margin-left:-31px;}
+.futon-select dd { margin-left:-133px;}
+.futon-select dd .dd-bd {/*height:219px; max-height:219px;*/ height:258px; max-height:258px;}
+.futon-select dd .dd-bd ul.dd-ul {height:132px;overflow: visible; position:absolute; top:30px; width:237px;}
+.dd-list dd .dd-bd ul.dd-ul li.dd-li { display:list-item;}
+#diy-we .futon-select dd .dd-bd ul.dd-ul li.dd-li {float:left; margin-right:0; width:39px;}
+.futon-select dd .dd-bd ul.dd-ul li.dd-li a { padding-left:10px;}
+
+
+/* =============================================================================
+   Alert Box
+   ========================================================================== */
+   
+.ft-msg { margin:14px; position:relative;}
+.ft-msg .hd, .ft-msg .ft { height:10px; width:602px;}
+.ft-msg .hd span, .ft-msg .ft span { display:block; float:left; height:10px;}
+.ft-msg .hd .l { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-tl.png) no-repeat 0 0;}
+.ft-msg .hd .c { width:582px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-tc.png) repeat-x 0 0;}
+.ft-msg .hd .r { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-tr.png) no-repeat 0 0;}
+.ft-msg .bd-outer { width:593px; padding-right:9px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-mr.png) repeat-y 100% 0;}
+.ft-msg .bd { padding-left:9px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-ml.png) repeat-y 0 0;}
+.ft-msg .bd .content { padding:14px; background-color: #f1f6f2;}
+.ft-msg h3 { color:#EF4141; font-family:Trebuchet MS; font-size:123.1%; font-weight:normal;}
+.ft-msg .ft .l { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-bl.png) no-repeat 0 0;}
+.ft-msg .ft .c { width:582px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-bc.png) repeat-x 0 0;}
+.ft-msg .ft .r { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-br.png) no-repeat 0 0;}
+.ft-msg h3 a.close { display:block;position:absolute;right:16px; top:18px;width:12px;height:12px;cursor:pointer;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups-200.png) no-repeat 0 0;_width:13px;_height:13px;_background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/ie/close-x-ie6.gif) no-repeat 0 0;z-index:3;_font-size:0;}
+
+
+/* =============================================================================
+   Prize Page
+   ========================================================================== */
+   
+#spnsr-gallery { margin: 0 14px;}
+#spnsr-gallery h2 { margin:0;}
+#spnsr-prize-top h2 { margin:0 8px 7px;}
+.spnsr-prize { border-bottom:none; margin:0; padding:13px 0 6px;}
+.spnsr-prize + .spnsr-prize { border-top:1px solid #DAE7E3;}
+#spnsr-prize-top .spnsr-prize + .spnsr-prize { padding:13px 0 0;}
+#dream-home #spnsr-prize-top, #video #spnsr-prize-top { background:none;}
+#dream-home #spnsr-prize-top .hd, #dream-home #spnsr-prize-top .ft { background:none;}
+/*.spnsr-list li { margin:0;}
+.spnsr-list li + li { margin:14px 0 0;}*/
+
+
+/* =============================================================================
+   Left Rail
+   ========================================================================== */
+
+#diy-ww .pod .epi-content { border-top:1px solid #DAE7E3; margin-top:7px; padding-top:7px;}
+#diy-ww .pod .epi-content p { line-height:1.7;}
+/* =============================================================================
+   Footnotes
+   ========================================================================== */
+
+.footnotes {border-top:1px solid #DAE7E3; clear:both; margin-bottom:14px; padding:14px 14px 0;}
+.footnotes p {color:#adadad; font-size:85%;}
+
+
+/* =============================================================================
+   Right Rail
+   ========================================================================== */
+
+#diy-e .widget-pod { margin:14px 0; width:349px;}
+#diy-e #toolbar { border:none; margin:0; padding-left:6px;}
+#diy-e .sharing { float:none;}
+#diy-e .sharing li { border:none;}
+/*#diy-e .sharing .email.active { background-color: #EF4141;}
+#diy-e .sharing .active a { color:#fff;}*/
+
+
+
+/* =============================================================================
+   Coming Soon
+   ========================================================================== */
+
+#site-wrapper #toolbar {border: 0; margin-left: 0; padding-left: 14px;}
+#toolbar .sharing {float:left;}
+#toolbar .sharing li {border: 0;}
+
+#coming-soon .small-lead #newsletter-signup {border: none;}
+#coming-soon .input input { border:1px solid #ddd; border-radius:3px; box-shadow: inset 0px 2px 0px 0px #f2f2f2; }
+#coming-soon .input input:focus { box-shadow: 0px 0px 5px 3px #d2effe, inset 0px 2px 0px 0px #f2f2f2; color:#000; }
+#coming-soon .input input.form-error { background-color:#fcddd7; box-shadow:inset 0px 2px 0px 0px #f4cec9,0px 0px 0px 0px #d2effe; border:1px solid #e6aba7; }
+
+#newsletter-signup .loading { 
+    float:left; 
+    display: none; 
+    margin: 0; 
+    position:relative; 
+    margin-top:-160px; 
+    width: 100%; 
+    padding:60px 0; 
+    background-color: RGBA( 255, 255, 255, .75); 
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#bfffffff', endColorstr='#bfffffff'); /* IE */   
+    z-index:3000;
+}
+
+
+
+.hub-tabs{margin-left:14px;}
+.hub-tabs ul {border-bottom:1px solid #DAE7E3;margin-right:14px;position:relative;}
+.hub-tabs ul li {background:#FFF;border-bottom:1px solid #DAE7E3;float:left;margin:0;position:relative;top:1px;}
+.hub-tabs ul li a {display:block;padding:7px 10px;}
+.hub-tabs ul li:hover {background:#F1F5FA;}
+.hub-tabs ul li.selected{border-color:#DAE7E3;border-width:1px;border-style:solid;-moz-border-radius:3px 3px 0 0;border-radius:3px 3px 0 0;border-bottom:none;}
+.hub-tabs ul li.selected:hover{background:#FFF;}
+.hub-tabs ul li.selected a{color:#454545;cursor:default;}
+.hub-tabs ul li a:hover{text-decoration:none;}
+
+
+div.intro.sweeps {margin:14px 14px 0;}
+#diy-we.sweeps {margin-top:14px;}
+#diy-we.sweeps h1 {text-align: center;}
+#tentpole-menu {margin: 18px 5px 14px;}
+
+#spnsr-block {width: 210px; float: right; padding-left: 14px; padding-right: 0;}
+#spnsr-block img, #sponsors img {background-color: #F1F6F2;}
+
+#spnsr-block .pod{text-align: center;background: none repeat scroll 0 0 #F1F6F2;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;border-top-right-radius: 4px;margin: 0 0 14px;position: relative;width: 210px;padding-top: 21px;}
+#spnsr-block .pod p {font-size: 85%; padding: 21px auto;}
+.spnsr-list.top {border-bottom: none;margin-bottom: 14px;}
+
+.intro-enter {margin: 14px 14px 0;}
+.intro-enter p {margin-bottom: 21px;}
+
+#spnsr-gallery { margin: 0;}
+#spnsr-gallery h2 {border-top: 1px solid #DAE7E3; margin: 0 14px; padding: 21px 0 0;}
+
+#spnsr-prize-top h2 { margin:0 8px 7px;}
+#spnsr-prize-top .spnsr-prize + .spnsr-prize { padding:13px 0 0;}
+#dream-home #spnsr-prize-top, #video #spnsr-prize-top { background:none;}
+#dream-home #spnsr-prize-top .hd, #dream-home #spnsr-prize-top .ft { background:none;}
+/*.spnsr-list li { margin:0;}
+.spnsr-list li + li { margin:14px 0 0;}*/
+
+#spnsr-prize-top {border: none; border-top: 1px solid #DAE7E3; border-radius: 0;}
+#spnsr-prize-top .hd {border: none; padding-top: 0; margin-bottom: 0;}
+#spnsr-prize-top .bd {padding: 0 14px;}
+#spnsr-gallery .spnsr-prize {padding: 0;}
+#spnsr-prize-top .spnsr-prize + .spnsr-prize {padding: 13px 0px 0; }
+#spnsr-gallery #spnsr-prize-top h2 {border:none;}
+#site-wrapper .spnsr-prize .product {display: block; float: right; border: 1px solid #a7bfa9; padding: 2px;}
+#site-wrapper .spnsr-prize .product:hover {border: 1px solid #ef4141;}
+#site-wrapper .spnsr-prize .product img {margin-bottom: 0;}
+
+
+.counter_wrap {position: absolute; top: 18px; right: 14px; width: 159px; height: 89px; -moz-border-radius: 3px; border-radius: 3px; background-color: #2d2d2d;}
+.counter_wrap .cw_inner { padding: 8px; }
+.counter_wrap h4 { color: #FEFFFF; font: bold 22px "Trebuchet MS"; line-height: 14px; margin-bottom: 6px; }
+.counter_wrap h5 { color: #FEFFFF; font: bold 16px "Trebuchet MS"; line-height: 14px; }
+.counter_wrap h6 { color: #FEFFFF; font: bold 11px "Trebuchet MS"; }
+.counter_wrap div { font: bold 14px Arial, Helvetica, sans-serif; color: #fff; }
+.counter_wrap .dhcd_days { float: left; display: inline; width: 42%; text-align: left; }
+.counter_wrap .dhcd_days span,
+.counter_wrap .dhcd_time span { font-size: 18px; }
+.counter_wrap .dhcd_time { float: right; display: inline; text-align: right; }
+.counter_wrap .dhcd_additional_text { font-size: 85%; font-weight: normal;}							
+.counter_wrap .dhcd_additional_text a { color: #9bcccc;}							
+.counter_wrap #cdDays, .counter_wrap .dhcd_time {background-color: #000; -moz-border-radius: 2px; border-radius: 2px; padding: 5px; font-weight: normal;}
+.counter_wrap .dhcd_days span.days_text {font-weight: normal; color: #ababab; font-size: 11px;}
+
+
+
+
+/* coming-soon lead */
+#coming-soon #sweeps-lead { position: relative; margin: 0 14px 14px; height: auto !important; *height: 300px; }
+#coming-soon #sweeps-lead p.img { margin-left: 0; width: 400px; height: 300px; overflow: hidden; position: absolute; top: 0; left: 0; }
+#coming-soon #sponsors { background-color: #f1f6f2; -moz-border-radius: 4px; border-radius: 4px; margin: 0 14px 21px; padding-top: 21px;}
+#coming-soon #sponsors-inner {padding: 0 14px 21px;}
+#coming-soon #sponsors-inner h3 {margin-bottom: 11px;}
+#coming-soon #sponsors h3 {font-family: arial; font-size: 14px; font-weight: normal;}
+#coming-soon #sponsors ul {margin-bottom: 14px;}
+#coming-soon #sponsors li {margin-right: 14px; margin-bottom: 14px; display: inline; line-height: 40px; padding-right: 7px; float: left; vertical-align: middle;}
+#coming-soon #sponsors li img {vertical-align: middle; border: none; padding:0;}
+
+/* coming soon sponsors */
+#coming-soon #sponsors ul { margin-bottom: 14px; }
+#coming-soon #sponsors div.first ul { padding-bottom: 14px; border-bottom: 1px dotted #ddd; }
+#coming-soon #sponsors h3 { font-family: "Trebuchet MS", sans-serif; font-size: 16px; line-height: 1; font-weight: bold; color: #1e1e17; }
+#coming-soon #sponsors div.first h3  { font-size: 19px; line-height: 1; }
+#coming-soon #sponsors ul.also-by li {height: 48px; margin-bottom: 21px;}
+#coming-soon #sponsors ul.also-by li.last {margin-bottom: 0; height: 32px;}
+#coming-soon #sponsors ul.also-by {margin-bottom: 0;}
+
+
+
+/* fine print */
+#coming-soon #sweeps-articles {margin: 0 14px 21px;}
+#sweeps-fineprint {	clear: both;	border-top: 1px dotted #ddd;	padding: 14px 14px 0;	margin-bottom: 14px;	font-size: 11px;	line-height: 17px; color: #adadad; }
+#sweeps-articles li a img { float:left; margin-right:12px;}
+#sweeps-articles li h3 { font-size: 21px; font-family: arial; letter-spacing: 1px; }
+#coming-soon #sponsors h3 { font: normal 13px arial;}
+#sweeps-articles li h3 a { font-weight: 500;}
+#sweeps-articles ul li { border-top: 0; margin-top: 14px; margin-bottom: 21px;}
+#sweeps-articles ul li a.thumb {display: block; float: left;}
+#sweeps-articles ul li ul li { padding:0; min-height:0; font-size: 14px; margin-bottom: 5px; }
+#sweeps-articles .cta { font-weight: normal;}
+#sweeps-articles ul li p { font-size: 14px; line-height: 21px;}
+#sweeps-articles p.cta a { font-weight: normal;}
+#sweeps-articles ul.list {float: left;}
+#sweeps-articles ul.list li {margin-top: 0; padding-left: 11px;}
+#sweeps-more { margin-bottom: 10px; border-top: 1px dotted #dddddd; padding:15px 0; float:left;}
+#sweeps-more h3 { font-size:20px; font-weight: normal;}
+#sweeps-more ul { padding-top: 10px;}
+#sweeps-more ul li { float: left; width:310px;}
+#sweeps-more ul li img { float: left; margin-right: 12px;}
+#sweeps-more ul li h4 { font-size: 15px; margin-bottom:10px; font-weight:normal;}
+#sweeps-more ul li p { font-size: 14px; line-height: 21px;}
+#sweeps-more ul li {float: left;width: 296px;}
+
+#coming-soon #newsletter-signup {border: 1px solid #C0D4CB; border-radius: 3px; margin: 0 14px 21px; padding: 21px 14px;}
+#newsletter-signup .loading { display: none; margin: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: RGBA( 255, 255, 255, .75)}
+#newsletter-signup .loading p { text-align: center; line-height: 100%; height: 100%; margin-top: 90px }
+#newsletter-signup .loading p img { float: none; display: inline; }
+#newsletter-signup .nl-error { display: none; color: #f00 }
+#newsletter-signup .success { display: none; }
+#newsletter-signup p {margin-bottom: 21px;}
+#coming-soon .rounded-input {width: 348px; height: 29px; padding: 0 0 0 7px; border-color: #dddddd; color: #adadad;}
+#coming-soon .input {float: left; width: 357px; margin-right: 7px; }
+#coming-soon .button {float: left; margin-top: 2px; width: 64px;}
+.legend {font-weight: bold; color: #454545;}
+
+
+#spnsr-gallery .sponsors h3 { font-weight: normal; padding: 15px 0 10px; font-size: 21px; border-top:1px dotted #ddd;}
+#spnsr-gallery .sponsors p { margin: 21px 0;}
+#spnsr-gallery .sponsors .sponsor-info-container p { float:left; width: 410px; margin-top: 10px; margin-right: 10px; margin-bottom: 14px;}
+.sponsor-info-container .more-nfo {clear: both; margin-bottom: 21px}
+.sponsor-info-container .more-nfo li {float: left; list-style-type: none; margin-right: 24px;}
+.sponsor-info-container .more-nfo li.blt {list-style-type: disc; color: #adadad;}
+.sponsor-info-container .more-nfo li span {color: #000;}
+
+.also-by {margin: 0 14px;}
+.also-by .spnsr-prize {margin: 0 0 6px;}
+
+.colist.list {float: left; width: 200px;}
+
+/* fine print */
+.sub-nav { border-bottom: 1px solid #dae7e3; margin: 10px 14px 14px; padding:10px 0 5px;}
+.sub-nav li { float: left; background-color: #fff;  }
+.sub-nav li a {padding: 10px 10px; font-size:14px; }
+.sub-nav li.sel a {border: 1px solid #dae7e3; border-bottom: 1px solid #fff; border-width: 1px 1px 0 1px; border-radius:4px 4px 0 0; margin-bottom: -1px;}
+.sub-nav li:hover {float: left; background-color: #f1f5fa; border-radius:4px 4px 0 0;  }
+
+
+/* coming soon rules */
+#coming-soon.rules .intro h1, #coming-soon.prizes .intro h2, #coming-soon #sweeps-lead h2 {font: bold 26px "Trebuchet MS", Helvetica, sans-serif; margin: 28px 0 21px;}
+
+
+/* coming soon reminder */
+#coming-soon.reminder #sweeps-lead h2 {display:none;}
+#coming-soon.reminder .input {width: 218px;}
+#coming-soon.reminder .rounded-input {width: 209px;}
+#coming-soon.reminder #newsletter-signup {padding-top: 0;}
+#coming-soon.reminder #three-feature {clear: both; border-top: 1px solid #DAE7E3; padding: 14px 0 14px 14px; margin: 0;}
+
+
+/* coming soon prizes */
+#dream-home #coming-soon .intro .li-hd {font-size: 21px; margin-bottom: 4px;}
+
+
+
+a{color:#176684;}
+.nl-bd {padding:0;}
+.nl-bd form .bd {margin:0 14px;}
+.sweeps .hr {background:none;border-top:1px dotted #DAE7E3;margin:14px;padding:0;font-size:0;height:1px;}
+.sweeps .hr hr {display:none;}
+.sweeps .nl-bd .find {height:29px;}
+.sweeps .nl-bd .button {width:auto;overflow:visible;white-space:nowrap;}
+
+.sweeps select {border:1px solid #DDD;border-radius:3px;-moz-border-radius:3px;color:#ADADAD;font:14px arial,helvetica,clean,sans-serif;padding:9px;width:100%;}
+.sweeps select.norm{color:#000;}
+.sweeps select:focus {color:#000;}
+.sweeps select.valid,
+.sweeps select.valid:focus {background:#E3FCD7;color:#000;border-color:#C0E8AC;}
+.sweeps select.error,
+.sweeps select.error:focus {background:#FDDDD7;color:#000;border-color:#E8ACA7;}
+
+
+.sweeps span.error {display:none;color:#cc2414;font:italic 14px arial,helvetica,clean,sans-serif;}
+
+.nl-bd .nl-your-info li {margin-bottom:14px;}
+
+form label.error, form h4.error {background:none;margin:0;padding:0;}
+
+.loading { margin:4em auto; width:30px;}
+#thanks-msg, #vote-results, #show-vote .catefory { display:none;}
+.form-errors { margin-top:14px;}
+
+#site-wrapper .tentpole-container { margin-bottom: 14px; }
+.static-lead p.description { padding-right: 0; }
+
+.vote p { font-family:Trebuchet MS; font-size:131%;}
+.form-errors .hd p { font:13px/1.7 arial,helvetica,clean,sans-serif;}
+#show-vote { border:1px solid #DAE7E3; margin:14px; padding:14px 0; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+#show-vote h2, #show-vote p {  margin:0 14px 7px;}
+#show-vote ul { margin-bottom:14px;}
+#show-vote li { clear:left; cursor:pointer; padding:7px 14px;}
+#show-vote li.selected { background:#F1F6F2}
+#show-vote label { color:#176684; cursor:pointer; font-family:Trebuchet MS; font-size:138.5%;}
+#show-vote label:hover { text-decoration:underline;}
+#show-vote .status { font-size:85%; margin-left:14px; margin-right:14px;}
+#show-vote .status em { font-style:normal; text-transform:uppercase;}
+#show-vote .rad-btn { float:left; margin:56px 8px 0 0;}
+#show-vote .choice-img { float:left;/* height:120px;*/ margin-right:15px; position:relative;/* width:160px;*/}
+#show-vote .desc { padding-top:34px;}
+#show-vote .desc p { margin:0;}
+#show-vote .desc a { color:#EF4141; font-weight:bold;}
+#show-vote .cnt { text-align:center;}
+#show-vote button.button span {background:url("http://hgtv.sndimg.com/webhgtv/hg20/imgs/hgtv_photogallery_sprite.png") no-repeat scroll left 0; display:block; font-family:"trebuchet ms",sans-serif; font-size:12px; font-weight:bold; line-height:29px; background-position:right -692px; margin:0; padding:0 38px 0 0;}
+#show-vote button.button em {background:url("http://hgtv.sndimg.com/webhgtv/hg20/imgs/hgtv_photogallery_sprite.png") no-repeat scroll right 0; cursor:pointer; display:block; height:29px; margin:0 0 0 -2px; text-align:left;background-position:left -692px; padding-left:21px;}
+#show-vote button.button:hover span { background-position: right -721px;}
+#show-vote button.button:hover span em { background-position: left -721px;}
+#show-vote button.button:active span { background-position: right -750px;}
+#show-vote button.button:active span em { background-position: left -750px;}
+
+/*.form-errors { margin:0 14px;}*/
+
+#vote-form { margin-top:14px;}
+#show-vote #vote-ft { color:#999; margin:0 auto;/* width:187px;*/ width:204px;}
+#vote-ft .txt { float:left; width:102px;}
+#vote-count { background: url(images/vote-count-bg.png) no-repeat scroll 0 0; float:left; height:8px; margin:6px 0 5px 4px; position:relative; width:98px;}
+#vote-count .bd { background: url(images/vote-count-bg.png) no-repeat scroll 0 0; height:8px; left:0; position:absolute; top:0; width:98px; text-indent:-999em; overflow:hidden;}
+#vote-count .bd.first { background-position: -90px -8px;}
+#vote-count .bd.second { background-position: -80px -8px;}
+#vote-count .bd.third { background-position: -70px -8px;}
+#vote-count .bd.fourth { background-position: -60px -8px;}
+#vote-count .bd.fifth { background-position: -50px -8px;}
+#vote-count .bd.sixth { background-position: -40px -8px;}
+#vote-count .bd.seventh { background-position: -30px -8px;}
+#vote-count .bd.eighth { background-position: -20px -8px;}
+#vote-count .bd.ninth { background-position: -10px -8px;}
+#vote-count .bd.tenth { background-position: 0 -8px;}
+
+#vote-results { border:1px solid #DAE7E3; margin:14px; padding:14px 0; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+#vote-results h2, #vote-results p { margin:0 14px 14px;}
+#vote-results .hd { border-bottom:1px solid #DAE7E3;}
+
+.ft-msg { margin:14px; position:relative;}
+.ft-msg .hd, .ft-msg .ft { height:10px; width:602px;}
+.ft-msg .hd span, .ft-msg .ft span { display:block; float:left; height:10px;}
+.ft-msg .hd .l { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-tl.png) no-repeat 0 0;}
+.ft-msg .hd .c { width:582px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-tc.png) repeat-x 0 0;}
+.ft-msg .hd .r { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-tr.png) no-repeat 0 0;}
+.ft-msg .bd-outer { width:593px; padding-right:9px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-mr.png) repeat-y 100% 0;}
+.ft-msg .bd { padding-left:9px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-ml.png) repeat-y 0 0;}
+.ft-msg .bd .content { padding:14px; background-color: #f1f6f2;}
+.ft-msg h3 { color:#EF4141; font-family:Trebuchet MS; font-size:123.1%; font-weight:normal;}
+.ft-msg .ft .l { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-bl.png) no-repeat 0 0;}
+.ft-msg .ft .c { width:582px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-bc.png) repeat-x 0 0;}
+.ft-msg .ft .r { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-br.png) no-repeat 0 0;}
+.ft-msg h3 a.close { display:block;position:absolute;right:16px; top:18px;width:12px;height:12px;cursor:pointer;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups-200.png) no-repeat 0 0;_width:13px;_height:13px;_background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/ie/close-x-ie6.gif) no-repeat 0 0;z-index:3;_font-size:0;}
+
+#diy-w .recommend-lead { margin:7px 14px;}
+.recommend-lead .thumb { float:left;}
+#diy-w .recommend-lead .content { clear:none;}
+.recommend-lead h3 { font-family:Trebuchet MS; font-size:138.5%; font-weight:normal;}
+
+#package-nav {margin:14px;}
+
+div.intro.sweeps {margin:21px 14px 0;}
+#diy-ww .pod .epi-content { border-top:1px solid #DAE7E3; margin-top:7px; padding-top:7px;}
+#diy-ww .pod .epi-content p { line-height:1.7;}
+
+.entry-form .nl-bd { border-bottom:none;}
+.entry-form .nl-bd legend, .entry-form .nl-bd .nl-optional h3 { color:#444; font:normal 161.6%/1 "Trebuchet MS",sans-serif; margin-bottom:7px; *text-indent:-3px;}
+.entry-form .nl-bd .ftnt { color:#ADADAD; font-size:77%;}
+
+.center-mod { background:#F1F6F2; clear:both; margin:7px auto; position:relative; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; _width:406px;}
+.fieldset .center-mod .hd { background:none; padding:0;}
+#sweepsEntryForm .center-mod .bd { border:none; padding:4px 14px;}
+.user-alert { color:#444;}
+.futon-menu {/* float:left; margin-top:21px;*/ line-height:26px; position:relative; z-index:200;}
+.futon-menu .dd20 { left:auto; right:0; line-height:1.7; background-color: white; border: 1px solid #E1E6E5; box-shadow: 3px 3px 13px rgba(127, 127, 127, 0.45); clear: both; padding: 10px 7px; width: 430px; z-index: 999; }
+.futon-menu .dd20 .dd20-hd, .futon-menu .dd20 .dd20-ft { width:368px;}
+.futon-menu .dd20 .dd20-hd .c, .futon-menu .dd20 .dd20-ft .c {width:348px;}
+.futon-menu .dd20 .dd20-bd-outer { width:359px;}
+.futon-menu .dd20 .dd20-bd .content { padding:6px 13px 13px;}
+.futon-menu .dd20 .dd20-bd .content p { margin-bottom:7px;}
+.futon-menu .dd20 .dd20-bd h3 a.close { background:url("http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups-200.png") no-repeat scroll 0 0 transparent; cursor:pointer; display:block; height:12px; position:absolute; right:14px; top:14px; width:12px; z-index:3;}
+
+.entry-form .dd-list dt.dd-dt a { height: 20px; line-height: 23px; }
+.dd-list dt.dd-dt a.focus {color:#EF4141;}
+.dd-list dd .dd-bd ul.dd-ul li.dd-li a.hilite{color: #fff;background-color: #EF4141;text-decoration:none;margin-top: -3px;margin-bottom: -1px;padding-top:3px;padding-bottom:1px;}
+
+.entry-form .nl-bd .dd-list { width:189px;}
+.entry-form .nl-bd .futon-select { width:154px; z-index: 50}
+.dd-list dd { display:none; margin-left:-31px;}
+.futon-select dd { margin-left:-133px;}
+.futon-select dd .dd-bd {height:262px; max-height:262px;}
+.futon-select dd .dd-bd ul.dd-ul {height:132px;overflow: visible; position:absolute; top:30px; width:237px;}
+.entry-form .futon-select dd .dd-bd ul.dd-ul li.dd-li {float:left; margin-right:0; width:39px;}
+.futon-select dd .dd-bd ul.dd-ul li.dd-li a {padding-left:10px;}
+
+/* =============================================================================
+   Enter Page
+   ========================================================================== */
+
+.entry-form {margin-top:21px;}
+
+.entry-form .hr {margin:0 14px;}
+
+.small-lead { border-bottom:1px solid #DAE7E3; line-height:1.7; margin:0; padding:0 14px;}
+.small-lead a { font-size:100%;}
+
+.entry-form .nl-bd { border-bottom:none;}
+.entry-form .nl-bd legend, .entry-form .nl-bd .nl-optional h3 { color:#454545; font:normal 161.6%/1 "Trebuchet MS",sans-serif; margin-bottom:0; *text-indent:-3px;}
+.entry-form .nl-bd legend.dbl-margin {margin-bottom:14px;}
+.entry-form p small {color:#ADADAD;font:11px Arial, Helvetica, sans-serif;margin-bottom:14px;}
+.entry-form .note {color:#454545;font:bold 13px Arial, Helvetica, sans-serif;margin-bottom:14px;}
+.entry-form form fieldset h4 {color:#454545;font:bold 14px Arial, Helvetica, sans-serif;}
+.entry-form form fieldset .nl-list label {color:#176684;font:13px Arial, Helvetica, sans-serif;margin-top:-2px;margin-top:2px\9;}
+.entry-form form fieldset .nl-list label:hover {color:#BA0707;text-decoration:underline;}
+
+
+.entry-form .nl-bd .nl-your-info li {float:none;position:relative;width:100%;}
+.entry-form .nl-bd .nl-your-info li.last {margin:0;padding:0;}
+.entry-form .nl-bd .nl-your-info li.remember-me {position:relative;}
+.entry-form .nl-bd .text-box {width:auto;}
+.entry-form form fieldset input {color:#000;padding:10px;width:98%;}
+.entry-form form fieldset input.text {border:1px solid #DDD;border-radius:3px;-moz-border-radius:3px;}
+.entry-form form fieldset input.example {color:#ADADAD;}
+.entry-form form fieldset input.example:focus {color:#DDD;}
+.entry-form form fieldset input.norm,
+.entry-form form fieldset input.norm:focus {color:#000;}
+.entry-form form fieldset input.valid,
+.entry-form form fieldset input.valid:focus {background: url("http://images.hgtv.com/webhgtv/2013/dream-home/sweeps/images/valid-ico.png") no-repeat right center scroll #E3FCD7;color:#000;border-color:#C0E8AC;}
+.entry-form form fieldset input.error,
+.entry-form form fieldset input.error:focus {background: url("http://images.hgtv.com/webhgtv/2013/dream-home/sweeps/images/err-ico.png") no-repeat right center scroll #FDDDD7;color:#000;border-color:#E8ACA7;}
+/* fix for IE radio buttons having backgrounds when they shouldn't */
+.entry-form form fieldset .radio-grp input.error,
+.entry-form form fieldset .radio-grp input.valid {background:none;}
+
+
+
+li label.error{display:none !important;}
+
+.entry-form form fieldset .radio input {width:auto;}
+.entry-form form fieldset .radio label {color:#575744;font:13px Arial, Helvetica, sans-serif;position:relative;top:-1px;}
+.entry-form form fieldset input:focus {outline:none;border-color:#D1EFFF;box-shadow:0 0 10px #D1EFFF;}
+.entry-form form fieldset small {color:#ADADAD;font:11px Arial, Helvetica, sans-serif;}
+.entry-form .nl-bd .nl-your-info li.half {width:49%;}
+.entry-form .nl-bd .nl-your-info li.float {float:left;}
+.entry-form .rad-error {background: url("http://images.hgtv.com/webhgtv/2013/dream-home/sweeps/images/err-ico.png") no-repeat right top scroll transparent;}
+.entry-form .rad-valid {background: url("http://images.hgtv.com/webhgtv/2013/dream-home/sweeps/images/valid-ico.png") no-repeat right top scroll transparent;}
+input:-webkit-autofill {background: url("http://images.hgtv.com/webhgtv/2013/dream-home/sweeps/images/valid-ico.png") no-repeat right top scroll transparent;}
+/*.entry-form .nl-bd .nl-your-info li.error:last-child {background: url("http://images.hgtv.com/webhgtv/2013/dream-home/sweeps/images/err-ico.png") no-repeat right center scroll #FDDDD7;;}*/
+.entry-form .dd-list dt.dd-dt a {color:#ADADAD;font-weight:normal;}
+
+.entry-form form fieldset .remember-me label {color:#444;font:13px Arial, Helvetica, sans-serif;}
+.entry-form form fieldset .remember-me a {font-size:11px;}
+.entry-form form fieldset .remember-me input {position:relative;top:1px;width:auto;}
+
+
+.remember-me-help h2 {margin-bottom:14px;}
+
+.entry-form .nl-bd .ftnt, .spnsr-prize .ftnt {color:#ADADAD;font-size:77%;margin-bottom:14px;text-align:center;}
+.entry-form .nl-bd .ftnt a, .spnsr-prize .ftnt a {color:#ADADAD;}
+a.privacy {text-decoration:underline;}
+.entry-form .fieldset {background:transparent;margin-bottom:0;padding-bottom:0;}
+.entry-form .fieldset.nl-your-info {max-width:378px;}
+
+.nl-bd .nl-your-info > li { float:none; display:inline-block; vertical-align:top; margin-right:-4px; zoom:1; *display:inline;}
+
+.entry-form .nl-bd .nl-optional {margin-bottom:0;}
+.nl-bd .nl-cols {border-bottom:none;}
+.nl-bd .nl-cols ul {float:left; width:50%;}
+.nl-bd .nl-cols .full {float:none;width:auto;}
+
+.entry-form .nl-bd .nl-cols .special label {width:95%;}
+.entry-form .nl-bd .nl-cols .special .copy {float:left;width:80%;}
+.entry-form .nl-bd .nl-cols .special img {float:right;width:90px;}
+#diy-bd .entry-form .nl-bd .nl-cols .special img {border:none;}
+.nl-bd .nl-cols .special label p a {color:#ADADAD;text-decoration:underline;}
+
+.nl-bd .nl-cols .sponsor-offer {border-bottom:1px solid #DDDDDD; float:none; margin-bottom:14px; width:auto;}
+.nl-bd .nl-list li {border-bottom:none; margin-bottom:14px;width:100%;zoom:1;}
+.nl-bd .nl-list li:last-child{padding-bottom:0;margin-bottom:0;}
+.nl-bd .nl-list li:after {content:".";display:block;height:0;width:0;line-height:0;clear:both;visibility:hidden;}
+.nl-bd .sponsor-offer li.last {padding-bottom:0;}
+
+.entry-form .nl-bd .nl-cols input {float:left;width:18px;}
+.entry-form .nl-bd .nl-cols label {cursor:pointer;float:left;margin:-2px 0 0 3px;margin:2px 0 0 3px\9;width:90%;}
+.entry-form .nl-bd .nl-cols label:hover {text-decoration:underline;}
+
+.entry-form .nl-bd .nl-cols .sponsor-offer label { float:none; width:auto; margin: -5px 0 5px;}
+.nl-bd p {margin-bottom:7px;}
+.nl-bd p.submit {text-align:center;}
+.nl-bd .nl-cols .sponsor-dropdowns { display:none; float:none; margin:8px 0 0 18px; width:auto;}
+.nl-bd .nl-cols .sponsor-dropdowns .text-box { margin-top:3px;}
+p.checkall label { color: #176684; cursor: pointer;}
+
+.spnsr { border:1px solid #DAE7E3; margin:21px 14px 14px; padding:14px; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+.spnsr-prod { float:right; margin:0 0 10px 10px; }
+/*.facebook-like iframe { width:50px !important;}*/
+
+#diy-e .widget-pod { margin:14px 0; width:349px;}
+#diy-e #toolbar { border:none; margin:0; padding-left:6px;}
+#diy-e .sharing { float:none;}
+#diy-e .sharing li { border:none;}
+
+#diy-w p.mini-rules {margin:14px 0;padding:0 14px;font:11px/17px arial;color:#ADADAD;}
+
+
+.thanks .feature-list img.thumb {float:right;}
+
+
+/* =============================================================================
+   Newsletter Sign Up Lead
+   ========================================================================== */
+
+#diy-bd-wrap .small-lead.nl-signup-lead { padding-bottom: 14px; position: relative;}
+#diy-bd-wrap .small-lead.nl-signup-lead h2 { padding-top: 4px; }
+#diy-bd-wrap .small-lead.nl-signup-lead .rounded-input { width: 304px; float: right; border:1px solid #C0D4CB; height:29px; padding:7px; -webkit-border-radius:3px; border-radius:3px; }
+#diy-bd-wrap .small-lead.nl-signup-lead .rounded-input .input { float: left; width: 234px; margin: 4px 14px 0 0; }
+#diy-bd-wrap .small-lead.nl-signup-lead .rounded-input input { width: 100%; font-size: 18px;  line-height: 21px; border: 0; color: #A3C0B9 }
+#diy-bd-wrap .small-lead.nl-signup-lead .rounded-input button { float: left; }
+#newsletter-signup .loading { display: none; margin: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: RGBA( 255, 255, 255, .75)}
+#newsletter-signup .loading p { text-align: center; line-height: 100%; height: 100%; margin-top: 90px }
+#newsletter-signup .loading p img { float: none; display: inline; }
+#newsletter-signup .nl-error { display: none; color: #f00 }
+#newsletter-signup .success { display: none; }
+
+/* =============================================================================
+   Prize flyout
+   ========================================================================== */
+.futon-menu .dd20.prize-flyout .dd20-hd, .futon-menu .dd20 .dd20-ft { width:440px;}
+.futon-menu .dd20.prize-flyout .dd20-hd .c, .futon-menu .dd20 .dd20-ft .c {width:420px;}
+.futon-menu .dd20.prize-flyout .dd20-bd-outer { width:431px;}
+.futon-menu .dd20.prize-flyout .content p { margin-left: 176px; line-height: 18px}
+.futon-menu .dd20.prize-flyout .content p.img { margin-left: 0; float: left; }
+
+/* =============================================================================
+   Sweeps Reminder
+   ========================================================================== */
+
+#sweeps-reminder { border:1px solid #C0D4CB; margin-top:14px; padding:7px 14px 14px; -webkit-border-radius:4px; border-radius:4px;}
+#sweeps-reminder h3 { font-size:161.5%; font-weight:normal;}
+#sweeps-reminder p { margin-bottom:7px;}
+.rounded-input { background:#fff; border:1px solid #C0D4CB; height:29px; padding:7px; -webkit-border-radius:3px; border-radius:3px;}
+#sweeps-reminder .input, #sweeps-reminder-thanks .input { float:left; width:297px;}
+#sweeps-reminder .input input, #sweeps-reminder-thanks .input input { border:0; color:#444; font-size:146.5%; height:24px; line-height:24px; padding:3px 0; width:100%;}
+#sweeps-reminder button, #sweeps-reminder-thanks button { margin-left:7px; white-space:nowrap; width:auto;}
+#sweeps-reminder input.input-hint, #sweeps-reminder-thanks input.input-hint {color:#9cbbb4;}
+#sweeps-reminder input.error, #sweeps-reminder-thanks input.error { border:1px solid #f00; color:#999; -webkit-border-radius:3px; border-radius:3px;}
+#sweeps-reminder .fail, #sweeps-reminder-thanks .fail { color:#f00;}
+#sweeps-reminder-thanks p { margin-bottom:14px;}
+#sweeps-reminder-thanks .input { width:477px;}
+
+/* =============================================================================
+   Prize Page
+   ========================================================================== */
+
+#spnsr-gallery { margin: 0 14px;}
+#spnsr-gallery h2 { margin:0;}
+#spnsr-prize-top h2 { margin:0 8px 7px;}
+.spnsr-prize { border-bottom:none; margin:0; padding:13px 0 6px;}
+.spnsr-prize + .spnsr-prize { border-top:1px solid #DAE7E3;}
+#spnsr-prize-top .spnsr-prize + .spnsr-prize { padding:13px 0 0;}
+#dream-home #spnsr-prize-top, #video #spnsr-prize-top { background:none;}
+#dream-home #spnsr-prize-top .hd, #dream-home #spnsr-prize-top .ft { background:none;}
+/*.spnsr-list li { margin:0;}
+.spnsr-list li + li { margin:14px 0 0;}*/
+
+/* intro */
+div.intro h2 {color:#333;font:bold 22px/21px Arial, Helvetica, sans-serif;margin-bottom:28px;}
+div.intro p,
+div.intro .button-nav {color:#333;font:13px/22px Arial, Helvetica, sans-serif;}
+div.intro p {margin-bottom:14px;}
+
+/* new hub tabs added 11-2012 */
+.hub-tabs{margin:14px 0 0 14px;}
+.hub-tabs ul {border-bottom:1px solid #DAE7E3;margin-right:14px;position:relative;}
+.hub-tabs ul li {background:#F6F6F6;border-bottom:1px solid #DAE7E3;float:left;margin:0;position:relative;top:1px;}
+.hub-tabs ul li a {display:block;padding:7px 10px;font-weight:bold;font-family:Arial, Helvetica, sans-serif;}
+.hub-tabs ul li:hover {background:#FFF;}
+.hub-tabs ul li.selected{border-color:#DAE7E3;border-width:1px;border-style:solid;-moz-border-radius:3px 3px 0 0;border-radius:3px 3px 0 0;border-bottom:none;}
+.hub-tabs ul li.selected:hover{background:#FFF;}
+.hub-tabs ul li.selected a{color:#454545;cursor:default;}
+.hub-tabs ul li a:hover{text-decoration:none;}
+
+
+/* Welcome Back msg */
+.welcome-back {background:#F2F6F2;border-bottom:1px solid #DAE7E3;border-top:1px solid #DAE7E3;display:none;margin-right:14px;}
+.welcome-back .bd {padding:14px 0 14px 14px;}
+.welcome-back .bd h3 {color:#454545;font:21px "Trebuchet MS", Arial, Helvetica, sans-serif;margin-bottom:7px;}
+.welcome-back .bd p {color:#444;font:13px Arial, Helvetica, sans-serif;}
+
+/* new sponsor module added 11-2012 */
+#diy-bd .sponsor-wrap .bd img {background:transparent;border:none;margin:0 auto;}
+.sponsor-wrap {float:right;margin:0 14px 14px;width:210px;}
+.sponsor-wrap .hd {/*background:url("http://images.hgtv.com/webhgtv/2013/dream-home/sweeps/images/sponsor-bg-hd.png") no-repeat center top scroll transparent;*/background:#F2F6F2;border:1px solid #F2F6F2;border-bottom:none;-moz-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;height:10px;}
+.sponsor-wrap .bd {/*background:url("http://images.hgtv.com/webhgtv/2013/dream-home/sweeps/images/sponsor-bg-bd.png") repeat-y center top scroll transparent;*/background:#F2F6F2;border-left:1px solid #F2F6F2;border-right:1px solid #F2F6F2;}
+.sponsor-wrap .bd h3 {color:#575744;font:11px Arial, Helvetica, sans-serif;padding:10px 0 0 5px;text-align:center;}
+.sponsor-wrap .bd ul li a {display:block;padding:7px 0;text-align:center;}
+.sponsor-wrap .ft {/*background:url("http://images.hgtv.com/webhgtv/2013/dream-home/sweeps/images/sponsor-bg-ft.png") no-repeat center top scroll transparent;*/background:#F2F6F2;border:1px solid #F2F6F2;border-top:none;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px;height:10px;}
+
+
+.feature-list h3 {margin:2px 0 0;}
+
+/* Remember Me popup */
+.dialog {background:#FFF;border:1px solid #EEE;border-radius:3px;-moz-border-radius:3px;box-shadow:0 0 6px #DDD;display:none;padding:14px;position:absolute;left:120px;top:22px;width:348px;}
+.dialog h2 {color:#1E1E17;font:bold 13px Arial, Helvetica, sans-serif;}
+.dialog p {color:#333;font:13px/22px Arial, Helvetica, sans-serif;}
+.dialog p.footnote {color:#ADADAD;font:11px/14px Arial, Helvetica, sans-serif;}
+.dialog .btn-close {float:right;margin:-18px 5px 0 0;font-size:11px;}
+
+.dialog th {background:#E3E3E3; border-right:1px solid #F6F6F6; font-style:italic; font-weight:bold; padding:1px 7px; vertical-align:top;}
+.dialog td {background:#F6F6F6; border-right:1px solid #F6F6F6; padding:7px; vertical-align:top;}
+.dialog .alt td {background:#E3E3E3;}
+.dialog td p {color:#333;line-height:20px;margin-bottom:0;}
+
+/* Rules page */
+#diy-w .rules {margin:14px;}
+#diy-w .rules .list {margin:14px;}
+.rules-header{color:#444;font:bold 26px "Trebuchet MS", Arial, Helvetica, sans-serif;margin:14px 0 0 14px;}
+.rls,
+#dream-home .sweeps h3.rls{text-align:left;}
+.rules-wrap{margin:0 14px;}
+
+
+.entry-form form span.error {padding-left: 3px; color: #CC2414;}
+/*.entry-form form fieldset input {color: #adadad !important;}*/
+.entry-form form fieldset input:focus {color: #000 !important;}
+div.intro.sweeps {margin:14px 14px 0;}
+#diy-we.sweeps {margin-top:14px;}
+.entry-form form fieldset input.areacode {width: 85%}
+/*.entry-form .button {width: 168px;}*/
+#spnsr-block {margin-right: 14px;}
+#sweeps-fineprint {margin-top:21px;margin-right:14px;border-top: 1px solid #DAE7E3;}
+.entry-form form .sponsor-offers fieldset input, .entry-form form .partner-offers fieldset input {float: left; width: 18px;}
+.sponsor-offers label, .partner-offers label {cursor: pointer; float: left; margin: -1px 0 0 3px; width: 40%;}
+.sponsor-offers li p {clear: both; margin-left: 21px; color:#ADADAD; font-size: 11px;}
+.partner-offers p {clear: left; margin-left: 21px; color: #adadad; font-size: 11px;}
+.sponsor-offers p a, .partner-offers p a {color: #adadad; text-decoration: underline;}
+.nl-bd .nl-list .sponsor-offers li, .nl-bd .nl-list .partner-offers li {margin-bottom: 14px;}
+.partner-offers img {float: right; margin-left: 14px;}
+.entry-form .nl-bd .partner-offers legend {margin-bottom: 21px;}
+.entry-form form fieldset .nl-list .supp label {float: none; color: #454545;}
+.nl-bd .nl-list li.supp {margin-top: -14px; padding-left: 20px; display:none;}
+.nl-bd .nl-list li.supp.last {margin-top: 0px; padding-left: 20px; margin-bottom: 21px;}
+.nl-bd form .bd {padding-top:14px;}
+.nl-bd form .bd.first {padding-top: 0;}
+
+
+div.intro.sweeps {margin:14px 14px 0;}
+#diy-we.sweeps {margin-top:14px;}
+#diy-w a.button {margin-right: 14px;}
+#diy-w .intro {margin:28px 14px 14px;}
+#diy-w #second-chance {padding: 21px 14px 0; margin-bottom: 28px;  border-top: 1px solid #dae7e3; }
+#diy-w #second-chance li a img {float: left; margin-right: 12px;}
+#diy-w #second-chance li h3 {font: 21px/1.7 arial,helvetica,clean,sans-serif; font-weight: bold;}
+#diy-w #second-chance ul li p {font-size: 14px; line-height: 21px;}
+#diy-w #second-chance .cta {font-weight: normal;}
+#tracking-images img {border: none;}
+#you-also {border-top: 1px solid #DAE7E3; margin-bottom: 21px; padding-bottom: 7px; padding: 21px 14px 0;}	
+#you-also li {margin-bottom: 14px;}	
+.two-across { margin: 10px 0 14px 14px; }
+.two-across .bd h3{margin-bottom:14px;}
+.two-across li.last {padding-right:0;}
+.two-across li a.thumb {height:133px;display:block;float:left;margin-right:14px;}
+.two-across img {display:inline;float:none;}
+
+/* IF nothing is in #diy-ww */
+#diy-ww {border-top:none;}

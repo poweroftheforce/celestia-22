@@ -1,0 +1,164 @@
+<div class="pack-title">
+	<div class="hd"><img src="../sites/diy/images/pack-title-banner.jpg" height="60" width="616" alt=""/></div>
+	<ul id="hub-nav" class="menu button-nav clrfix">
+		<li><a href="#" class="selected"><span>Btn 1</span></a></li>
+	</ul>
+</div>
+<script>
+({
+	name				: 'Pack Title',
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Banner',
+			selector	: "$({m}).find('img')",
+			editables	: [{
+				alt		: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src		: {
+					label	: 'Src',
+					value	: '../sites/diy/images/pack-title-banner.jpg'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'List',
+			selector	: "$({m}).find('.button-nav')",
+			markup		: '<li><a href="#"><span>Btn {x}</span></a></li>',
+			elements	: [{
+				name		: 'Btn {x}',
+				selector	: "$({m}).find('.button-nav').children().eq({x}).find('span')",
+				editables	: [{
+					html	: {
+						label	: 'Text',
+						value	: 'Btn {x}'
+					}
+				}]
+			}, {
+				name		: 'Btn {x} URL',
+				selector	: "$({m}).find('.button-nav').children().eq({x}).find('a')",
+				editables	: [{
+					class	: {
+						label	: 'Class',
+						value	: ''
+					},
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	replacables: {
+		"$(self){module}.find('div.hd').find('img')" : { attr: { src: 'MPC-img-src', alt: 'MPC-img-alt' } }
+	},
+	dyn_replacables: {
+		"$(self){module}.find('ul.button-nav').children().eq(i).find('a')" : { attr: { href: 'MPC-btn1-href', className: 'MPC-btn1-class-name' } },
+		"$(self){module}.find('ul.button-nav').children().eq(i).find('a').find('span')" : { html: 'MPC-btn-1' }
+	},
+	inputs: [{
+		'mpc-diyw-pack-title-image-section': {
+			type			: 'section',
+			label			: 'Image Section'
+		},
+		'MPC-img-src': {
+			append			: '.mpc-diyw-pack-title-image-section',
+			default_value	: 'templates/diy/images/pack-title-banner.jpg',
+			type			: 'text',
+			label			: 'Image Src'
+		},
+		'MPC-img-alt': {
+			append			: '.mpc-diyw-pack-title-image-section',
+			default_value	: '',
+			type			: 'text',
+			label			: 'Image Alt'
+		}
+	}],
+	dyn_inputs: [{
+		'mpc-diyw-pack-title-button1-section': {
+			type			: 'section',
+			label			: 'Button 1 Section'
+		},
+		'MPC-btn-1': {
+			append			: '.mpc-diyw-pack-title-button1-section',
+			default_value	: 'Main',
+			type			: 'text',
+			label			: 'Btn 1 Label'
+		},
+		'MPC-btn1-class-name': {
+			append			: '.mpc-diyw-pack-title-button1-section',
+			default_value	: 'selected',
+			type			: 'text',
+			label			: 'Btn 1 Class Name'
+		},
+		'MPC-btn1-href': {
+			append			: '.mpc-diyw-pack-title-button1-section',
+			default_value	: '#',
+			type			: 'text',
+			label			: 'Btn 1 Href'
+		}
+	}],
+	buttons: [{
+		'btn-toggle-module-sorting': {
+			html	: 'Toggle Module Sorting',
+			click	: function() {
+				$.common.toggleControlsOpener(this);
+				var ctrl = $.common.getControlsFromButton(this);
+				var module = ctrl.module;
+				$.common.toggleModuleSorting({
+					module			: module,
+					controls	: ctrl,
+					sortables	: {
+						"$(module).find('ul.button-nav')": {}
+					}
+				});
+			}
+		},
+		'btn-add-menu-item': {
+			html	: 'Add Menu Item',
+			click	: function() {
+				addHTML({
+					btn			: this,
+					append		: 'ul.button-nav',
+					html		: '<li><a href="MPC-btn#mpc_inc-href" class="MPC-btn#mpc_inc-class-name"><span>MPC-btn-#mpc_inc</span></a></li>',
+					smart_words	: {
+						'mpc-diyw-pack-title-button#mpc_inc-section': {
+							type			: 'section',
+							label			: 'Button #mpc_inc Section'
+						},
+						'MPC-btn-#mpc_inc': {
+							append			: '.mpc-diyw-pack-title-button#mpc_inc-section',
+							default_value	: 'Btn #mpc_inc',
+							type			: 'text',
+							label			: 'Btn #mpc_inc Label'
+						},
+						'MPC-btn#mpc_inc-class-name': {
+							append			: '.mpc-diyw-pack-title-button#mpc_inc-section',
+							default_value	: '',
+							type			: 'text',
+							label			: 'Btn #mpc_inc Class Name'
+						},
+						'MPC-btn#mpc_inc-href': {
+							append			: '.mpc-diyw-pack-title-button#mpc_inc-section',
+							default_value	: '#',
+							type			: 'text',
+							label			: 'Btn #mpc_inc Href'
+						}
+					}
+				});
+			}
+		},
+		'btn-delete-menu-item': {
+			html	: 'Del Menu Item',
+			click	: function() { $.common.deleteHTML(this, 'ul.button-nav'); }
+		}
+	}]
+})
+</script>

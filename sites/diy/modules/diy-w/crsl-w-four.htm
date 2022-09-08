@@ -1,0 +1,116 @@
+<div id="MPC-ID" class="crsl-w">
+	<h2>MPC-title</h2>
+	<div class="bd crsl">
+		<ul>
+			<li class="panel">
+				<ul class="crsl-group">
+					<li class="crsl-item"><a href="MPC-thumb1-href"><img src="MPC-thumb1-image" alt="MPC-thumb1-alt"/></a>
+						<p><a href="MPC-thumb1-href">MPC-thumb1-text</a></p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+<script>
+({
+	tag						: 'diyCrslW',
+	name					: 'Carousel',
+	class_name				: '.crsl-w',
+	insertable_node			: '.crsl',
+	add_script				: '<script type="text/javascript">SNI.Common.Carousel("#MPC-ID", { pagelink:"image" });<\/script>',
+	run_script				: 'SNI.Common.Carousel("#MPC-ID", { pagelink:"image" });',
+	replacables: {
+		"$(self){module}" : { attr: { id: 'MPC-ID' } },
+		"$(self){module}.find('h2')" : { html: 'MPC-title' }
+	},
+	dyn_replacables: {
+		"$(self){module}.find('.bd').find('ul').find('li.panel').find('ul').find('li').find('a').eq(0)" : { attr: { href: 'MPC-thumb1-href' } },
+		"$(self){module}.find('.bd').find('ul').find('li.panel').find('ul').find('li').find('a').eq(0).find('img')" : { attr: { src: 'MPC-thumb1-image', alt: 'MPC-thumb1-alt' } },
+		"$(self){module}.find('.bd').find('ul').find('li.panel').find('ul').find('li').find('p').find('a')" : { html: 'MPC-thumb1-text', attr: { href: 'MPC-thumb1-href' } }
+	},
+	inputs: [{
+		'mpc-diyw-crsl-w-four-title-section': {
+			type			: 'section',
+			label			: 'Title Section'
+		},
+		'MPC-ID': {
+			append			: '.mpc-diyw-crsl-w-four-title-section',
+			default_value	: 'crsl-w-test',
+			type			: 'text',
+			label			: 'ID'
+		},
+		'MPC-title': {
+			append			: '.mpc-diyw-crsl-w-four-title-section',
+			default_value	: 'Carousel W Four Title',
+			type			: 'text',
+			label			: 'Title'
+		}
+	}],
+	dyn_inputs: [{
+		'mpc-diyw-crsl-w-four-thumb1-section': {
+			type			: 'section',
+			label			: 'Thumb 1 Section'
+		},
+		'MPC-thumb1-text': {
+			append			: '.mpc-diyw-crsl-w-four-thumb1-section',
+			default_value	: 'Thumb 1',
+			type			: 'text',
+			label			: 'Thumb 1 Text'
+		},
+		'MPC-thumb1-image': {
+			append			: '.mpc-diyw-crsl-w-four-thumb1-section',
+			default_value	: '../sites/diy/images/120x90.jpg',
+			type			: 'text',
+			label			: 'Thumb 1 Image'
+		},
+		'MPC-thumb1-alt': {
+			append			: '.mpc-diyw-crsl-w-four-thumb1-section',
+			default_value	: '',
+			type			: 'text',
+			label			: 'Thumb 1 Alt'
+		}
+	}],
+	buttons: [{
+		'btn-add-thumb': {
+			html	: 'Add Thumb',
+			click	: function() {
+				addHTML({
+					btn					: this,
+					append				: '.crsl',
+					carousel_per_page	: 4,
+					html				: '<li class="crsl-item"><a href="MPC-thumb1-href"><img src="MPC-thumb1-image" alt="MPC-thumb1-alt"/></a><p><a href="MPC-thumb1-href">MPC-thumb1-text</a></p></li>',
+					smart_words			: {
+						'mpc-diyw-crsl-w-four-thumb#mpc_inc-section': {
+							type			: 'section',
+							label			: 'Thumb #mpc_inc Section'
+						},
+						'MPC-thumb#mpc_inc-text': {
+							append			: '.mpc-diyw-crsl-w-four-thumb#mpc_inc-section',
+							default_value	: 'Thumb #mpc_inc',
+							type			: 'text',
+							label			: 'Thumb #mpc_inc Text'
+						},
+						'MPC-thumb#mpc_inc-image': {
+							append			: '.mpc-diyw-crsl-w-four-thumb#mpc_inc-section',
+							default_value	: '../sites/diy/images/120x90.jpg',
+							type			: 'text',
+							label			: 'Thumb #mpc_inc Image'
+						},
+						'MPC-thumb#mpc_inc-alt': {
+							append			: '.mpc-diyw-crsl-w-four-thumb#mpc_inc-section',
+							default_value	: 'Thumb #mpc_inc',
+							type			: 'text',
+							label			: 'Thumb #mpc_inc Alt'
+						}
+					}
+				});
+			}
+		},
+		'btn-delete-thumb': {
+			html	: 'Delete Thumb',
+			click	: function() { $.common.deleteHTML(this, 'ul.button-nav'); }
+		}
+	}]
+})
+</script>

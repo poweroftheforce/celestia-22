@@ -1,0 +1,54 @@
+<div class="sponsor-area-1">
+	<div id="sponsors-inner"> 
+		<h3>Sponsored By:</h3>
+		<ul class="clrfix">
+			<li><a href="#" target="_blank"><img src="../sites/door/images/sponsor-area-dummy.jpg" alt=""/></a></li>
+		</ul>
+	</div>
+</div>
+<script>
+({
+	name	: 'Package Lead / Simgle Lead',
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('h3')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Sponsored By:'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Sponsor Section',
+		elements	: [{
+			name		: 'Sponsors',
+			selector	: "$({m}).find('ul')",
+			markup		: '<li><a href="#" target="_blank"><img src="../sites/door/images/sponsor-area-dummy.jpg" alt=""/></a></li>',
+			elements	: [{
+				name		: 'Sponsor {x} Image',
+				selector	: "$({m}).find('li').eq({x}).find('img')",
+				editables	: [{
+					html	: {
+						label	: 'Src',
+						value	: '../sites/door/images/sponsor-area-dummy.jpg'
+					}
+				}]
+			}, {
+				name		: 'Sponsor {x} Call to Action',
+				selector	: "$({m}).find('li').eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					}
+				}]
+			}]
+		}],
+	}]
+	
+})
+</script>

@@ -1,0 +1,139 @@
+<div class="mini-lead">
+	<style>.mini-lead h1 { background-image: url("../sites/hgtv/images/mini-lead.jpg"); }</style>
+	<h1><a href="#"><span>Package Title</span></a></h1>
+</div>
+<script>
+({
+	name		: 'HGTV Banner',
+	
+	init : function() {
+		if ( !$('.mini-lead .calendar-nav')[0] ) {
+			$('.mini-lead .calendar-nav, .hath-calendar-section').css('display', 'none');
+		}
+		C.loadAssets({
+			'calendar-css' : 'http://web.hgtv.com/webhgtv/2013/hath/local.css'
+		});
+	},
+	
+	sections: [{
+		name		: 'Title Section',
+		elements	: [{
+			name		: 'SEO Title',
+			selector	: "{m}.find('h1').find('span')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'HGTV Package',
+					callback	: function( input, value, data ) {
+						/* when done, let update the seo box */
+						$('#txt-banner-text').val(value);
+					}
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('a').eq(0)",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#',
+					callback	: function( input, value, data ) {
+						/* when done, let update the seo box */
+						$('#txt-package-url').val(value);
+					}
+				}
+			}]
+		}, {
+			name			: 'Image',
+			selector		: "{m}.find('style')",
+			extract			: /\("*(.*?)"*\)/,
+			editables		: [{
+				html	: {
+					label		: 'Src',
+					value		: '../sites/hgtv/images/mini-lead.jpg',
+					callback	: function( input, value, data ) {
+						/* when done, let update the seo box */
+						$('#txt-banner-url').val(value);
+					}
+				}
+			}]
+		}]
+	}, {
+		name : 'HATH Calendar Section',
+		elements : [{
+			name		: 'January URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(0)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'February URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(1)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'March URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(2)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'April URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(3)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'May URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(4)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'June URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(5)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'July URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(6)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'August URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(7)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'September URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(8)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'October URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(9)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'November URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(10)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}, {
+			name		: 'December URL',
+			selector	: "{m}.find('.calendar-nav').find('a').eq(11)",
+			editables	: [{ href : { label: 'URL', value : '#' }, class : { label: 'Class Name', value : '' } }]
+		}]
+	}],
+	
+	buttons	: [{
+		'btn-show-calendar-nav'	: {
+			html	: 'Show (HATH) Calendar Nav',
+			click	: function() {
+				var nav = $('.calendar-nav', C.module.current);
+				if ( nav[0] ) {
+					nav.remove();
+					$('.inputs-wrap .btn-add-nav-item, .inputs-wrap .btn-del-nav-item').hide();
+				} else {
+					$(C.module.current).append('<div class="calendar-nav"><ul><li><a href="#">January</a></li><li><a href="#">February</a></li><li><a href="#">March</a></li></ul><ul><li><a href="#">April</a></li><li><a href="#">May</a></li><li><a href="#">June</a></li></ul><ul><li><a href="#">July</a></li><li><a href="#">August</a></li><li><a href="#">September</a></li></ul><ul><li><a href="#">October</a></li><li><a href="#">November</a></li><li><a href="#">December</a></li></ul></div>');
+					$('.inputs-wrap .btn-add-nav-item, .inputs-wrap .btn-del-nav-item').show();
+				}
+				C.drawControls();
+				if ( nav[0] ) {
+					$('.hath-calendar-section').hide();
+					$('.inputs-wrap').find('.btn-show-calendar-nav').html('Show (HATH) Calendar Nav');
+				} else {
+					$('.hath-calendar-section').show();
+					$('.inputs-wrap').find('.btn-show-calendar-nav').html('Hide (HATH) Calendar Nav');
+				}
+			}
+		}
+	}]
+	
+})
+</script>

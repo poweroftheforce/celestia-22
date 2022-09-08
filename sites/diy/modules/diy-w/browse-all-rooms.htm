@@ -1,0 +1,103 @@
+<div id="browse-all-rooms">
+	<div class="hd">
+		<h3>Header</h3>
+	</div>
+	<div class="bd">
+		<ul class="grid">
+			<li class="cell">
+				<div class="bd">
+					<h4><a href="#">Lorem Ipsum</a></h4>
+					<a href="#" class="thumbnail"><img src="../sites/diy/images/160x120_med.jpg" alt="" width="160" height="120"/></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+				</div>
+			</li>
+			<li class="cell">
+				<div class="bd">
+					<h4><a href="#">Lorem Ipsum</a></h4>
+					<a href="#" class="thumbnail"><img src="../sites/diy/images/160x120_med.jpg" alt="" width="160" height="120"/></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+				</div>
+			</li>
+			<li class="cell cap">
+				<div class="bd">
+					<h4><a href="#">Lorem Ipsum</a></h4>
+					<a href="#" class="thumbnail"><img src="../sites/diy/images/160x120_med.jpg" alt="" width="160" height="120"/></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<script>
+({
+	name : 'Browse All Rooms',
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.hd').find('h3')",
+			editables	: [{
+				html : {
+					label : 'Text',
+					value : 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Content Section',
+		elements	: [{
+			name		: 'Thumb List',
+			selector	: "{m}.find('.bd').find('.grid')",
+			markup		: '<li class="cell last"><div class="bd"><h4><a href="#">Lorem Ipsum</a></h4><a href="#" class="thumbnail"><img src="../sites/diy/images/160x120_med.jpg" alt="" width="160" height="120"/></a><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div></li><li class="cell last"><div class="bd"><h4><a href="#">Lorem Ipsum</a></h4><a href="#" class="thumbnail"><img src="../sites/diy/images/160x120_med.jpg" alt="" width="160" height="120"/></a><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div></li><li class="cell last cap"><div class="bd"><h4><a href="#">Lorem Ipsum</a></h4><a href="#" class="thumbnail"><img src="../sites/diy/images/160x120_med.jpg" alt="" width="160" height="120"/></a><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div></li>',
+			elements	: [{
+				name		: 'Thumb {x} Header',
+				selector	: "{p}.children('li').eq({x}).find('h4').find('a')",
+				affects		: "{p}.children('li').eq({x}).find('a')",
+				editables	: [{
+					href : {
+						label : 'URL',
+						value : '#'
+					},
+					html : {
+						label : 'Text',
+						value : 'Header'
+					}
+				}]
+			}, {
+				name		: 'Thumb {x} Image',
+				selector	: "{p}.children('li').eq({x}).find('img')",
+				editables	: [{
+					alt : {
+						label : 'Alt',
+						value : ''
+					},
+					src : {
+						label : 'Source',
+						value : '../sites/diy/images/160x120_med.jpg'
+					}
+				}]
+			}, {
+				name		: 'Thumb {x} Copy',
+				selector	: "{p}.children('li').eq({x}).find('p')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	htmlAdded : function( list ) {
+		clog(list)
+		$.each($(list).children(), function() {
+			$(this).removeClass('last');
+		});
+		$(list).children().eq($(list).children().length - 1).addClass('last');
+		$(list).children().eq($(list).children().length - 2).addClass('last');
+		$(list).children().eq($(list).children().length - 3).addClass('last');
+	}
+})
+</script>

@@ -1,0 +1,56 @@
+<div class="lead generic">
+	<div class="bd">
+		<div class="wrap left" style="margin-bottom:2em;"> 
+			<img src="../sites/hgrm/images/266x200_al.jpg" alt="" height="200" width="266"/>
+		</div>
+		<h4>Header</h4>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	</div>
+	<div class="hr"><hr></div>
+</div>
+<script>
+({
+	
+	name : 'Generic Lead',
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h4')",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Image',
+			selector	: "{m}.find('img')",
+			editables	: [{
+				alt : {
+					label	: 'Alt',
+					value	: ''
+				},
+				src : {
+					label	: 'Src',
+					value	: '../sites/hgrm/images/266x200_al.jpg'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p')",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}]
+	
+});
+</script>

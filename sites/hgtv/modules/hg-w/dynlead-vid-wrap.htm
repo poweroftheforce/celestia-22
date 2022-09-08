@@ -1,0 +1,39 @@
+<div class="dynlead-vid-wrap">
+	<div id="vplayer-1"></div>
+	<cscript type="text/javascript">var snap = new SNI.HGTV.Player.FullSize('vplayer-1','16823');</cscript>
+	<img class="temp-full-size-player" src="../sites/hgtv/images/temp-full-size-player.jpg"/>
+</div>
+<script>
+({
+	name			: 'Dynamic Lead Video Player',
+	
+	sections : [{
+		name		: 'Player Section',
+		elements	: [{
+			name		: 'Player Id',
+			selector	: "{m}.find('cscript')",
+			extract		: /\(\s*['"](.*?)['"]\s*,.*\)/,
+			editables		: [{
+				html		: {
+					label	: 'Id',
+					value	: 'vplayer-1',
+					callback	: function( btn, value, data ) {
+						$(C.module.current).find('div').eq(0).attr('id', value);
+					}
+				}
+			}]
+		}, {
+			name		: 'Player Channel',
+			selector	: "{m}.find('cscript')",
+			extract		: /\(.*?,\s*(?:'|")?(.*?)(?:'|")?\s*,.*\)/,
+			editables		: [{
+				html	: {
+					label	: 'Channel',
+					value	: '16823'
+				}
+			}]
+		}]
+	}]
+
+})
+</script>

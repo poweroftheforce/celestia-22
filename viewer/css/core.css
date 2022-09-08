@@ -1,0 +1,113 @@
+body{color:#000;background:transparent;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup,sub{line-height:-1px;vertical-align:text-top;}sub{vertical-align:text-bottom;}input, textarea, select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+body{font:13px/1.22 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:99%;}
+.clrfix{zoom:1;}
+.clrfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+*html img { margin-bottom: -4px; }
+
+h1 { display: none; }
+.meter { font-size: 10px; height: 12px; text-align: center; margin: 2px 5px; width: 190px; overflow-x: hidden; }
+
+/*.ui-dialog {height:400px !important; }*/
+.ui-dialog-titlebar-close {display:none;}
+
+.ui-accordion .ui-accordion-content {padding: 0 0 1.2em !important; width: 100%; height: 70px !important; }
+.ui-accordion-header, .ui-accordion-content {border:none !important;}
+.ui-icon-triangle-1-s, .ui-icon-triangle-1-e {display: none !important;}
+
+
+#project-list-wrap { margin-top: 20px; }
+
+#links-wrap { margin-top: 3px; }
+#links-wrap a { color: #06F; font: 11px Arial, Helvetica, sans-serif; text-decoration: none; }
+
+.dir h2,
+.files li a { -webkit-transition: padding .1s ease-out; -moz-transition: padding .1s ease-out; }
+.dir h2 { cursor: pointer; font: bold 12px Arial, Helvetica, sans-serif; color: #00F; padding: 0px 0px 5px 5px; }
+
+#project-search h3 { padding-bottom: 3px; }
+#project-list-wrap > li {margin-top: 10px;}
+
+.hgtv { color: #386CB4; }
+.hgtv h3 {font-weight:bold;}
+.hgtv h2 { color: #386CB4; font: bold 11px arial; }
+.diy { color: #671104; }
+.diy h3 {color:#A91D1E;font-weight:bold;}
+.diy h2 { color: #176684; font: 13px arial,helvetica,clean,sans-serif; }
+.remodels { color: #333333; }
+.remodels h3 {color:#2A76A8;font-weight:bold;}
+.remodels h2 { color: #2A76A8; font: 14px/1.5em Arial, Helvetica, sans-serif; }
+.door { color: #4A8CB8; }
+.door h3 {font-weight:bold;}
+.door h2 { color: #4A8CB8; font: bold 14px "trebuchet ms"; }
+
+.dir h2:hover,
+.dir h2.found { background-color: #FF9; }
+.sub { padding-left: 1.5em; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+li.file:hover,
+li.found { background: #FF6; }
+.ui-widget-content li.file:hover a { color: #000; }
+
+span.highlight { background-color: #FF0; }
+/*
+.ui-widget-content a { color: #000; font: 13px Arial, Helvetica, sans-serif; }
+.ui-widget-content { color: #000; }
+*/
+
+
+/* Main Menu */
+#main-menu {width: 200px; }
+
+
+#project-search .folder h2 {color:#FF3;}
+#project-search .folder h2:hover {padding:0.5em 0.75em;}
+#project-search .files li {padding-left:20px;}
+
+#project-keywords {font:13px Arial, Helvetica, sans-serif;width:98%;padding: 2px;background:#FFF;color: #60C;border:1px inset #60C;}
+
+
+
+
+/********************************************************************************************/
+/********************************** FROM COM MAPPER *****************************************/
+
+
+.treeview, .treeview ul { padding: 0; margin: 0; list-style: none; }
+.treeview ul { background-color: transparent; /*margin-top: 4px;*/ }
+.treeview .hitarea { background-image: url(../images/treeview-default-white.gif); background-position: -64px -25px; background-repeat: no-repeat; height: 16px; width: 16px; margin-left: -16px; float: left; cursor: pointer; }
+/* fix for IE6 */
+* html .hitarea { display: inline; float:none; }
+.treeview li { line-height: 1.3em; margin: 0; padding: 0 0 0 16px; }
+.treeview a.selected { background-color: transparent; }
+#treecontrol { margin: 1em 0; display: none; }
+.treeview .hover { cursor: pointer; text-decoration: underline; }
+.treeview li { background: url(../images/treeview-default-line.gif) no-repeat scroll 0 0 transparent; }
+.treeview li.collapsable, .treeview li.expandable { background-position: 0 -176px; }
+.treeview .expandable-hitarea { background-position: -80px -3px; }
+.treeview li.last { background-position: 0 -1766px }
+.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: url(../images/treeview-default-white.gif); background-repeat: no-repeat; }  
+.treeview li.lastCollapsable { background-position: 0 -111px }
+.treeview li.lastExpandable { background-position: -32px -67px }
+.treeview div.lastCollapsable-hitarea, .treeview div.lastExpandable-hitarea { background-position: 0; }
+.treeview-red li { background-image: url(../images/treeview-red-line.gif); }
+.treeview-red .hitarea, .treeview-red li.lastCollapsable, .treeview-red li.lastExpandable { background-image: url(../images/treeview-red.gif); } 
+.treeview-black li { background-image: url(../images/treeview-black-line.gif); }
+.treeview-black .hitarea, .treeview-black li.lastCollapsable, .treeview-black li.lastExpandable { background-image: url(../images/treeview-black.gif); }  
+.treeview-gray li { background-image: url(../images/treeview-gray-line.gif); }
+.treeview-gray .hitarea, .treeview-gray li.lastCollapsable, .treeview-gray li.lastExpandable { background-image: url(../images/treeview-gray.gif); } 
+.treeview-famfamfam li { background-image: url(../images/treeview-famfamfam-line.gif); }
+.treeview-famfamfam .hitarea, .treeview-famfamfam li.lastCollapsable, .treeview-famfamfam li.lastExpandable { background-image: url(../images/treeview-famfamfam.gif); } 
+.treeview .placeholder { background: url(../images/ajax-loader.gif) 0 0 no-repeat; height: 16px; width: 16px; display: block; }
+.filetree li { padding: 3px 0 2px 16px; }
+.filetree span.folder, .filetree span.file { padding: 1px 0 1px 16px; display: block; }
+.filetree span.folder { background: url(../images/folder.gif) 0 0 no-repeat; }
+.filetree li.expandable span.folder { background: url(../images/folder-closed.gif) 0 0 no-repeat; }
+.filetree span.file { background: url(../images/file.gif) 0 0 no-repeat; }
+.treeview li a { text-decoration: none; }
+.treeview li.no-children { background: url("../images/treeview-default-line.gif") no-repeat scroll 0 -1766px transparent; }
+
+
+
+

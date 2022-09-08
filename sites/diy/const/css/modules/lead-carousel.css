@@ -1,0 +1,28 @@
+.carousel-lead { width: 966px; height: 300px; overflow: hidden; background: #333; margin: 0 14px; position: relative; }
+.carousel-lead .toc { position: absolute; top: 14px; right: 14px; z-index: 100; }
+.carousel-lead > ul > li { display: block; width: 966px; height: 300px; }
+.carousel-lead .img { display: block; position: absolute; top: 0; left: 0; width: 400px; height: 300px; }
+.carousel-lead .caption { display: block; position: absolute; bottom: 0; right: 14px; width: 307px; height: 28px; z-index: 100; font-size: 14px; color: #fff; line-height: 28px; text-align: right; padding-right: 7px; }
+.carousel-lead .info { display: block; position: absolute; top: 0; right: 0; width: 532px; height: 232px; padding: 34px 0 34px 34px; }
+.carousel-lead .info h3 { width: 170px; line-height: 23px; }
+.carousel-lead .info h3 a { color: #d8c5a5; font-size: 21px; }
+.carousel-lead .info p { color: #fff; width: 170px; font-size: 13px; line-height: 15px; margin: 7px 0; }
+.carousel-lead .info li a { color: #d8c5a5; }
+.carousel-lead .info .show-nav { position: absolute; bottom: 0; right: 0; width: 566px; height: 28px; background-color: #231f20; }
+.carousel-lead .info .show-nav li { dispaly: block; float: left; margin: 0 14px;}
+.carousel-lead .info .show-nav li a { color: #d8c5a5; font-size: 14px; line-height: 28px; }
+.carousel-lead .info .media { display: block; position: absolute; top: 34px; left: 235px; width: 266px; height: 223px; }
+
+.carousel-lead .prev,
+.carousel-lead .next {cursor:pointer;width:20px;height:20px;background:transparent url("http://images.diynetwork.com/webdiy/diy20/imgs/se/diy-ui.png"); text-indent: -999em; z-index: 100; }
+.carousel-lead .prev {position:absolute;top:135px;left:17px; width:30px;height:30px;background-position:0 -580px;text-align:center;}
+.carousel-lead .prev:hover {background-position: -60px -580px;}
+.carousel-lead .prev:active {background-position: -120px -580px;}
+.carousel-lead .next {position:absolute;top:135px;right:17px; width:30px;height:30px;background-position: -30px -580px;text-align:center;}
+.carousel-lead .next:hover {background-position: -90px -580px;}
+.carousel-lead .next:active {background-position: -150px -580px;}
+
+.carousel-lead .toc a{background:transparent url("http://images.diynetwork.com/webdiy/diy20/imgs/se/diy-ui.png") no-repeat -490px -617px;height:8px;width:8px;display:inline;float:left;line-height:8px;margin:0 1px;padding:0;text-indent: -9999px;overflow:hidden;}
+.carousel-lead .toc a:hover{background-position:-510px -617px;}
+.carousel-lead .toc a.activeSlide{background-position: -510px -617px;}
+

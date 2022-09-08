@@ -1,0 +1,19 @@
+#diy-bd #diy-e .qa .hd { position: relative; }
+#diy-bd #diy-e .qa .hd span { position: absolute; top: 7px; right: 14px; color: #FFF; font-size: 11px; }
+#diy-bd #diy-e .qa .hd span a { color: #FFF; text-decoration: none; }
+
+#diy-bd #diy-e .qa .bd li { border-top: dotted 1px #DDD; padding-top: 14px; margin-top: 7px; }
+#diy-bd #diy-e .qa .bd li.first { border-top: none; padding-top: 0; margin-top:0; }
+
+#diy-bd #diy-e .qa .bd p { padding-left: 54px; }
+#diy-bd #diy-e .qa .bd .question { background-image: url("http://images.diynet.com/webdiy/diy20/pkgs/2011/crashers-central/images/q.jpg"); background-position: top 4px; background-repeat: no-repeat }
+#diy-bd #diy-e .qa .bd .question strong { font-size: 14px; font-weight: bold; }
+#diy-bd #diy-e .qa .bd .from-who { text-align: right; font-style: italic; color: #7A7979 }
+#diy-bd #diy-e .qa .bd .answer { background-image: url("http://images.diynet.com/webdiy/diy20/pkgs/2011/crashers-central/images/a.jpg"); background-position: top 4px; background-repeat: no-repeat }
+#diy-bd #diy-e .qa .bd .answer span.more { display: none; }
+#diy-bd #diy-e .qa .bd .more-hide  { display: none; }
+#diy-bd #diy-e .qa .bd .more-hide  span { display: inline-block; height: 8px; width: 11px; background: url("http://images.diynet.com/webdiy/diy20/pkgs/2011/crashers-central/images/open-close.jpg") top left #fff no-repeat; }
+#diy-bd #diy-e .qa .bd .more-show  span { display: inline-block; height: 8px; width: 11px; background: url("http://images.diynet.com/webdiy/diy20/pkgs/2011/crashers-central/images/open-close.jpg") left -8px #fff no-repeat; }
+
+#diy-bd #diy-e .qa .bd .more-hide a:hover  span { background: url("http://images.diynet.com/webdiy/diy20/pkgs/2011/crashers-central/images/open-close-hvr.jpg") top left #fff no-repeat; }
+#diy-bd #diy-e .qa .bd .more-show a:hover  span { background: url("http://images.diynet.com/webdiy/diy20/pkgs/2011/crashers-central/images/open-close-hvr.jpg") left -8px #fff no-repeat; }

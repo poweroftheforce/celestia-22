@@ -1,0 +1,102 @@
+<div class="pod gallery-tease clrfix">
+	<h3 class="sub-header"><a href="#">Header</a></h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	<a href="#"><img src="../sites/diy/images/92x69_sm.jpg" alt="" height="69" width="92"/></a>
+	<a href="#"><img src="../sites/diy/images/92x69_sm.jpg" alt="" height="69" width="92"/></a>
+	<a href="#" class="gallery-link">View<br />Photo Gallery</a>
+	<a href="#" class="last"><img src="../sites/diy/images/92x69_sm.jpg" alt="" height="69" width="92"/></a>
+</div>
+<script>
+({
+	name			: 'Gallery Tease',
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('h3').find('a')",
+			affects		: "$({m}).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Copy',
+			selector	: "$({m}).find('p')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}, {
+			name		: 'Image 1',
+			selector	: "$({m}).find('img').eq(0)",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: '#'
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/diy/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value, data ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}, {
+			name		: 'Image 2',
+			selector	: "$({m}).find('img').eq(1)",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: '#'
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/diy/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}, {
+			name		: 'Image 3',
+			selector	: "$({m}).find('img').eq(2)",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: '#'
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/diy/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}]
+	}]
+
+})
+</script>

@@ -1,0 +1,57 @@
+<div class="calendar-app">
+	<ul id="cal-tabs" class="clrfix">
+		<li><a href="#" id="cal-view-week" class="selected"><span>Week View</span></a></li>
+		<li><a href="#" id="cal-view-month"><span>Month View</span></a></li>
+	</ul>
+	<div id="menu-ical" class="futon-menu"> <a href="#" class="open">Have ideas sent to your calendar</a>
+		<div class="dd20">
+			<p>Have Help Around the Home updates sent to your calendar program monthly by selecting from the available options below.</p>
+			<ul class="list">
+				<li><a href="http://hgtv.sndimg.com/webhgtv/2013/hath/february/calendar.ics" class="outlook">Outlook</a></li>
+				<li><a href="http://hgtv.sndimg.com/webhgtv/2013/hath/february/calendar.ics" class="ical">iCal</a></li>
+				<li><a href="http://hgtv.sndimg.com/webhgtv/2013/hath/february/calendar.ics" class="google">Google</a></li>
+				<li><a href="http://hgtv.sndimg.com/webhgtv/2013/hath/february/calendar.ics" class="yahoo">Yahoo!</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="cal-app">
+		<div id="cal-data"></div>
+		<cscript src="http://web.hgtv.com/webhgtv/hg20/pkgs/js/futon3.js"></cscript>
+		<cscript src="http://web.hgtv.com/webhgtv/js/calendar2.js"></cscript>
+		<cscript>ftn.calendar({});</cscript>
+		<img class="dummy-calendar" src="../sites/hgtv/images/dummy-calendar.jpg"/>
+	</div>
+</div>
+<script>
+({
+	name	: 'Event Calendar App',
+	
+	init : function() {
+		/* note: assets get loaded in reverse order because they are prepended */
+		C.loadAssets({
+			'calendar-css' : 'http://web.hgtv.com/webhgtv/2013/hath/local.css'
+		});
+	},
+	
+	sections: [{
+		name		: 'Data Section',
+		elements	: [{
+			name		: 'Data',
+			selector	: "{m}.find('cscript').eq(2)",
+			//extract		: /\((.*?)\);/,
+			editables	: [{
+				html	: {
+					label	: 'JSON Data Object',
+					value	: ''
+//					callback	: function( btn, value, data ) {
+//						/* the easy way! */
+//						$(C.module.current).find('cscript').html(value);
+//						return true;
+//					}
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

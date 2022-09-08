@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Celestia Console Demo Page</title>
+
+<link type="text/css" href="../global/css/custom-theme/jquery-ui-1.7.3.custom.css" rel="stylesheet"/>
+<style>
+
+body{margin:0;padding:0;}
+
+
+
+/* CONSOLE CSS */
+div,input,textarea,p{margin:0;padding:0;}img{border:0;}li{list-style:none;}
+.clrfix{zoom:1;}
+.clrfix:after{content:".";display:block;height:0;width:0;line-height:0;clear:both;visibility:hidden;}
+#resizable { width: 150px; height: 150px; padding: 0.5em; }
+#resizable h3 { text-align: center; margin: 0; }
+.ui-resizable-helper { border: 2px dotted #00F; }
+/* END CONSOLE CSS */
+</style>
+
+<script type="text/javascript" src="../global/js/jquery-full-ui-1.8.20.js"></script>
+<!--<script type="text/javascript" src="../global/js/core.js"></script>-->
+<script>
+
+;(function($) {
+$.console = function( options ) {  
+
+	var options = $.extend({
+		height			: '250'
+	}, options);
+	
+	/* console (wrap) */
+	var console = $('<div class="console-wrap"/>')
+			.css({
+				height		: options.height + 'px',
+				position	: 'absolute',
+				width		: '100%'
+			})
+			.appendTo(document.body),
+		
+		/* body */
+		bd = $('<div class="bd"/>')
+			.appendTo(console),
+		
+		/* log (window) */
+		log = $('<div class="log"/>')
+			.css({
+				'height'		: options.height + 'px',
+				'overflow-y'	: 'scroll'
+			})
+			.appendTo(bd);
+	
+	$(options.wrap).height(options.height);
+	
+	function update() {
+		console.css({
+			top : $(window).scrollTop() + (($(window).height() - 3) - console.height()) + 'px'
+		});
+	};
+	
+	$(window).bind('resize scroll', function () {
+		update();
+	});
+	
+	console.resizable({
+		helper	: 'ui-resizable-helper',
+		handles	: 'n',
+		resize : function( e, ui ) {
+			update();
+		},
+		stop : function( e, ui ) {
+			var height = $(ui.element).height();
+			$(log).css({
+				height : height + 'px'
+			});
+			update();
+		}
+	});
+	
+	update();
+	
+	/* public methods */
+	var _console = {
+		
+		console	: console,
+		
+		log : function() {
+			var str = '';
+			$.each(arguments, function(i, arg) {
+				$.each(arg, function(i, msg) {
+					str += msg;
+				});
+			});
+			$("#myDiv").animate({ scrollTop: $("#myDiv").attr("scrollHeight") }, 3000);
+			var line = $('<p/>')
+				.html(str)
+				.appendTo($(log));
+			
+			/* have the log (window) scroll to the last line that was appended */
+			//$(log).animate({
+			//		scrollTop : $(log).prop('scrollHeight')
+			//	}, 3000).stop();
+			$(log).prop('scrollTop', $(log).prop('scrollHeight'));
+			return line;
+		},
+		
+		warn : function() {
+			var p = _console.log(arguments);
+			return $(p).addClass('warn').prepend('<img src="../console/images/ico-warn.png"/>\t');
+		},
+		
+		error : function() {
+			var p = _console.log(arguments);
+			return $(p).addClass('error').prepend('<img src="../console/images/ico-error.png"/>\t');
+		},
+		
+		info : function() {
+			var p = _console.log(arguments);
+			return $(p).addClass('info').prepend('<img src="../console/images/ico-info.png"/>\t');
+		},
+		
+		clean : function() {
+			var p = _console.log(arguments);
+			return $(p).addClass('clean').prepend('<img src="../console/images/ico-clean.png"/>\t');
+		},
+		
+		clear : function() {
+			$(log).html('');
+		}
+	};
+	return _console;
+};
+})(jQuery);
+
+
+
+$(function() {
+
+var _console = $.console();
+
+_console.log('A standard console log.', '-', 'with comma delimited lines of text');
+_console.warn('This is a warning line.');
+_console.error('This is an error line.');
+_console.info('This is an info line.');
+p = _console.clean('This is a clean / "ok" line.');
+$(p).css({
+	'background': '#FF0'
+}).click(function() {
+	alert('You clicked on the highlighted line containing the phrase ' + $(this).text());
+});
+//_console.clear();
+
+});
+})(jQuery);
+
+</script>
+
+</head>
+<body>
+</body>
+</html>

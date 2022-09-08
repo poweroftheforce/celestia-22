@@ -1,0 +1,140 @@
+<div class="pod">
+	<div class="rules">
+		<style>
+		.sponsors.vertical {border: 1px solid #E6E6E6;float: right;margin: 14px;padding: 14px;width: 160px;}
+		.sponsors.vertical > li:first-child {border-bottom: 1px solid #E6E6E6;}
+		.sponsors h5 {color: #999999;font-size: 0.786em;font-weight: normal;}
+		.sponsors.vertical h5 {text-align: center;}
+		.sponsors.vertical ul li {display: block;float: none;}
+		.sponsors.vertical img {display: block;margin: 14px auto;}
+		</style>
+		<ul class="sponsors vertical">
+			<li>
+				<h5>presented by</h5>
+				<ul>
+					<li><a href="#" target="_blank"><img src="http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/ll_2.gif" alt=""/></a></li>
+				</ul>
+			</li>
+			<li>
+				<h5>featured by</h5>
+				<ul>
+					<li><a href="#" target="_blank"><img src="http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/gaf_3.gif" alt=""/></a></li>
+				</ul>
+			</li>
+		</ul>
+		<h3>Complete Official Rules</h3>
+		<div class="rules-list">
+			<p><strong>Lorem ipsum</strong>: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+		</div>
+	</div>
+</div>
+<script>
+({
+	
+	name : 'Rules (with sponsor list)',
+	
+	init: function() {
+		C.sortable('.sponsors li:first-child ul');
+		C.sortable('.sponsors li:last-child ul');
+		C.sortable('.rules-list');
+	},
+	
+	sections : [{
+		name		: 'Sponsor Section',
+		elements	: [{
+			name		: 'Presented Sponsor Header',
+			selector	: "{m}.find('h5').eq(0)",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'presented by'
+				}
+			}]
+		}, {
+			name		: 'Presented By List',
+			selector	: "{m}.find('.sponsors').find('li:first-child').find('ul')",
+			markup		: '<li><a href="#" target="_blank"><img src="http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/ll_2.gif" alt=""/></a></li>',
+			elements	: [{
+				name		: 'Image {x}',
+				selector	: "{p}.find('li:first-child').find('ul').find('img').eq({x})",
+				editables	: [{
+					alt : {
+						label	: 'Alt',
+						value	: ''
+					},
+					src : {
+						label	: 'Src',
+						value	: 'http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/ll_2.gif'
+					}
+				}]
+			}]
+		}, {
+			name		: 'Featured Sponsor Header',
+			selector	: "{m}.find('h5').eq(1)",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'featured by'
+				}
+			}]
+		}, {
+			name		: 'Featured By List',
+			selector	: "{m}.find('.sponsors').find('li:last-child').find('ul')",
+			markup		: '<li><a href="#" target="_blank"><img src="http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/gaf_3.gif" alt=""/></a></li>',
+			elements	: [{
+				name		: 'Image {x}',
+				selector	: "{p}.find('li:last-child').find('ul').find('img').eq({x})",
+				editables	: [{
+					alt : {
+						label	: 'Alt',
+						value	: ''
+					},
+					src : {
+						label	: 'Src',
+						value	: 'http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/gaf_3.gif'
+					}
+				}]
+			}]
+		}]
+	}, {
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h3')",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Complete Official Rules'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Rules Section',
+		elements	: [{
+			name		: 'Rules List',
+			selector	: "{m}.find('.rules-list')",
+			markup		: '<p><strong>Lorem ipsum</strong>: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>',
+			elements	: [{
+				name		: 'Rule {x} (strong)',
+				selector	: "{p}.find('strong').eq({x})",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: 'Lorem ipsum.'
+					}
+				}]
+			}, {
+				name		: 'Rule {x}',
+				selector	: "{p}.find('p').eq({x})",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+});
+</script>

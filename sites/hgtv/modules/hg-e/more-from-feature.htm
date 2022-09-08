@@ -1,0 +1,57 @@
+<div class="pod more-from-feature">
+	<div class="hd"><h4>More From This Feature</h4></div>
+	<div class="bd clrfix">
+		<ul class="list">
+			<li><a href="#">Call to Action</a></li>
+		</ul>
+	</div>
+	<div class="ft"></div>
+</div>
+<script>
+({
+
+	name		: 'More From This Feature',
+	
+	init: function() {
+		C.sortable('.list');
+	},
+	
+	sections	: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h4')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'More From This Feature',
+					max_width	: '336px'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'List',
+			selector	: "{m}.find('.list')",
+			markup		: '<li><a href="#">Call to Action</a></li>',
+			elements	: [{
+				name		: 'List Item {x}',
+				selector	: "{p}.find('li').eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label		: 'Text',
+						value		: 'Call to Action',
+						max_width	: '300px'
+					}
+				}]
+			}]
+		}]
+	}]
+
+})
+</script>

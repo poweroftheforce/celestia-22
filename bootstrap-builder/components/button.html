@@ -1,0 +1,75 @@
+<div class="component">
+  <div class="component-controls-wrap"></div>
+  <a class="btn btn-primary" href="#" role="button">Link</a>
+</div>
+<script>
+    ({
+      name		: 'Simple Button',
+      
+      init : function() {},
+      setClass  : function (el, value) {
+        console.log(el, value);
+        el.attr('class', 'btn btn-' + value);
+      },
+      
+      sections: [{
+        name		: 'Options',
+        elements	: [{
+          name		: 'Type',
+          selector	: "{m}.find('a')",
+          editables	: [{
+            html	: {
+              label		: 'Text',
+              value		: 'Type',
+              type	: 'select',
+              selections	: [{
+                name	: 'Primary',
+                value	: 'primary'
+              }, {
+                name	: 'Secondary',
+                value	: 'secondary'
+              }, {
+                name	: 'Success',
+                value	: 'success'
+              }, {
+                name	: 'Danger',
+                value	: 'danger'
+              }, {
+                name	: 'Warning',
+                value	: 'warning'
+              }, {
+                name	: 'Info',
+                value	: 'info'
+              }, {
+                name	: 'Light',
+                value	: 'light'
+              }, {
+                name	: 'Dark',
+                value	: 'dark'
+              }],
+              callback  : function (dropdown, el, module_data, value) {
+                console.log(dropdown, el, module_data, value);
+                module_data.setClass(el, value);
+              }
+            }
+          }]
+        }]
+      }, {
+        name		: 'Misc',
+        elements	: [{
+          name		: 'Text',
+          selector	: "{m}.find('a')",
+          editables	: [{
+            html	: {
+              label		: 'Text',
+              value		: 'Link',
+              callback	: function( input, value, data ) {}
+            }
+          }]
+        }]
+      }],
+      
+      buttons	: []
+      
+    })
+    </script>

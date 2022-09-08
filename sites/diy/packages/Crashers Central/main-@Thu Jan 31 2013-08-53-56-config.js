@@ -1,0 +1,13 @@
+{
+    "txt-record-number": "00000",
+    "txt-franchise-name": "",
+    "txt-package-name": "",
+    "txt-package-url": "",
+    "txt-banner-url": "",
+    "txt-banner-text": "",
+    "txt-keywords": "",
+    "txt-home-section": "",
+    "txt-seo": "",
+    "txt-sponsorship": "",
+    "banner_html": "<div class=\"show-lead\"><style type=\"text/css\">.show-lead h1.mini-lead {background: url(\"../sites/diy/images/mini-lead.jpg\") no-repeat 0 0;}</style><h1 class=\"mini-lead\">Package Title</h1></div>"
+}

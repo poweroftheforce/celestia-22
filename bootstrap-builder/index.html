@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Display as grid</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+  <style>
+    body {
+      min-width: 520px;
+    }
+    .row {
+      border: 1px solid #CCCCFF;
+      padding-top: 10px;
+    }
+    .row-controls-wrap {
+      background: #DFDFDF;
+    }
+    .col-md {
+      min-height: 50px;
+    }
+    .c-dummy {
+      background-color: #CCCCFF;
+      padding: .35em;
+      text-align: center;
+    }
+    .component {
+      position: relative;
+    }
+    .component .component-controls-wrap {
+      background: #DFDFDF;
+      cursor: pointer;
+      height: 12px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 12px;
+      z-index: 100;
+    }
+    .portlet {
+      margin: 0 1em 1em 0;
+      padding: 0.3em;
+    }
+    .portlet-toggle {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -8px;
+    }
+    .portlet-content {
+      padding: 0.4em;
+    }
+    .portlet-placeholder {
+      border: 1px dotted black;
+      margin: 0 1em 1em 0;
+      height: 50px;
+    }
+    #controls-opener {
+      background: #0CF;
+      cursor: pointer;
+      display: none;
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 0;
+      -moz-opacity:.15;
+      filter: alpha(opacity=15);
+      opacity: .15;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/main.js"></script>
+    <script src="../global/js/core.js"></script>
+  </head>
+  <body>
+  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md">
+          <div class="component alert alert-primary" role="alert">
+            <div class="component-controls-wrap"></div>
+            A simple primary alert—check it out!
+          </div>
+
+          <button type="button" class="component btn btn-primary">
+            <div class="component-controls-wrap"></div>
+            Profile <span class="badge badge-light">9</span>
+            <span class="sr-only">unread messages</span>
+          </button>
+      
+          <div class="component btn-group" role="group" aria-label="Basic example">
+            <div class="component-controls-wrap"></div>
+            <button type="button" class="btn btn-secondary">Left</button>
+            <button type="button" class="btn btn-secondary">Middle</button>
+            <button type="button" class="btn btn-secondary">Right</button>
+          </div>
+        </div>
+      
+        <div class="col-md">
+          <div class="component card" style="width: 18rem;">
+            <div class="component-controls-wrap"></div>
+            <img src="https://www.sideshow.com/product-asset/400155/feature" class="card-img-top" alt="r2-d2">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dlg-components-menu" title="Add Component">
+      <div class="bd">
+        <ul class="component-menu">
+          <li><a href="javascript:;" file="button.html">Button</a></li>
+          <li><a href="javascript:;" file="carousel.html">Carousel</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overlay for modules to open dlg Module Controls -->
+    <div id="controls-opener"></div>
+    
+    <!-- BEGIN: dlg Module Controls -->
+	  <div id="dlg-controls" title="Edit Module">
+      <div class="controls">
+        <div class="inputs-wrap"></div>
+        <div class="controls-wrap"></div>
+      </div>
+      <div id="raw-html"></div>
+    </div>
+    <div id="temp-source"></div>
+    <!-- END: dlg Module Controls -->
+    
+    <!-- TEMPLATES -->
+    <script type="text/html" id="tmpl_row_controls">
+      <div class="row-controls-wrap col-md-12">
+        <button class="button primary btn-add-row">+ Row</button>
+        <% if (removable) { %>
+          <button class="button primary btn-remove-row">- Row</button>
+        <% } %>
+        <button class="button primary btn-add-column">+ Column</button>
+        <button class="button primary btn-add-component">+ Component</button>
+      </div>
+    </script>
+
+    <script type="text/html" id="tmpl_row">
+      <div class="row"></div>
+    </script>
+
+    <script type="text/html" id="tmpl_column">
+      <div class="col-md"></div>
+    </script>
+
+    <script type="text/html" id="tmpl_dummy_html">
+      <div class="c-dummy">
+        <button class="button primary btn-remove-column">- Column</button>
+        empty column
+      </div>
+    </script>
+    
+  </body>
+  </html>

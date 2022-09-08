@@ -1,0 +1,30 @@
+<div class="pod">
+	<div class="hd">
+		<h4>Customer Service</h4>
+	</div>
+	<div class="bd clrfix">
+		<div id="smartbutton"></div>
+		<script type="text/javascript">
+						// IF AGENTS ARE AVAILABLE:
+						function agents_available() {
+							var href = "window.open('http://web.hgtv.com/webhgtv/hg20/html/advanced_customer_form.html','custclient','width=500,height=320,scrollbars=0');return false;";
+							document.getElementById('smartbutton').innerHTML = '<A HREF="#" onClick="'+href+'" rel="nofollow"><IMG SRC="http://web.hgtv.com/webhgtv/hg20/html/live-chat-button.gif" border="0"></A>';
+							return true;
+						};
+						// IF AGENTS ARE NOT AVAILABLE:
+						function agents_not_available() {
+							document.getElementById('smartbutton').innerHTML = ''; 
+							return true;
+						};
+						document.write('<img src="http://admin.instantservice.com/resources/smartbutton/6061/18947/available.gif?'+Math.floor(Math.random()*10001)+'" style="width:0;height:0;visiblity:hidden;position:absolute;border:none;background:transparent;" onLoad="agents_available()" onError="agents_not_available()">');
+						</script>
+		<style type="text/css">
+						#smartbutton img { background:none; border:medium none; margin-bottom:7px;}
+						</style>
+		<ul class="list">
+			<li><a href="http://www.hgtv.com/dream-home/hgtv-dream-home-2012-faqs/index.html">Need help? Check our frequently asked HGTV Dream Home questions.</a></li>
+			<li><a href="http://www.hgtv.com/contact-us/package/index.html">Contact Customer Service</a></li>
+		</ul>
+	</div>
+	<div class="ft"></div>
+</div>

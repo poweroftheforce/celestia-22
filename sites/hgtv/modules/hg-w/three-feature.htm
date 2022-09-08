@@ -1,0 +1,217 @@
+<div id="three-feature">
+	<h2>Header</h2>
+	<ul class="clrfix">
+		<li>
+			<h3>Feature 1 Header</h3>
+			<a href="#"><img src="../sites/hgtv/images/160x120_med.jpg" alt="" height="120" width="160"/></a>
+			<p><a href="#">Call to Action</a></p>
+		</li>
+		<li>
+			<h3>Feature 2 Header</h3>
+			<a href="#"><img src="../sites/hgtv/images/160x120_med.jpg" alt="" height="120" width="160"/></a>
+			<p><a href="#">Call to Action</a></p>
+		</li>
+		<li class="last">
+			<h3>Feature 3 Header</h3>
+			<a href="#"><img src="../sites/hgtv/images/160x120_med.jpg" alt="" height="120" width="160"/></a>
+			<p><a href="#">Call to Action</a></p>
+		</li>
+	</ul>
+</div>
+<script>
+({
+	name	: 'Three Feature',
+	
+	init: function() {
+		C.sortable('ul');
+	},
+	
+	sections: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h2')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Feature 1',
+		elements	: [{
+			name		: 'Feature 1 Header',
+			selector	: "{m}.children('ul').find('li').eq(0).find('h3')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Feature 1 Image',
+			selector	: "{m}.children('ul').find('li').eq(0).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'URL',
+					value	: '../sites/hgtv/images/160x120_med.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+			}
+		}, {
+			name		: 'Feature 1 Call to Action',
+			affects		: "{m}.children('ul').find('li').eq(0).find('a')",
+			selector	: "{m}.children('ul').find('li').eq(0).find('p a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label	: 'Text',
+					value	: 'Call to Action'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Feature 2',
+		elements	: [{
+			name		: 'Feature 2 Header',
+			selector	: "{m}.children('ul').find('li').eq(1).find('h3')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Feature 2 Image',
+			selector	: "{m}.children('ul').find('li').eq(1).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'URL',
+					value	: '../sites/hgtv/images/160x120_med.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+			}
+		}, {
+			name		: 'Feature 2 Call to Action',
+			selector	: "{m}.children('ul').find('li').eq(1).find('p a')",
+			affects		: "{m}.children('ul').find('li').eq(1).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label	: 'Text',
+					value	: 'Call to Action'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Feature 3',
+		elements	: [{
+			name		: 'Feature 3 Header',
+			selector	: "{m}.children('ul').find('li').eq(2).find('h3')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Feature 3 Image',
+			selector	: "{m}.children('ul').find('li').eq(2).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'URL',
+					value	: '../sites/hgtv/images/160x120_med.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+			}
+		}, {
+			name		: 'Feature 3 Call to Action',
+			selector	: "{m}.children('ul').find('li').eq(2).find('p a')",
+			affects		: "{m}.children('ul').find('li').eq(2).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label	: 'Text',
+					value	: 'Call to Action'
+				}
+			}]
+		}]
+	}],
+	
+	buttons: [{
+		'btn-hide-header'	: {
+			html	: 'Hide Header',
+			click	: function() {
+				var module = C.module.current;
+				if ( $('h2', module)[0] ) {
+					$('h2', module).remove();
+					C.drawControls();
+					$('.inputs-wrap .header-section').show();
+					$('.inputs-wrap .btn-hide-header').html('Hide Header');
+				} else {
+					$(module).prepend('<h2>3 Feature Header</h2>');
+					C.drawControls();
+					$('.inputs-wrap .header-section').hide();
+					$('.inputs-wrap .btn-hide-header').html('Show Header');
+				}
+				C.save();
+			}
+		},
+		'btn-hide-section-headers'	: {
+			html	: 'Hide Section Headers',
+			click	: function() {
+				var module = C.module.current;
+				if ( $('h3', module)[0] ) {
+					$('h3', module).remove();
+					C.drawControls();
+					$('.inputs-wrap .btn-hide-section-headers').html('Show Section Headers');
+				} else {
+					$('ul li', module).each(function(i, el) {
+						$(this).prepend('<h3>Feature ' + (i + 1) + ' Title</h3>');
+					});
+					C.drawControls();
+					$('.inputs-wrap .btn-hide-section-headers').html('Hide Section Headers');
+				}
+				C.save();
+			}
+		}
+	}]
+})
+</script>

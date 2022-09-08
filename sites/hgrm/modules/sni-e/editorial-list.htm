@@ -1,0 +1,66 @@
+<div class="pod">
+	<div class="bd editorial-list">
+		<h5>Header</h5>
+		<ul class="list">
+			<li><a href="#">List Item 1</a><cite class="in cap">(6 photos)</cite></li>
+		</ul>
+	</div>
+</div>
+<script>
+({
+
+	name			: 'Editorial + List',
+	
+	init: function() {
+		C.sortable('.list');
+	},
+
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h5')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header',
+					max_width	: '321px'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'List',
+			selector	: "{m}.find('.list')",
+			markup		: '<li><a href="#">List Item {x}</a><cite class="in cap">(6 photos)</cite></li>',
+			elements	: [{
+				name		: 'List Item {x} Cap',
+				selector	: "{p}.children('li').eq({x}).find('cite')",
+				editables	: [{
+					html	: {
+						label		: 'Text',
+						value		: '(6 photos)',
+						max_width	: '321px'
+					}
+				}]
+			}, {
+				name		: 'Call to Action',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label		: 'Text',
+						value		: 'List Item {x}',
+						max_width	: '321px'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+})
+</script>

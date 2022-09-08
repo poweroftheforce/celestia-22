@@ -1,0 +1,280 @@
+<div class="intro clrfix">
+	<style>div.intro h2 { font: 146.5% Arial; color: #53250b; margin-bottom: 0; }</style>
+	<div id="cnt_sponsor">
+		<span class="sponsor-multi-logo"><img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_88x31.jpg"/></span>
+	</div>
+	<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</h2>
+</div>
+<script>
+({
+	name	: 'Introduction',
+	
+	help : 'help-intro',
+	
+	structure : [
+		{ tagName : 'style', children : [] },
+		{ tagName : 'div', children : [ { tagName : 'span', children : [{ tagName : 'img', children : [] } ] } ]},
+		{ tagName : 'h2', children : [] }
+	],
+	
+	checkIntro : function() {
+		
+		var intro = '';
+		$('.inputs-wrap .generic-introduction, .inputs-wrap .sweeps-enter-prize-page-introduction, .inputs-wrap .sweeps-rules-page-introduction, .inputs-wrap .sweeps-oops-page-introduction, .inputs-wrap .hath-introduction, .inputs-wrap .logos-wrap').hide();
+		if ( $(C.module.current).find('h2')[0] ) {
+			if ( $(C.module.current).find('.sponsor-multi-logo')[0] ) {
+				$('.inputs-wrap .generic-introduction, .inputs-wrap .logos-wrap').show();
+				intro = 'generic';
+			} else {
+				if ( $(C.module.current).find('a')[0] ) {
+					/* oops intro */
+					$('.inputs-wrap .sweeps-oops-page-introduction').show();
+					intro = 'oops';
+					C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+				} else {
+					/* sweeps enter/prize intro */
+					$('.inputs-wrap .sweeps-enter-prize-page-introduction').show();
+					intro = 'sweeps';
+					C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+				}
+			}
+		} else {
+			if ( $(C.module.current).find('.sponsor-multi-logo')[0] ) {
+				/* hath intro */
+				$('.inputs-wrap .hath-introduction, .inputs-wrap .logos-wrap').show();
+				intro = 'hath';
+			} else {
+				/* rules intro */
+				$('.inputs-wrap .sweeps-rules-page-introduction').show();
+				intro = 'rules';
+				C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+			}
+		}
+		$('#sel-intros option[value="' + intro + '"]').attr('selected', 'selected');
+		$('#sel-logos option[value="' + $(C.module.current).find('.sponsor-multi-logo img').attr('src') + '"]').attr('selected', 'selected');
+	},
+	
+	/* init is only called when the module is first loaded */
+	init : function() {
+		$.data(C.module.current, 'data').checkIntro();
+
+		var ary = [];
+		function getDecendants( parent, ary ) {
+			$.each(parent.children(), function() {
+				var obj = {
+					tagName : this.tagName.toLowerCase(),
+					children : []
+				};
+				ary.push(obj);
+				getDecendants($(this), obj.children);
+			});
+		}
+		getDecendants($(C.module.current), ary);
+		
+		clog('comparing modules :: test : into.htm->init()', C.compareModules(ary, $.data(C.module.current, 'data').structure));
+	},
+	
+	controlsDrawn : function() {
+		$.data(C.module.current, 'data').checkIntro();
+	},
+	
+	sections : [{
+		name		: 'Generic Introduction',
+		elements	: [{
+			name		: 'Copy',
+			selector	: "{m}.find('h2')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Sweeps (rules page) Introduction',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h1')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('strong')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'The following promotion is intended for viewing in the 50 United States and D.C. only and will be construed and evaluated according to United States laws. Do not proceed in this site if you are not a legal resident of the 50 United States or D.C., 21 years or older, and accessing this site in the United States.'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Sweeps (oops page) Introduction',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h2')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'The server experienced a slight hiccup. Please submit your entry again.'
+				}
+			}]
+		}, {
+			name		: 'URL',
+			selector	: "{m}.find('a')",
+			editables	: [{
+				href	: {
+					label		: 'URL',
+					value		: '#',
+					noHighlight	: true
+				}
+			}]
+		}, {
+			name		: 'Button Copy',
+			selector	: "{m}.find('span')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Try Again'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Sweeps (enter/prize page) Introduction',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h2')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Paragraph List',
+			selector	: "{m}.children('div')",
+			markup		: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>",
+			elements	: [{
+				name		: 'Paragraph {x}',
+				selector	: "{p}.children('p').eq({x})",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}]
+		}]
+	}, {
+		name		: 'HATH Introduction',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h1')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Ideas for January'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}],
+	
+	/*
+		moving to the new menu property
+		that utilizes my famous json2HTML method
+			- 87 lines of genius
+	*/
+	menu : [{
+		nodeName	: 'ul',
+		addClass	: 'clrfix',
+		append		: [{
+			nodeName	: 'li',
+			append		: [{
+				nodeName	: 'label',
+				html		: 'Switch Introductions: ',
+				append		: [{
+					nodeName	: 'select',
+					id			: 'sel-intros',
+					append		: [
+						{ nodeName : 'option', val : '', html : 'Select Option' },
+						{ nodeName : 'option', val : 'generic', html : 'Generic' },
+						{ nodeName : 'option', val : 'hath', html : 'HATH (Help Around the Home)' },
+						{ nodeName : 'option', val : 'sweeps', html : 'Sweeps (enter/prize)' },
+						{ nodeName : 'option', val : 'oops', html : 'Sweeps (oops)' },
+						{ nodeName : 'option', val : 'rules', html : 'Sweeps (rules)' }
+					],
+					change : function() {
+						function showIntro( intro ) {
+							
+							var genericHTML = '<style>div.intro h2 { font: 146.5% Arial; color: #53250b; margin-bottom: 0; }</style><div id="cnt_sponsor"><span class="sponsor-multi-logo"><img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_88x31.jpg"/></span></div><h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</h2>',
+								hathHTML = '<div id="cnt_sponsor"><span class="sponsor-multi-logo"><img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_88x31.jpg"/></span></div><h1 class="topic-title">Ideas for January</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>',
+								sweepsHTML = '<h2>Header</h2><div class="bd"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div>',
+								oopsHTML = '<div class="intro clrfix"><h2>Our Bad.</h2><p>The server experienced a slight hiccup. Please submit your entry again.</p><p><a href="#" class="button"><span>Try Again</span></a></p></div>';
+								rulesHTML = '<div class="intro"><h1>Header</h1><p><strong>The following promotion is intended for viewing in the 50 United States and D.C. only and will be construed and evaluated according to United States laws. Do not proceed in this site if you are not a legal resident of the 50 United States or D.C., 21 years or older, and accessing this site in the United States.</strong></p></div>';								html = intro == 'generic' ? genericHTML
+											: intro == 'hath' ? hathHTML
+											: intro == 'sweeps' ? sweepsHTML
+											: intro == 'oops' ? oopsHTML
+											: intro == 'rules' ? rulesHTML
+												/* default to generic */
+												: genericHTML;
+							$(C.module.current).html(html);
+							C.drawControls();
+							$.data(C.module.current, 'data').checkIntro();
+						};
+						showIntro($(this).val() != undefined ? $(this).val() : 'generic');
+						C.save();
+					}
+				}]
+			}]
+		}, {
+			nodeName	: 'li',
+			addClass	: 'logos-wrap',
+			append		: [{
+				nodeName	: 'label',
+				html		: 'Preview with Logo (select size): ',
+				append		: [{
+					nodeName	: 'select',
+					id			: 'sel-logos',
+					append		: [
+						{ nodeName : 'option', val : '', html : 'Select Option' },
+						{ nodeName : 'option', val : '../sites/hgtv/images/hg_multi_88x31.jpg', html : '88 x 31' },
+						{ nodeName : 'option', val : '../sites/hgtv/images/hg_multi_68x40.jpg', html : '68 x 40' },
+						{ nodeName : 'option', val : '../sites/hgtv/images/hg_multi_115x24.jpg', html : '115 x 24' },
+						{ nodeName : 'option', val : '../sites/hgtv/images/hg_multi_135x20.jpg', html : '135 x 20' },
+						{ nodeName : 'option', val : '', html : 'No Logo' }
+					],
+					change : function() {
+						if ( $(this).val() == '' ) {
+							$(C.module.current).find('.sponsor-multi-logo').html('');
+						} else {
+							$(C.module.current).find('.sponsor-multi-logo').html('<img class="temp-multi-logo" src="' + $(this).val() + '"/>');
+						}
+						C.save();
+					}
+				}]
+			}]
+		}]
+	}]
+})
+</script>

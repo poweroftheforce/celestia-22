@@ -1,0 +1,36 @@
+<div id="featured-video" class="full-vid-player clrfix">
+	<div id="MPC-widget-id"></div>
+	<mpcscript type="text/javascript">SNI.DIY.Player.FullSize('MPC-widget-id', 'MPC-player-id', '', '', SNI.DIY.Player.NowPlaying);</mpcscript>
+</div>
+<script>
+({
+	tag			: 'diyFullVidPlayer',
+	name		: 'Full Video Player',
+	class_name	: '.full-vid-player',
+	replacables: {
+		"$(self){module}.children().eq(0)" : { attr: { id: 'MPC-widget-id' } },
+		're': {
+			're1': { n: 'mpcscript', s: "('", t: 'MPC-widget-id', e: "', 'MPC" },
+			're2': { n: 'mpcscript', s: "','", t: 'MPC-player-id', e: "', '', ''," }
+		}
+	},
+	inputs: [{
+		'mpc-diyw-full-vid-player-main-section': {
+			type			: 'section',
+			label			: 'Feature Section'
+		},
+		'MPC-widget-id'	: {
+			append			: '.mpc-diyw-full-vid-player-main-section',
+			default_value	: 'vplayer-1',
+			type			: 'text',
+			label			: 'Widget ID *'
+		},
+		'MPC-player-id'	: {
+			append			: '.mpc-diyw-full-vid-player-main-section',
+			default_value	: '16823',
+			type			: 'text',
+			label			: 'Player ID'
+		}
+	}]	
+})
+</script>

@@ -1,0 +1,113 @@
+<div id="HGTV_poll96059" class="pod qv">
+	<div class="hd">
+		<h4>Quick Vote</h4>
+	</div>
+	<div class="qvInputPanel bd clrfix">
+		<p>Quick Vote Question</p>
+		<form action="/cr/cda/updatePoll/1,1274,,00.html" method="post" id="quick-vote-poll">
+			<blockquote class="errormsg" style="display: none;">Pick one to vote!</blockquote>
+			<ul>
+				<li class="clrfix">
+					<input type="radio" id="opt-1" value="1" class="required" name="Rating">
+					<label for="opt-1">Option 1</label>
+				</li>
+			</ul>
+			<input type="hidden" value="1" name="active">
+			<input type="hidden" value="96059" name="PollId">
+			<input type="hidden" value="Opinion" name="PollType">
+			<input type="hidden" value="HGTV" name="Site">
+			<input type="hidden" value="" name="Role">
+			<input type="hidden" value="no" name="PollRedirectToResults">
+			<input type="hidden" value="HOME" name="PollSctn">
+			<p class="submit"><button type="submit" id="quick-vote-submit" class="button"><span>Vote</span></button></p>
+		</form>
+	</div>
+	<div class="submitting bd">
+		<p>Submitting Vote</p>
+		<img src="http://hgtv.sndimg.com/webhgtv/hg20/imgs/hg-loader.gif">
+	</div>
+	<div class="loading bd">
+		<p>Loading Results</p>
+		<img src="http://hgtv.sndimg.com/webhgtv/hg20/imgs/hg-loader.gif">
+	</div>
+	<div class="qv-results-panel bd clrfix"></div>
+	<div class="ft"></div>
+	<cscript type="text/javascript">SNI.HGTV.QuickVote.init('96059', '/cr/cda/updatePoll/1,1274,,00.html', '/hgtv/cda/poll/0,3104,HGTV_96059_POLL-BUILDER_no,00.html');</cscript>
+</div>
+<script>
+({
+
+	name		: 'Quick Vote',
+	
+	init: function() {
+		C.sortable('ul');
+	},
+	
+	sections	: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h4')",
+			editables	: [{
+				html	: {
+					label		: 'Title',
+					value		: 'Quick Vote'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Poll Section',
+		elements	: [{
+			name		: 'Poll ID',
+			selector	: "{m}.find('cscript')",
+			extract		: /\('(.*?)'.*,.*'.*'.*,.*'.*'\)/,
+			editables	: [{
+				html	: {
+					label		: 'ID',
+					value		: '96059',
+					callback	: function( btn, value, data ) {
+						$(C.module.current).find('input[name="PollId"]').val(value);
+						$(C.module.current).attr('id', 'HGTV_poll' + value);
+						
+						var param1 = $(C.module.current).find('cscript').html().toString().match(/\('(.*?)'.*,.*'.*'.*,.*'.*'\)/)[1] || null,
+							param3 = $(C.module.current).find('cscript').html().toString().match(/\('.*'.*,.*'.*'.*,.*'(.*?)'\)/)[1] || null;
+						if ( param1 ) {
+							$(C.module.current).find('cscript').html($(C.module.current).find('cscript').html().replace(param1, value));
+						}
+						if ( param3 ) {
+							$(C.module.current).find('cscript').html($(C.module.current).find('cscript').html().replace(param3, '/hgtv/cda/poll/0,3104,HGTV_' + value + '_POLL-BUILDER_no,00.html'));
+						}
+						
+						/* return true to skip any further (default) processing */
+						return true;
+					}
+				}
+			}]
+		}, {
+			name		: 'Question',
+			selector	: "{m}.find('.qvInputPanel').find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Quick Vote Question'
+				}
+			}]
+		}, {
+			name		: 'Option List',
+			selector	: "{m}.find('.qvInputPanel').find('ul')",
+			markup		: '<li class="clrfix"><input type="radio" id="opt-{x}" value="{x}" class="required" name="Rating"><label for="opt-{x}">Option {x}</label></li>',
+			elements	: [{
+				name		: 'Option {x}',
+				selector	: "{p}.find('li').eq({x}).find('label')",
+				editables	: [{
+					html	: {
+						label	: 'Option {x}',
+						value	: 'Option {x}'
+					}
+				}]
+			}]
+		}]
+	}]
+
+})
+</script>

@@ -1,0 +1,86 @@
+<div class="pod paint cartridge">
+	<div class="hd">
+		<h4>Header</h4>
+	</div>
+	<div class="bd clrfix">
+		<div class="feature-cartridge ralign">
+			<div class="bd clrfix">
+				<a class="thumb" href="#"><img src="../sites/diy/images/92x69_sm.jpg" alt=""/></a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+				<p><a href="#">Call to Action</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+({
+	name : 'Cartridge',
+	
+	sections : [{
+		name : 'Header Section',
+		elements : [{
+			name : 'Header',
+			selector : "{m}.find('.hd').find('h4')",
+			editables : [{
+				html : {
+					label : 'Text',
+					value : 'Header'
+				}
+			}]
+		}]
+	}, {
+		name : 'Body Section',
+		elements : [{
+			name : 'Image',
+			selector : "{m}.find('.bd').find('img')",
+			editables : [{
+				src : {
+					label : 'Src',
+					value : '../sites/diy/images/92x69_sm.jpg'
+				},
+				alt : {
+					label : 'Alt',
+					value : ''
+				}
+			}]
+		}, {
+			name : 'Copy',
+			selector : "{m}.find('.bd').find('p').eq(0)",
+			editables : [{
+				html : {
+					label : 'Text',
+					value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}, {
+			name : 'Call to Action',
+			selector : "{m}.find('.bd').find('a').eq(1)",
+			affects : "{m}.find('a')",
+			editables : [{
+				html : {
+					label : 'Text',
+					value : 'Call to Action'
+				},
+				href : {
+					label : 'URL',
+					value : '#'
+				}
+			}]
+		}]
+	}],
+	
+	buttons: [{
+		'btn-diy-css-color': {
+			html	: 'Header Color',
+			click	: function() {
+				$('#dlg-diy-css-color')
+					.dialog('open')
+					.dialog('option', 'width', 450)
+					.dialog('option', 'height', 200)
+					.attr('module', 'pod cartridge');
+			}
+		}
+	}]
+	
+})
+</script>

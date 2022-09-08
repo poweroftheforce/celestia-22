@@ -1,0 +1,211 @@
+<div class="intro sweeps">
+	<h2>DIY Sweepstakes</h2>
+	<div class="bd">
+		<p>Enter for a chance to win</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	</div>
+</div>
+<script>
+({
+	
+	name	: 'Sweeps Introduction',
+
+	sections : [{
+		name		: 'Sweeps (enter/prize page) Introduction',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h2')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Paragraph List',
+			selector	: "{m}.children('.bd')",
+			markup		: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>",
+			elements	: [{
+				name		: 'Paragraph {x}',
+				selector	: "{p}.children('p').eq({x})",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}]
+		}]
+	}, {
+		name		: 'Sweeps (thanks page) Introduction',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h2')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Thank You For Entering!'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Visit <a href="#">FrontDoor.com</a> for a second chance to win! Remember, you can enter twice online per day &mdash; once on HGTV.com and once on FrontDoor.com &mdash; through February 15, 2013, at 5p.m. ET.'
+				}
+			}]
+		}, {
+			name		: 'Copy 2',
+			selector	: "{m}.find('p').eq(1)",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: '<a class="button" href="#"><span>Enter Again on FrontDoor.com</span></a> or <a href="#">Watch These Exclusive Videos</a>'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Sweeps (rules page) Introduction',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h1')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('strong')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'The following promotion is intended for viewing in the 50 United States and D.C. only and will be construed and evaluated according to United States laws. Do not proceed in this site if you are not a legal resident of the 50 United States or D.C., 21 years or older, and accessing this site in the United States.'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Sweeps (oops page) Introduction',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h2')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'The server experienced a slight hiccup. Please submit your entry again.'
+				}
+			}]
+		}, {
+			name		: 'URL',
+			selector	: "{m}.find('a')",
+			editables	: [{
+				href	: {
+					label		: 'URL',
+					value		: '#',
+					noHighlight	: true
+				}
+			}]
+		}, {
+			name		: 'Button Copy',
+			selector	: "{m}.find('span')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Try Again'
+				}
+			}]
+		}]
+	}],
+	
+	checkIntro : function() {
+		var intro = 'sweeps';
+		$('.inputs-wrap .sweeps-enter-prize-page-introduction, .inputs-wrap .sweeps-thanks-page-introduction, .inputs-wrap .sweeps-rules-page-introduction, .inputs-wrap .sweeps-oops-page-introduction').hide();
+		if ( $(C.module.current).find('h2')[0] ) {
+			if ( $(C.module.current).find('a')[0] ) {
+				if ( $(C.module.current).find('p').eq(1).find('a.button')[0] && $(C.module.current).find('p').eq(1).find('a').eq(1)[0] ) {
+					/* sweeps thanks intro */
+					$('.inputs-wrap .sweeps-thanks-page-introduction').show();
+					intro = 'thanks';
+					C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+				} else {
+					/* oops intro */
+					$('.inputs-wrap .sweeps-oops-page-introduction').show();
+					intro = 'oops';
+					C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+				}
+			} else {
+				/* sweeps enter/prize intro */
+				$('.inputs-wrap .sweeps-enter-prize-page-introduction').show();
+				intro = 'sweeps';
+				C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+			}
+		} else {
+			/* rules intro */
+			$('.inputs-wrap .sweeps-rules-page-introduction').show();
+			intro = 'rules';
+			C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+		}
+		$('#sel-intros option[value="' + intro + '"]').attr('selected', 'selected');
+	},
+	
+	controlsDrawn : function() {
+		$.data(C.module.current, 'data').checkIntro();
+	},
+	
+	menu : [{
+		nodeName	: 'ul',
+		addClass	: 'clrfix',
+		append		: [{
+			nodeName	: 'li',
+			append		: [{
+				nodeName	: 'label',
+				html		: 'Switch Introductions: ',
+				append		: [{
+					nodeName	: 'select',
+					id			: 'sel-intros',
+					append		: [
+						{ nodeName : 'option', val : '', html : 'Select Option' },
+						{ nodeName : 'option', val : 'sweeps', html : 'Sweeps (enter/prize)' },
+						{ nodeName : 'option', val : 'thanks', html : 'Sweeps (thanks)' },
+						{ nodeName : 'option', val : 'oops', html : 'Sweeps (oops)' },
+						{ nodeName : 'option', val : 'rules', html : 'Sweeps (rules)' }
+					],
+					change : function() {
+						function showIntro( intro ) {
+							
+							var sweepsHTML = '<h2>Header</h2><div class="bd"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div>',
+								oopsHTML = '<div class="intro clrfix"><h2>Our Bad.</h2><p>The server experienced a slight hiccup. Please submit your entry again.</p><p><a href="#" class="button"><span>Try Again</span></a></p></div>';
+								rulesHTML = '<div class="intro"><h1>Header</h1><p><strong>The following promotion is intended for viewing in the 50 United States and D.C. only and will be construed and evaluated according to United States laws. Do not proceed in this site if you are not a legal resident of the 50 United States or D.C., 21 years or older, and accessing this site in the United States.</strong></p></div>',
+								thanksHTML = '<div class="intro clrfix"><h2>Thank You For Entering!</h2><p>Visit <a href="#">FrontDoor.com</a> for a second chance to win!  Remember, you can enter twice online per day &mdash; once on HGTV.com and once on FrontDoor.com &mdash; through February 15, 2013, at 5p.m. ET.</p><p><a class="button" href="#"><span>Enter Again on FrontDoor.com</span></a> or <a href="#">Watch These Exclusive Videos</a></p></div>';
+								html = intro == 'sweeps' ? sweepsHTML
+											: intro == 'oops' ? oopsHTML
+											: intro == 'rules' ? rulesHTML
+											: intro == 'thanks' ? thanksHTML
+												/* default to generic */
+												: sweepsHTML;
+							$(C.module.current).html(html);
+							C.drawControls();
+							$.data(C.module.current, 'data').checkIntro();
+						};
+						showIntro($(this).val() != undefined ? $(this).val() : 'generic');
+						C.save();
+					}
+				}]
+			}]
+		}]
+	}]
+	
+})
+</script>

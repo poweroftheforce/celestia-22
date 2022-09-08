@@ -1,0 +1,56 @@
+<div id="all-about" class="pod relevant">
+	<h4>Header</h4>
+	<ul class="topics">
+		<li class="first"><a href="#">List Item 1</a></li>
+	</ul>
+	<p class="more"><a href="/topics/index.html">More Topics</a></p>
+</div>
+<script>
+({
+	name			: 'All About',
+	
+	init: function() {
+		C.sortable('.topics');
+	},
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('h4')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'List',
+			selector	: "$({m}).find('.topics')",
+			markup		: '<li><a href="#">List Item {x}</a></li>',
+			elements	: [{
+				name		: 'List Item {x}',
+				selector	: "$({module}).find('.topics').children().eq({x}).find('a')",
+				editables	: [{
+					class	: {
+						label	: 'Class',
+						value	: ''
+					},
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}]
+
+})
+</script>

@@ -1,0 +1,108 @@
+<div id="spnsr-gallery">
+	<style>#spnsr-gallery h2{margin:0 0 7px;}.spnsr-prize {border-bottom: medium none;margin: 0;padding: 13px 0 6px;}.spnsr-prize + .spnsr-prize {border-top: 1px solid #DAE7E3;}.spnsr-prize {border-bottom: medium none;margin: 0;padding: 13px 0 6px;}</style>
+	<div class="spnsr-prize clrfix">
+		<h2>Sponsored by:</h2>
+		<div class="spnsr-prod"><a href="#" target="_blank"><img src="http://hgtv.sndimg.com/webhgtv/hg20/pkgs/2012/urban-oasis/images/UO2012_Sweeps-Sponsor-Cabinets-To-Go-Photo_s160x120.jpg" alt=""/></a></div>
+		<a href="#" target="_blank"><img src="http://hgtv.sndimg.com/webhgtv/hg20/pkgs/2012/urban-oasis/images/UO2012_Sweeps-Sponsor-Cabinets-To-Go-Logo_s119x41.gif" alt=""/></a>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+		<p><a href="#" target="_blank">Lorem ipsum dolor</a> | <span>1-800-555-7890</span></p>
+	</div>
+</div>
+<script>
+({
+	
+	name : 'Prize (page) Sponsor Gallery',
+	
+	init : function() {
+		C.sortable();
+	},
+	
+	sections : [{
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Sponsor List',
+			selector	: "$({m})",
+			markup		: '<div class="spnsr-prize clrfix"><h2>Sponsored by:</h2><div class="spnsr-prod"><a href="#" target="_blank"><img src="http://hgtv.sndimg.com/webhgtv/hg20/pkgs/2012/urban-oasis/images/UO2012_Sweeps-Sponsor-Cabinets-To-Go-Photo_s160x120.jpg" alt=""/></a></div><a href="#" target="_blank"><img src="http://hgtv.sndimg.com/webhgtv/hg20/pkgs/2012/urban-oasis/images/UO2012_Sweeps-Sponsor-Cabinets-To-Go-Logo_s119x41.gif" alt=""/></a><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p><p><a href="#" target="_blank">Lorem ipsum dolor</a> | <span>1-800-555-7890</span></p></div>',
+			elements	: [{
+				name		: 'Header',
+				selector	: "$({m}).find('.spnsr-prize').eq({x}).find('h2')",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: 'Header'
+					}
+				}],
+				callback : function( input, value ) {
+					/* on drawControls for input */
+					var btn = $('<button/>')
+								.html('Remove Section Header')
+								.click(function() {
+									/* TODO: implement undo */
+									$($(input).data('data')['options']['selector']).remove();
+								});
+					$(input).parent().append(btn);
+				}
+			}, {
+				name		: 'Sponsor {x} Logo',
+				selector	: "$({m}).find('.spnsr-prize').eq({x}).find('img').eq(1)",
+				editables	: [{
+					alt : {
+						label	: 'Alt',
+						value	: ''
+					},
+					src : {
+						label	: 'Src',
+						value	: 'http://hgtv.sndimg.com/webhgtv/hg20/pkgs/2012/urban-oasis/images/UO2012_Sweeps-Sponsor-Cabinets-To-Go-Logo_s119x41.gif'
+					}
+				}]
+			}, {
+				name		: 'Sponsor {x} Image',
+				selector	: "$({m}).find('.spnsr-prize').eq({x}).find('img').eq(0)",
+				editables	: [{
+					alt : {
+						label	: 'Alt',
+						value	: ''
+					},
+					src : {
+						label	: 'Src',
+						value	: 'http://hgtv.sndimg.com/webhgtv/hg20/pkgs/2012/urban-oasis/images/UO2012_Sweeps-Sponsor-Cabinets-To-Go-Photo_s160x120.jpg'
+					}
+				}]
+			}, {
+				name		: 'Sponsor {x} Copy',
+				selector	: "$({m}).find('.spnsr-prize').eq({x}).find('p').eq(0)",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}, {
+				name		: 'Sponsor {x} Call to Action',
+				selector	: "$({m}).find('.spnsr-prize').eq({x}).find('p').eq(1).find('a')",
+				affects		: "$({m}).find('.spnsr-prize').eq({x}).find('a')",
+				editables	: [{
+					href : {
+						label	: 'URL',
+						value	: '#'
+					},
+					html : {
+						label	: 'Text',
+						value	: 'Lorem ipsum dolor'
+					}
+				}]
+			}, {
+				name		: 'Sponsor {x} Phone Number',
+				selector	: "$({m}).find('.spnsr-prize').eq({x}).find('p').eq(1).find('span')",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: '1-800-555-7890'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+})
+</script>

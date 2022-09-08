@@ -1,0 +1,590 @@
+/* ALL PAGES */
+
+.clrfix { zoom:1;}
+.clrfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+.clearfix { zoom:1;}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+#article { padding-top:1px;}
+
+/* links */
+#sni-tmpl-rrail a,
+#article a.priv-pol ,
+#article a.priv-pol:hover ,
+#article a.priv-pol:focus ,
+#article a.priv-pol:active { text-decoration: none; }
+
+#article a:hover {  }
+#article a:focus { text-decoration: underline; }
+
+#sweepsEntryForm li span { font-size: 12px; font-weight: bold; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; color: #1e1e17; }
+#sweepsEntryForm li small { font-size: 11px; font-weight: normal; font-family:Arial, Helvetica, sans-serif; color: #999; }
+#sweepsEntryForm .info p { text-align: center; padding: 0 80px; margin-bottom: 0; }
+
+#sweeps-enter #sni-we .nl-bd .nl-your-info { border-bottom: 1px dotted #d8d7ce; padding-bottom: 14px; }
+
+
+/* superlead */
+#sni-hd { height: 125px; background: #fff url(http://hgtv.sndimg.com/HGTV/2012/07/23/UO2012_banner-terrace_s980x125.jpg) no-repeat scroll 7px 7px; position: relative; }
+#sni-hd h1 {text-indent: -999em; overflow: hidden;}
+
+#article #sni-bd { margin: 21px 14px 0; }
+
+#article .package-header h2 { padding: 14px 0; font-size: 15px; line-height: 20px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; color: #1E1E17; }
+#article .package-header h2 { padding: 14px 0; font-size: 15px; line-height: 20px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; color: #1E1E17; }
+
+/* buttons/tabs */
+
+#sni-bd .btn-nav { margin-bottom: 14px; }
+#sni-bd .btn-nav ul { overflow:hidden; }
+#sni-bd .btn-nav ul li { float:left; margin:0 2px 0 0; }
+#sni-bd .btn-nav ul li a { display:block; font:bold 13px/17px "trebuchet ms"; background:url(http://static-img.frontdoor.com/images/v.1.2.9/bground-sprite.png) 0 -164px repeat-x; text-decoration:none; border-radius:2px; -webkit-border-radius:2px; -moz-border-radius:2px; color:#fff; height:17px; text-transform:uppercase; padding:4px 14px; }
+#sni-bd .btn-nav ul li a:hover { background-position:0 -189px; }
+#sni-bd .btn-nav ul li a:active { background-position:0 -214px; color:#eebea3; }
+#sni-bd .btn-nav ul li a.selected { font:bold 13px/17px "trebuchet ms"; color:#fff; height:17px; background:url(http://static-img.frontdoor.com/images/v.1.2.9/bground-sprite.png) 0 -239px repeat-x; text-transform:uppercase; border-radius:2px; -webkit-border-radius:2px; -moz-border-radius:2px; padding:4px 14px; }
+
+#article .button-nav li{float:left;margin-right:2px;}
+#article .hub{margin-bottom: 21px; clear:both;}
+#article .hub a{ color: #a41d21; font-family: "trebuchet ms", sans-serif; font-size: 15px; }
+#article .hub em{font-weight:normal;}
+#article .hub sup{font-size:46%;line-height:1;}
+
+#pkg-tp-nav { width:980px; z-index:990; background:url(http://static-img.frontdoor.com/images/v.1.2.0/bground-sprite.png) repeat-x 0 0; border-top-left-radius:2px; -webkit-border-top-left-radius:2px; -moz-border-radius-topleft:2px; border-top-right-radius:2px; -webkit-border-top-right-radius:2px; -moz-border-radius-topright:2px; margin:0 auto; }
+#pkg-tp-nav>ul { width:980px; z-index:990; height:41px; margin:0 auto; }
+#pkg-tp-nav>ul>li { z-index:990; position:relative; float:left; margin:0 0 0 3px; }
+#pkg-tp-nav>ul>li+li { margin:0; }
+#pkg-tp-nav>ul>li:hover { position:relative; }
+#pkg-tp-nav>ul>li>a { display:block; font:bold 15px/41px "trebuchet ms"; color:#fff; padding:0 14px; }
+#pkg-tp-nav>ul>li>a.sel { background-image: none; background-color: #fff; color: #1e1e17; }
+#pkg-tp-nav>ul>li>a.sel em { background:url(http://static-img.frontdoor.com/images/v.1.2.0/global-sprite.png) no-repeat -983px -253px; }
+#pkg-tp-nav>ul>li>a:hover,
+#pkg-tp-nav>ul>li>a.active { color:#fff; background:url(http://static-img.frontdoor.com/images/v.1.2.0/bground-sprite.png) repeat-x 0 -41px; }
+#pkg-tp-nav>ul>li>a:active { color:#999; background:url(http://static-img.frontdoor.com/images/v.1.2.0/bground-sprite.png) repeat-x 0 -82px; }
+#pkg-tp-nav>ul>li>a em,
+#pkg-tp-nav>ul>li>a:hover em { background:url(http://static-img.frontdoor.com/images/v.1.2.0/global-sprite.png) no-repeat -983px -239px; margin:0 0 0 5px; padding:0 2px 0 0; }
+#pkg-tp-nav>ul>li>a:active em { background:url(http://static-img.frontdoor.com/images/v.1.2.0/global-sprite.png) no-repeat -983px -253px; }
+#pkg-tp-nav>ul>li.last { border-top-right-radius:5px; -webkit-border-top-right-radius:5px; -moz-border-radius-topright:5px; }
+#pkg-tp-nav > ul li a.first { border-top-left-radius:2px; -webkit-border-top-left-radius:2px; -moz-border-radius-topleft:2px; }
+#pkg-tp-nav .tab_dropdown_top a.tab-list-close { right: 14px; }
+
+#pkg-tp-nav .dropdown { position: absolute; top: 30px; }
+#pkg-tp-nav .dropdown h3 { color: #A41D21; }
+
+#sni-tmpl-header #dh-tour-dropdown,
+#sni-tmpl-header #dh-sweeps-dropdown, 
+#sni-tmpl-header #dh-explore-dropdown { top: 310px; }
+
+#sweeps-enter #dh-comeback-dropdown { position: absolute; top: 330px; z-index:999999; left: 440px; display: none; }
+#sweeps-enter #dh-comeback-dropdown { margin-bottom: 0; }
+#sweeps-enter #dh-comeback-dropdown a.tab-list-close { right: 14px; }
+
+
+/* ADDED 08-16-2012 (for large header / banner with sub-nav and sub-menu) */
+#sni-hd {height:auto;}
+#sni-hd h1 { margin: 7px; height: 125px; background: transparent url("http://hgtv.sndimg.com/HGTV/2012/07/23/UO2012_banner-terrace_s980x125.jpg") top left no-repeat }
+.nl-bd .nl-optional li {margin-right:0;}
+#sni-hd ul.nav { width: 100%; background-color: #eceae6; float: left;}
+#sni-hd ul.nav li { float: left; padding: 0 14px; margin-top: 1px;}
+#sni-hd ul.nav li a { font: bold 15px/39px "trebuchet ms"; /* color: #4a8dbb */ }
+#sni-hd ul.nav li.sel { background: #454440 url(images/nav-sel-border-top.jpg) top center repeat-x; border-radius: 4px 4px 0 0 }
+#sni-hd ul.nav li.sel a { color: #fff }
+#sni-hd .nav li.s {margin-left: 10px;}
+
+#sni-hd ul.sub-nav { width: 100%; background-color: #454440; float: left;}
+#sni-hd ul.sub-nav li { float: left; padding: 0 18px; margin-top: 1px;}
+#sni-hd ul.sub-nav li a { font: bold 13px/30px "trebuchet ms"; color: #a4c6dd }
+#sni-hd ul.sub-nav li a:hover { color: #fff }
+#sni-hd ul.sub-nav li.sel { background: transparent url(images/sub-nav-sel.jpg) bottom center no-repeat; }
+#sni-hd ul.sub-nav li.sel a { color: #fff }
+#sni-hd ul.sub-nav li.finals {height: 3px; background-position: 430px 100%; float: none; }
+
+#sni-hd .tab_dropdown_top a.tab-list-close { right: 14px; }
+#sni-hd .dropdown {display:none;position:absolute;/* USE margin-top:+/-abpx; TO raise and lower the dropdown */margin-top:-10px;z-index:100;}
+#sni-hd .dropdown h3 {color: #A41D21;}
+
+#sni-hd>ul>li>a em,
+#sni-hd>ul>li>a:hover em { background:url("http://static-img.frontdoor.com/images/v.1.2.0/global-sprite.png") no-repeat -986px -338px; margin:0 0 0 5px; padding:0 2px 0 0; }
+#sni-hd>ul>li>a:active em { background:url(http://static-img.frontdoor.com/images/v.1.2.0/global-sprite.png) no-repeat -986px -338px; }
+
+.tab_dropdown ul li {float:none !important;}
+.tab_dropdown ul li a {font:12px Arial, Helvetica, sans-serif !important;}
+
+
+#article #article_tools { background-image: none; padding-bottom: 0; margin-bottom: 14px; }
+
+/* content layout */
+#article #sni-w { width: 630px; float: left; margin: 0 0 14px; position: relative;}
+#article #sni-e { width: 322px; float: left; margin: 0 0 14px 14px;}
+#article #sni-we { width: 420px; margin-left: 11px; float: right; }
+#article #sni-ww { width: 198px; float: right; }
+
+/* sponsor */
+#article #sni-share { text-align: center; vertical-align: middle; margin-bottom: 14px; line-height: 40px;  }
+
+#article #sni-share p,
+#article #sni-share ul,
+#article #sni-share li { display: inline; line-height: 40px; }
+#article #sni-share li img { padding-left: 7px; vertical-align: middle; }
+
+/*************/
+/* WEST RAIL */
+/*************/
+
+/* intro */
+#sni-w .intro p { color: #1E1E17; font: 15px/20px "Trebuchet MS", Arial, Helvetica, sans-serif; margin-bottom: 14px; }
+#sni-w span.sponsor-multi-logo { float: right; position: relative; }
+#sni-w span.sponsor-multi-logo em { color: #666; font: normal 11px Arial, Helvetica, sans-serif; left: -4px; position: relative; top: -15px; }
+
+/* leads */
+
+/* coming-soon lead */
+#article #sni-w .pkg-lead-single { position: relative; margin-bottom: 14px; min-height: 300px; height: auto !important; *height: 300px; }
+#article #sni-w .pkg-lead-single h2 { font-family: "Trebuchet MS", sans-serif; font-size: 14px; color: #000; font-weight: bold; margin-bottom: 3px; }
+#article #sni-w .pkg-lead-single h2,
+#article #sni-w .pkg-lead-single p,
+#article #sni-w .pkg-lead-single ul { margin-left: 414px; margin-bottom: 5px; }
+#article #sni-w .pkg-lead-single p.img { margin-left: 0; width: 400px; height: 300px; overflow: hidden; position: absolute; top: 0; left: 0; }
+
+/* lander lead */
+#article #lander #pkg-lead { width: 630px; padding-top: 21px; margin-bottom: 21px; background: #fbfaf7 url(images/category-lead-border.gif) 0 0 no-repeat; position: relative; }
+#article #lander #pkg-lead #pkg-lead-inner { width: 602px; padding: 0 14px 21px; background: url(images/category-lead-border.gif) 0 100% no-repeat; min-height: 200px; height: auto !important; *height: 200px; }
+#article #lander #pkg-lead p { line-height: 17px; }
+#article #lander #pkg-lead p.cta { margin-top: 3px; }
+#article #lander #pkg-lead p.cta a { font-weight: bold; }
+#article #lander #pkg-lead h2 { position: absolute; top: -999em; left: -999em; }
+#article #lander #pkg-lead h3 { font-family: "Trebuchet MS", sans-serif; font-size: 13px; line-height: 13px; margin-bottom: 10px; font-weight: bold; color: #1e1e17; }
+#article #lander #pkg-lead #pkg-lead-primary { width: 266px; padding-right: 14px; float: left; border-right: 1px dotted #d8d7ce; }
+#article #lander #pkg-lead #pkg-lead-secondary { width: 321px; float: left; border-left: 1px dotted #d8d7ce; margin-left: -1px; }
+#article #lander #pkg-lead #pkg-lead-secondary li { padding: 14px; border-top: 1px dotted #d8d7ce; clear: both; }
+#article #lander #pkg-lead #pkg-lead-secondary .orangeBullets li { padding: 0 0 0 11px; border-top: none; clear: both; }
+#article #lander #pkg-lead #pkg-lead-secondary li.first { padding-top: 0; border-top: none; }
+
+#article #lander #pkg-lead #pkg-lead-secondary li h2,
+#article #lander #pkg-lead #pkg-lead-secondary li p,
+#article #lander #pkg-lead #pkg-lead-secondary li ul { margin: 0 0 3px 130px; }
+#article #lander #pkg-lead #pkg-lead-secondary li ul.orangeBullets { margin-left: 0; }
+#article #lander #pkg-lead #pkg-lead-secondary li p.cta a { font-weight: bold; }
+#article #lander #pkg-lead #pkg-lead-secondary li p.img { margin: 0 0 14px 0; width: 120px; height: 90px; float: left; overflow: hidden; }
+#article #lander #pkg-lead #pkg-lead-secondary li p.img a { display: block; }
+#article #lander #pkg-lead #pkg-lead-secondary li p.img img { display: block; }
+/* lander */
+#article h3 { font-family: "Trebuchet MS", sans-serif; font-size: 13px; line-height: 13px; margin-bottom: 10px; font-weight: bold; color: #1e1e17; }
+
+/* two feature */
+#article .two-feature li { width: 306px; margin-left: 3px; float: left; position: relative; min-height: 90px; height: auto !important; *height: 90px;}
+#article .two-feature li.mod2 { margin-left: 0px; }
+#article .two-feature h4 { margin: 0 0 4px 99px; font-weight: bold; font-size: 16px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; }
+#article .two-feature h4 a { text-decoration: underline; }
+#article .two-feature p { margin-left: 99px; }
+#article .two-feature p a { font-weight: bold; }
+#article .two-feature p.img { width: 92px; height: 69px; overflow: hidden; position: absolute; top: 0; left: 0; margin-left: 0; position: absolute; top: 0px; left: 0px; }
+
+/* three feature */
+#article .three-feature li { width: 185px; margin: 0 0 14px 20px; float: left; position: relative; min-height: 205px; height: auto !important; *height: 205px;}
+#article .three-feature li.mod3 { margin: 0 0 14px 0; }
+#article .three-feature h4 { margin: 116px 0 4px; font-weight: bold; font-size: 16px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
+#article .three-feature h4 a { text-decoration: underline; }
+#article .three-feature p.img { width: 182px; height: 106px; overflow: hidden; position: absolute; top: 0; left: 0; }
+#article .three-feature p.cta a { font-weight: bold; }
+
+/* split image list */
+#article .split-image-list { position: relative; }
+#article .split-image-list h4 { font-weight: bold; }
+#article .split-image-list p { margin: 4px 0 10px; line-height: 1.35em; }
+#article .split-image-list p.img { width: 266px; height: 200px; position: absolute; top: 0px; left: 0px; }
+#article .split-image-list ul { margin-left: 280px; }
+
+
+/******************/
+/* WEST/EAST RAIL */
+/******************/
+
+/* related links */
+#article #sni-we .related-link ul { margin: 21px 0; }
+#article #sni-we .related-link { padding: 11px 0; border-top: 1px dotted #ddd; position: relative; min-height: 83px; height: auto !important; *height: 83px; }
+#article #sni-we .related-link.first { padding-top: 0; border-top: none; }
+#article #sni-we .related-link h3 { font-family: "Trebuchet MS", sans-serif; font-size: 16px; line-height: 18px; font-weight: bold; margin-bottom: 7px; }
+#article #sni-we .related-link p { line-height: 17px; }
+#article #sni-we .related-link p,
+#article #sni-we .related-link ul { margin: 0 103px 3px 0; }
+#article #sni-we .related-link p.img { margin-right: 0; position: absolute; width: 92px; height: 69px; top: 21px; right: 0; }
+#article #sni-we .related-link.first p.img { margin-right: 0; position: absolute; width: 92px; height: 69px; top: 0; right: 0; }
+#article #sni-we .related-link p.cta a { font-weight: bold; }
+
+
+
+
+/*************/
+/* EAST RAIL */
+/*************/
+
+/* gutter */
+#article .hp_gutter_box { background:url(http://images.frontdoor.com/FDOOR/homepage/images/static/gutter-box-bg.gif) no-repeat; margin:0 0 14px; padding:1px 0 0 0; }
+#article .hp_gutter_box .no_title { margin-top:3px; }
+#article .hp_gutter_box ul { margin:0; padding-bottom:10px; padding-top:5px; }
+#article .hp_gutter_box ul li { padding:14px 14px 0 24px; background-position:14px 11px; }
+#article .hp_gutter_box ul a, 
+#article .hp_gutter_box ul a:hover {  }
+#article .hp_gutter_box h3 { font:bold 13px/16px "trebuchet ms",sans-serif;color:#1E1E17; }
+#article .hp_gutter_box_inside { background:url(http://images.frontdoor.com/FDOOR/homepage/images/static/gutter-box-inside-bg.gif) no-repeat; margin:0 4px; }
+#article #bigbox-wrap { padding:7px 7px 0 7px; }
+#article .hp_gutter_box_bottom { background:url(http://images.frontdoor.com/FDOOR/homepage/images/static/gutter-box-bottom.gif) no-repeat; height:11px; overflow:hidden; text-indent:-9999px; }
+#article .hp_gutter_box_h5 { background:url(http://images.frontdoor.com/FDOOR/homepage/images/static/gutter-box-h5.gif) no-repeat; margin:3px 4px 3px 4px; }
+#article .hp_gutter_box_h5 h5 { padding:8px 10px 9px 10px; font:bold 14px/14px "trebuchet ms",sans-serif; color:#FFF; }
+
+
+
+#article .contentRowWrapper { border: none; margin-top: 21px; padding: 0; }
+
+/* three feature - thanks */
+#article #sweeps-thanks .three-feature { margin-left: -31px; }
+#article #sweeps-thanks .three-feature li { width: 182px; margin: 0 0 14px 31px; float: left; position: relative; min-height: 205px; height: auto !important; *height: 205px;}
+#article #sweeps-thanks .three-feature h4 {  margin: 10px 0; font-weight: bold; font-size: 14px; }
+#article #sweeps-thanks .three-feature h4 a { font-size: 13px; font-weight: bold; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; color: #1e1e17; text-decoration: none; }
+#article #sweeps-thanks .three-feature p.img { width: 182px; height: 106px; overflow: hidden; position: relative; top: auto; left: auto; }
+#article #sweeps-thanks .three-feature p.cta { margin: 10px 0; font-weight: bold; }
+
+/* Thanks - GMC Second Chance */
+#gmcEntryForm a.external { display: block; margin: 0 auto; width: 490px; margin-bottom: 21px; }
+
+
+/* #article #lander #sni-w h3 { color: #1E1E17; font: bold 13px/16px "trebuchet ms",sans-serif; margin: 0 0 7px; padding: 0 0 2px; } */
+#article #lander #sni-w .contentRowWrapper h3 { border-bottom: 2px solid #D3D3C9; color: #A41D21; font: bold 16px/16px "trebuchet ms",sans-serif; margin: 0 0 14px; padding: 0 0 2px; }
+
+
+/* fine print */
+#article #pkg-fineprint {	clear: both;	border-top: 1px dotted #ddd;	padding-top: 14px;	margin-bottom: 14px;	font-size: 11px;	line-height: 17px; color: #adadad; }
+#article #sni-ww .sponsor-area-1 h4 { margin-bottom: 14px; font-size: 12px; font-weight: bold; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; color: #1e1e17; }
+/* coming soon sponsors */
+#article #sni-w .sponsor-area-1 { background: url(images/coming-soon-sponsors-border.gif) 0 0 no-repeat; padding-top: 21px; margin-bottom: 14px; }
+#article #sni-w #sponsors-inner { background: url(images/coming-soon-sponsors-border.gif) 0 100% no-repeat; padding: 0 14px 21px; }
+#article #sni-w .sponsor-area-1 ul { margin-bottom: 14px; }
+#article #sni-w .sponsor-area-1 div.first ul { padding-bottom: 14px; border-bottom: 1px dotted #ddd; }
+#article #sni-w .sponsor-area-1 li { display: inline; padding-right: 7px; line-height: 40px;  }
+#article #sni-w .sponsor-area-1 li img { vertical-align: middle; }
+#article #sni-w .sponsor-area-1 h3 { font-family: "Trebuchet MS", sans-serif; font-size: 16px; line-height: 1; font-weight: bold; color: #1e1e17; }
+#article #sni-w .sponsor-area-1 div.first h3  { font-size: 19px; line-height: 1; }
+
+
+/* sweeps */
+
+/* sweeps main */
+#article #sweeps-main #pkg-lead { width: 630px; margin-bottom: 21px; position: relative; min-height: 300px; height: auto !important; *height: 300px; }
+#article #sweeps-main #pkg-lead #pkg-lead-inner { width: 615px; padding: 0 0 21px 14px; }
+#article #sweeps-main #pkg-lead h2 { font-family: "Trebuchet MS", sans-serif; font-size: 14px; color: #000; font-weight: bold; margin-bottom: 3px; }
+#article #sweeps-main #pkg-lead h2,
+#article #sweeps-main #pkg-lead p,
+#article #sweeps-main #pkg-lead ul { margin-left: 400px; margin-bottom: 5px; }
+#article #sweeps-main #pkg-lead p.img { margin-left: 0; width: 400px; height: 300px; overflow: hidden; position: absolute; top: 0; left: 0; }
+
+#article #sweeps #sponsors { background: url(images/coming-soon-sponsors-border.gif) 0 0 no-repeat; padding-top: 21px; margin-bottom: 14px; }
+#article #sweeps #sponsors-inner { background: url(images/coming-soon-sponsors-border.gif) 0 100% no-repeat; padding: 0 14px 21px; }
+#article #sweeps #sponsors ul { margin-bottom: 14px; }
+#article #sweeps #sponsors div.first ul { padding-bottom: 14px; border-bottom: 1px dotted #ddd; }
+#article #sweeps #sponsors li { display: inline; padding-right: 20px; line-height: 40px;  }
+#article #sweeps #sponsors li img { vertical-align: middle; }
+#article #sweeps #sponsors h3 { font-family: "Trebuchet MS", sans-serif; font-size: 16px; line-height: 1; font-weight: bold; color: #1e1e17; }
+#article #sweeps #sponsors div.first h3  { font-size: 19px; line-height: 1; }
+
+/* sweeps main fine print */
+#article #sweeps-main #pkg-fineprint { clear: both; border-top: 1px dotted #ddd; padding-top: 14px; margin-bottom: 14px; font-size: 11px; line-height: 17px; color: #adadad; }
+
+/* sweeps main sponsors */
+#article #sweeps-main #sponsors { background-color: #fbfaf7; padding-top: 21px; margin-bottom: 14px; border: solid 1px #deded7; border-radius: 4px; }
+#article #sweeps-main #sponsors-inner { padding: 0 14px 21px; }
+#article #sweeps-main #sponsors ul { margin: -17px 0 14px; }
+#article #sweeps-main #sponsors div.first ul { padding-bottom: 14px; border-bottom: 1px dotted #ddd; }
+#article #sweeps-main #sponsors li { display: inline; padding-right: 14px; line-height: 40px;  }
+#article #sweeps-main #sponsors li img { vertical-align: middle; }
+#article #sweeps-main #sponsors h3 { font-family: "Trebuchet MS", sans-serif; font-size: 16px; line-height: 1; font-weight: bold; color: #1e1e17; }
+#article #sweeps-main #sponsors div.first h3  { font-size: 19px; line-height: 1; }
+
+/* sweeps enter */
+
+/* sweeps enter lead */
+
+#article #sweeps-enter #pkg-lead { position: relative; margin-bottom: 14px; }
+#article #sweeps-enter #pkg-lead h2 { font-family: "Trebuchet MS", sans-serif; font-size: 16px; color: #1e1e17; font-weight: bold; margin-bottom: 7px; }
+#article #sweeps-enter #pkg-lead h2,
+#article #sweeps-enter #pkg-lead p,
+#article #sweeps-enter #pkg-lead ul { margin-bottom: 5px; }
+#article #sweeps-enter #pkg-lead p.img { margin-left: 0; width: 266px; height: 200px; overflow: hidden; position: absolute; top: 0; left: 0; }
+
+/* sweeps enter overlay */
+#article #sweeps-enter .overlay{display:none;position:absolute;top:64px;right:0;width:443px;height:363px;z-index:104;}
+#article #sweeps-enter .overlay .hd{padding-top:7px;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups.png) no-repeat -2355px 0;_background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups.gif) no-repeat -2355px 0;height:9px;_font-size:0;}
+#article #sweeps-enter .overlay .hd h3{font-size:108%;font-weight:bold;line-height:1.6;font-family:'trebuchet ms';text-transform:uppercase;_font-size:14px;_background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups.png) repeat-y scroll -2798px 0;}
+#article #sweeps-enter .overlay .hd h3 span{display:block;padding:2px 14px;margin:0 7px;}
+#article #sweeps-enter .overlay .hd .close{position:absolute;top:13px;right:15px;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups.png) no-repeat scroll left top;width:12px;height:12px;text-indent: -9999px;cursor:pointer;}
+#article #sweeps-enter .overlay .bd{clear:both;padding:23px 7px 4px;position:static;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups.png) repeat-y -2798px 0;_background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups.gif) repeat-y -2798px 0;_float:left;padding:23px 7px 4px;}
+#article #sweeps-enter .overlay .bd p{margin:0 14px 14px;}
+#article #sweeps-enter .overlay .ft{padding-left:2px;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups.png) no-repeat -3241px -6px;_background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups.gif) no-repeat -3241px -6px;height:10px;_font-size:0;}#eve_msgboards 
+
+/* sweeps enter form */
+
+.nl-bd .button-nav{margin-bottom:14px;}
+.nl-bd p{margin-bottom:14px;}
+.nl-bd .nl-choose h4{margin-bottom:14px;}
+.nl-bd .nl-choose h4 label{padding-left:7px;}
+.nl-bd .nl-list li {margin-bottom:12px;padding-bottom:8px;border-bottom:1px dotted #ddd;line-height:1.539;font-size:100%;}
+.nl-bd .nl-list li ul li, .nl-bd .nl-list li.checkall { margin-bottom:10px; padding-bottom: 0; border-bottom: 0;line-height:1.539; font-size:100%; }
+.nl-bd .nl-list li.checkall label { color: #4a8dbb; font-weight: bold; text-decoration: underline; }
+.nl-bd .nl-list li div.left { margin-right: 10px; }
+.nl-bd .nl-list ul.columns li{ border-bottom: 0; }
+.nl-bd .nl-list li.last{margin-bottom:0;border-bottom:0;}
+.nl-bd .nl-list label{margin-left:2px;*margin-left: 0;}
+.nl-bd .nl-list .check-all{margin-bottom:10px;border-bottom:0;}
+.nl-bd .nl-list .desc{padding-top:2px;margin-left:19px;color: #999;font-size:85%;*margin-left: 24px;}
+.nl-bd .nl-list .desc p{margin-bottom:0;}
+.nl-bd .nl-list .samplelink{float:right;margin-left:20px;}
+
+.nl-bd .nl-list .magazine { position: relative; }
+.nl-bd .nl-list .magazine p { margin-left: 100px; min-height: 111px; height: auto !important; height: 111px; }
+.nl-bd .nl-list .magazine p.img { position: absolute; top: 0; left: 0px; margin: 0; }
+
+.nl-bd .nl-your-info li{float:left;margin-bottom:10px;}
+.nl-bd .text-box{width:210px;margin-left:14px;}
+.nl-bd .row-first-child .text-box, .nl-bd .row-only-child .text-box {margin-left:0;}
+.nl-bd .nl-optional ul{margin-bottom:5px;}
+.nl-bd .nl-optional li{float:left;margin-right:15px;}
+.nl-bd .nl-optional label{margin-left:6px;vertical-align:middle;}
+.nl-bd .nl-optional .radio{vertical-align:middle;}
+.nl-bd .acco-res{_float:left;_width:602px;}
+.nl-bd .acco-res .acco-link{cursor:pointer;}
+.nl-bd .acco-res .acco-bd{display:none;}
+.nl-bd .acco-res .nl-list{padding:12px 7px 0 7px;}
+.nl-bd .acco-res .nl-list .last{padding-bottom:0;}
+.nl-bd .site-logos a{height:49px;display:block;margin-right:6px;background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/logos.png) 0 0 no-repeat;float:left;text-indent: -999em;}
+.nl-bd .site-logos a.hgtv{background-position:0 0;width:88px;}
+.nl-bd .site-logos a.diy{background-position: -97px 0;width:89px;}
+.nl-bd .site-logos a.fln{background-position: -193px 0;width:90px;}
+.nl-bd .site-logos a.gac{background-position: -292px 0;width:87px;}
+.nl-bd .site-logos a.rcpczaar{background-position: -390px 0;width:88px;}
+.nl-bd .site-logos a.hgtvpro{background-position: -486px 0;width:88px;margin-right:0;}
+.nl-bd .site-logos{height:49px;overflow:hidden;}
+.nl-bd .find{text-align:center;}
+.nl-bd .button{width:75px;}
+
+li.gender { margin-bottom: 16px; }
+
+.nl-legal{clear:both;padding-top:3px;}
+.nl-legal label{font-size: .85em;}
+.nl-errors li,.nl-loading,.nl-thank-you{display:none;}
+.nl-errors li{color: #F00;}
+
+#sni-we .nl-bd{margin:14px 0;padding:0;}
+#sni-we .nl-bd .fieldset, #sni-we #stf .fieldset{padding-bottom:14px; margin-bottom:14px !important;padding-bottom:0;background:none;_float:left;_width:406px;border: 0;}
+#sni-we .nl-bd legend, #sni-we #stf legend{color:#000;font:bold 123.1%/1 "Trebuchet MS",sans-serif;*display:block; *margin-left: -8px;padding-bottom:14px;}
+#sni-we .nl-bd p{padding-bottom:0;}
+#sni-we .nl-bd button.button, #sni-we #stf button.button{width:auto;overflow:visible;white-space:nowrap;}
+#sni-we .nl-bd button.button span em, #sni-we #stf button.button span em{padding:0 7px 0 0;}
+#sni-we .nl-bd .text-box{width:203px;}
+#sni-we #stf .text-box{width:175px;}
+#sni-we .nl-bd .text-box.lg{width:420px;}
+#sni-we .nl-bd .text-box.sm{width:94px;}
+#sni-we .nl-bd .text-box.acode{float:left;width:80px;margin-right:8px;}
+#sni-we .nl-bd .text-box.pnum{float:left;width:114px;_width:117px;}
+#sni-we .nl-bd .dd-list{width:87px;}
+#sni-we .nl-bd .nl-your-info .text-box li, #sni-we #stf .nl-your-info li{margin-right:15px;_margin-right:10px;}
+#sni-we .nl-bd .nl-your-info li label{ white-space:nowrap; margin-left: 14px; }
+#sni-we .nl-bd .nl-your-info li.row-first-child label, #sni-we .nl-bd .nl-your-info li.row-only-child label { white-space:nowrap; margin-left: 0; }
+#sni-we .nl-bd .nl-your-info li.row-only-child { width: 420px; }
+#sni-we .nl-bd .nl-your-info .text-box li label{margin-left:6px;vertical-align:middle;}
+#sni-we .nl-bd .nl-optional h3{font:bold 123.1%/1 "Trebuchet MS",sans-serif;margin-bottom:14px;}
+#sni-we .nl-bd .nl-optional li{float:none; position: relative;}
+#sni-we .nl-bd .nl-optional li.last{margin-bottom:14px;}
+#sni-we .nl-bd .nl-optional input { position: absolute; top: 3px; *top: -3px;}
+#sni-we .nl-bd .nl-optional label{ vertical-align:top;padding-left:12px; *padding-left:15px; }
+
+.text-box span{display:block;margin:0 2px 0 0;padding:0 0 0 8px;line-height:0;background:transparent url(images/textbox-bg.png) no-repeat 0 0;}
+.text-box span em{display:block;height:26px;line-height:26px;margin:0 -2px 0 0;padding:0 8px 0 0;background:transparent url(images/textbox-bg.png) no-repeat right 0;font-style:normal;}
+.text-box span input{width:100%;border:0;color: #333;outline:none;font-weight:normal;background:transparent;*margin-top: 6px;}
+.text-box span input.input-hint{color: #989898;}
+.textarea-box{width:420px;height:201px;margin:0;padding:0;line-height:0;background: #fff url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-forms.png) no-repeat left 0;_width:416px;}
+.textarea-box span{display:block;height:193px;margin:0 0 0 8px;padding:5px 8px 0 0;border:0;background: #fff url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-forms.png) no-repeat right 0;*margin-left: 4px;*padding-right: 11px;_padding-right:8px;}
+.textarea-box span textarea{width:100%;height:191px;border:0;outline:none;color: #333;font-family:arial;font-weight:normal;background-color:transparent;resize:none;}
+
+.form-errors{display:none;margin-bottom:14px;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-errors.png) repeat-y -602px 0;_width:100%;}
+.form-errors .hd{padding:10px 15px 0 15px;color: #c00;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-errors.png) no-repeat 0 0;}
+.form-errors .hd p{margin-bottom:0;}
+.form-errors .bd{padding:0 15px 10px 15px;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-errors.png) no-repeat -1204px bottom;}
+.form-errors li{padding-left:13px;color: #3d3d3d;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/error-bullet.png) no-repeat 0 10px;line-height:1.7;}
+.form-errors .close{float:right;margin:0 -5px 0 0;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups.png) no-repeat left 0;width:12px;height:12px;text-indent: -9999px;cursor:pointer;}
+form label.error, form h4.error{padding:2px 4px;color: #fff;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/error-label-bg.png) repeat-x 0 0;}
+
+.ftnt { font-size: 10px; color: #999; }
+
+/* sweeps enter sponsors */
+#sponsors h4 { border-top: 1px dotted #ddd; margin-top: 14px; padding-top: 14px; font-weight: bold; }
+#sponsors h4.first { border-top: none; padding-top: 0; margin-top: 0; }
+#sponsors .spnsr-list li { text-align: center; margin-bottom: 14px; }
+/* rules */
+
+#article #sweeps-rules #pkg-lead { }
+#article #sweeps-rules #pkg-lead p,
+#article #sweeps-rules #sni-we p { margin-bottom: 7px; line-height: 1.6; }
+
+/* prizes */
+
+/* prizes lead */
+#article #sweeps-prizes #pkg-lead { margin-bottom: 14px;}
+#article #sweeps-prizes #pkg-lead h2 { font-family: "Trebuchet MS", sans-serif; font-size: 16px; color: #1e1e17; font-weight: bold; margin-bottom: 7px; }
+#article #sweeps-prizes #pkg-lead h2,
+#article #sweeps-prizes #pkg-lead p,
+#article #sweeps-prizes #pkg-lead ul { margin-left: 0; }
+#article #sweeps-prizes #pkg-lead p { line-height: 18px; margin-bottom: 4px; }
+#article #sweeps-prizes #pkg-lead p.first { font-weight: bold; }
+
+/* prizes sponsors */
+#article #sweeps-prizes .sponsors h3 { font-family: "Trebuchet MS", sans-serif; font-size: 19px; line-height: 1; font-weight: bold; color: #1e1e17; }
+#article #sweeps-prizes .sponsors ul { margin-bottom: 14px; }
+#article #sweeps-prizes .sponsors li { position: relative; margin-bottom: 14px; padding-top: 14px; border-top: 1px dotted #ddd; min-height: 151px; height: auto !important; height:151px; }
+#article #sweeps-prizes .sponsors li.first { border-top: none;  }
+#article #sweeps-prizes .sponsors li.first { border-top: none; padding-top: 0; }
+#article #sweeps-prizes .sponsors h4 { font-size: 12px; line-height: 17px; font-weight: bold; color: #1e1e17; }
+#article #sweeps-prizes .sponsors h4,
+#article #sweeps-prizes .sponsors p { margin: 0 180px 7px 0; }
+#article #sweeps-prizes .sponsors p.no-img { margin-right: 0; }
+#article #sweeps-prizes .sponsors p.img { margin-right: 0; width: 160px; height: 120px; overflow: hidden; position: absolute; right: 10px; }
+
+#article #sweeps-prizes #presented-by { background: url(images/coming-soon-sponsors-border.gif) 0 0 no-repeat; padding-top: 21px; position: relative; margin-bottom: 14px; }
+#article #sweeps-prizes #presented-by-inner { background: url(images/coming-soon-sponsors-border.gif) 0 100% no-repeat; padding: 0 14px 21px; }
+
+/* thanks lead */
+#article #sweeps-thanks #no-thanks { display: none; }
+
+#article #sweeps-thanks #pkg-lead { width: 630px; padding-top: 21px; margin-bottom: 21px; background: #fbfaf7 url(images/category-lead-border.gif) 0 0 no-repeat; position: relative; }
+#article #sweeps-thanks #pkg-lead #pkg-lead-inner { width: 602px; padding: 0 14px 21px; background: url(images/category-lead-border.gif) 0 100% no-repeat; }
+#article #sweeps-thanks #pkg-lead #pkg-lead-inner p { margin-bottom: 3px; }
+#article #sweeps-thanks #pkg-lead #pkg-lead-inner p.cta a { font-weight: bold; }
+
+#sweeps-thanks #pkg-lead .pkg-lead-primary { width: 266px; padding-right: 14px; float: left; border-right: 1px dotted #d8d7ce; }
+#sweeps-thanks #pkg-lead .pkg-lead-primary p.img { height: 200px; width: 266px; margin-bottom: 4px; }
+#sweeps-thanks #pkg-lead .pkg-lead-secondary { width: 307px; float: left; border-bottom: 1px dotted #d8d7ce; padding: 0 0 14px 14px; margin-bottom: 14px; position: relative; }
+#sweeps-thanks #pkg-lead .pkg-lead-secondary.last { border-bottom: none; }
+#sweeps-thanks #pkg-lead .pkg-lead-secondary.image-lead { min-height: 92px; height: auto !important; height: 92px; }
+#sweeps-thanks #pkg-lead .pkg-lead-secondary.image-lead img { position: absolute; left: 14px; width: 92; height: 69; }
+#sweeps-thanks #pkg-lead .pkg-lead-secondary.image-lead p { margin: 0 0 3px 106px; }
+
+#sweeps-thanks #two-feature .nl-bd li, #sweeps-thanks #two-feature .nl-bd li .text-box{background:none;width:190px;margin-right:14px;padding:0;_margin-right:5px;}
+#sweeps-thanks #two-feature .nl-bd li.lastname, #sweeps-thanks #two-feature .nl-bd li.confirm{margin-right:0;}
+#sweeps-thanks #pkg-articles h2 { position: static; }
+#sweeps-thanks .snap_wrap { width: 320px; margin: 14px auto; }
+#sweeps-thanks .intro { margin-bottom: 21px; }
+
+/* oops lead */
+
+
+
+/* other info */
+#article #sni-ww h2 { position: absolute; top: -999em; left: -999em; }
+
+#article #sni-ww .related-topics { width: 196px; padding-top: 4px; background: url(images/ww-module-bg.gif) 0 0 no-repeat; margin-bottom: 14px; }
+#article #sni-ww .related-topics .mod-hd { margin: 0 3px 3px; padding-top: 3px; background: url(images/ww-header-bg.gif) 0 0 no-repeat; }
+#article #sni-ww .related-topics .mod-hd h3 { padding: 3px 10px 6px;  margin: 0px; background: url(images/ww-header-bg.gif) 0 100% no-repeat; font-family: "Trebuchet MS", sans-serif; font-size: 12px; line-height: 16px; font-weight: bold; color: #1e1e17; border: none; }
+#article #sni-ww .related-topics .mod-bd { margin: 0 3px; padding: 8px 10px 6px; background: url(images/ww-content-bg.gif) 0 0 no-repeat; color: #575744; line-height: 17px; }
+#article #sni-ww .related-topics .mod-bd ul.orangeBullets { margin-top: 0; }
+#article #sni-ww .related-topics .mod-ft { height: 8px; background: url(images/ww-footer-bg.gif) 0 100% no-repeat; }
+#article #sni-ww .related-topics .mod-bd.image-lead{ position: relative; padding: 10px; min-height: 79px; height: auto !important; *height: 79px; }
+
+#article #sni-w #sni-we div.mod { width: 420px; padding-top: 4px; background: url(images/we-module-bg.gif) 0 0 no-repeat; margin-bottom: 14px; }
+#article #sni-w #sni-we div.mod.nohd { width: 420px; padding-top: 4px; background: url(images/we-module-nohd-bg.gif) 0 0 no-repeat; margin-bottom: 14px; }
+#article #sni-w #sni-we div.mod-hd { margin: 0 3px 3px; padding-top: 3px; background: url(images/we-header-bg.gif) 0 0 no-repeat; }
+#article #sni-w #sni-we div.mod-hd h3 { padding: 3px 10px 3px;  margin-bottom: 0px; background: url(images/we-header-bg.gif) 0 100% no-repeat; font-family: "Trebuchet MS", sans-serif; font-size: 12px; line-height: 16px; font-weight: bold; color: #1e1e17;  }
+#article #sni-w #sni-we div.mod-bd { margin: 0 3px; padding: 8px 10px 6px; background: url(images/we-content-bg.gif) 0 0 no-repeat; color: #575744; line-height: 17px; }
+#article #sni-w #sni-we div.mod-bd ul.orangeBullets { margin-top: 0; }
+#article #sni-w #sni-we div.mod-ft { height: 8px; background: url(images/we-footer-bg.gif) 0 100% no-repeat; }
+#article #sni-w #sni-we div.mod-bd.image-lead{ position: relative; padding: 10px 10px 0; min-height: 79px; height: auto !important; *height: 79px; }
+
+#article #sni-w div.mod { width: 616px; padding-top: 28px; background: url(images/w-module-bg-border.jpg) 0 0 no-repeat; margin-bottom: 14px; position: relative; }
+#article #sni-w div.mod h3 { margin: 0 21px 21px; font-family: "Trebuchet MS", sans-serif; font-size: 19px; line-height: 19px; font-weight: bold; color: #a41d21; border-bottom: 2px solid #d3d3c9; }
+#article #sni-ww div.mod-bd h3 { margin: 4px 0; line-height: 12px; border-bottom: none; }
+#article #sni-ww div.mod-bd h3 a { font-size: 12px; line-height: 12px; font-family: arial; font-weight: bold; }
+#article #sni-w div.mod-bd { margin: 0 21px; color: #575744; line-height: 17px; }
+#article #sni-w div.mod-bd p { margin-bottom: 0; }
+#article #sni-ww div.mod-bd.image-lead h4 { margin-left: 102px; line-height: 69px; }
+#article #sni-ww div.mod-bd.image-lead h4 a { font-weight: bold; }
+#article #sni-ww div.mod-bd.image-lead p.img { margin-left: 0; width: 92px; height: 69px; overflow: hidden; position: absolute; top: 10px; left: 10px; }
+#article #sni-w div.mod-bd ul.orangeBullets { margin-top: 0; }
+#article #sni-w div.mod-ft { height: 21px; background: url(images/w-module-bg-border.jpg) bottom left no-repeat; }
+#article  #sni-w div.mod-bd.image-lead{ position: relative; padding: 10px 10px 0; min-height: 79px; height: auto !important; *height: 79px; }
+#article #sni-w a.close-mod { position: absolute; right: 10px; top: 10px; height: 15px; width: 15px; }
+/* right rail */
+#sni-e h2 { position: absolute; top: -999em; left: -999em; }
+
+/* gutter boxes */
+#sni-e .hp_gutter_box{background:url(http://images.frontdoor.com/FDOOR/homepage/images/static/gutter-box-bg-transparent.png) no-repeat;margin:14px 0 0;padding:1px 0 0;}
+#sni-e .hp_gutter_box_inside{background:url(http://images.frontdoor.com/FDOOR/homepage/images/static/gutter-box-inside-bg.gif) no-repeat;margin:0 4px;}
+#sni-e .hp_gutter_box_inside.image-lead{ position: relative; padding: 10px 10px 0; min-height: 79px; height: auto !important; *height: 79px; }
+#sni-e .hp_gutter_box_inside.image-lead p,
+#sni-e .hp_gutter_box_inside.image-lead h4,
+#sni-e .hp_gutter_box_inside.image-lead ul { margin-left: 102px; margin-bottom: 7px; }
+#sni-e .hp_gutter_box_inside.image-lead ul.orangeBullets,
+#sni-e .hp_gutter_box_inside.image-lead div.hp_gutter_box_list{ padding-top: 0; }
+#sni-e .hp_gutter_box_inside.image-lead ul.orangeBullets { margin-left: 92px; }
+#sni-e .hp_gutter_box_inside.image-lead ul.orangeBullets.no-indent { margin: 28px 0 0 -7px; }
+#sni-e .hp_gutter_box_inside.image-lead p.img { margin-left: 0; width: 92px; height: 69px; overflow: hidden; position: absolute; top: 10px; left: 10px; }
+#sni-e .hp_gutter_box_inside.image-lead p.cta { font-weight: bold; }
+
+#sni-e .hp_gutter_box .no_title{margin-top:3px;}
+#sni-e #bigbox-wrap{padding:7px 7px 0;}
+#sni-e .hp_gutter_box_bottom{background:url(http://images.frontdoor.com/FDOOR/homepage/images/static/gutter-box-bottom.gif) no-repeat;height:11px;overflow:hidden;text-indent:-9999px;}
+#sni-e .hp_gutter_box_h5{background:url(http://images.frontdoor.com/FDOOR/homepage/images/static/gutter-box-h5.gif) no-repeat;margin:3px 4px;}
+#sni-e .hp_gutter_box_h5 h5, 
+#sni-e .hp_gutter_box_h5 h3{font:bold 14px/14px "trebuchet ms",sans-serif;color:#FFF;padding:8px 10px 9px;margin:0;}
+/*	#sni-e .hp_gutter_box_list { padding-top:14px;} */
+#sni-e .hp_gutter_box ul{padding-bottom:0;padding-top:14px;margin:0;}
+#sni-e .hp_gutter_box ul li{background-position:14px 6px;padding:0 14px 7px 24px;}
+
+/* countdown timer */
+#sni-e .hp_gutter_box.countdown .hp_gutter_box_inside { padding: 12px 10px 0; color: #575744; }
+#sni-e .hp_gutter_box.countdown .cd-hd { padding: 18px 0 12px 7px; margin: 0 0 11px; background: url(images/countdown-bg.jpg) 0 0 no-repeat; }
+#sni-e .hp_gutter_box.countdown .cd-hd .cd-hd-inner { background-color: #262626; background-color: rgba(0,0,0,.75); *background-color: #262626; color: #fff; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; padding: 4px 7px; width: 148px; }
+#sni-e .hp_gutter_box.countdown .cd-hd h4 { font-family: "Trebuchet MS", sans-serif; font-size: 21px; line-height: 22px; color: #fff; margin: 0 0 7px; }
+#sni-e .hp_gutter_box.countdown .cd-hd .cd-timer { font-size: 14px; line-height: 14px; color: #d4422a; text-transform: uppercase; font-weight: bold; }
+#sni-e .hp_gutter_box.countdown .cd-hd .cd-timer span.days { display: block; float: left; }
+#sni-e .hp_gutter_box.countdown .cd-hd .cd-timer span.time { display: block; float: right; }
+#sni-e .hp_gutter_box.countdown p { line-height: 18px; }
+#sni-e .hp_gutter_box.countdown abbr { border-bottom: none; }
+
+/* footer search */
+#article .fd-search { background: url(images/search-bg.png) 0 0 no-repeat; margin-bottom: 21px; }
+#article .fd-search p.input { margin: 0; padding: 0; width: 541px; float: left; position: relative; }
+#article .fd-search p.input label,
+#article .fd-search p.input input { display: block; margin: 0; padding: 0; float: left; font-size: 15px; *line-height: normal; position: relative; *position: static; }
+#article .fd-search p.input label { color: #999; width: 30%; *width: 29.8%; margin-right: 1%; *margin-right: 0.9%; }
+#article .fd-search p.input input { width: 69%; *width: 68.9%;  margin-top: 9px;  }
+
+
+#article .fd-search.ready p.input label,
+#article .fd-search.ready p.input input {  margin-left: 2%; *margin-left: 1.8%; width: 98%; }
+#article .fd-search.ready p.input label { z-index: 3; position: absolute; left: 0; top: 2px; *top: 6px; }
+#article .fd-search.ready p.input input { border: 0; background-color: transparent; }
+#article .fd-search p.submit { margin: 0; padding: 0; width: 81px; float: right; }
+
+#article #sni-ww hr { margin: 7px 0; border: none 0; border-top: 1px dotted #adadad; width: 100%; height: 1px; }
+#om-overrides {display:none;}
+
+#smartbutton img { margin-left: 10px; }
+
+
+
+
+
+
+/* for sweeps */
+#article #sni-w a, #article #sni-w a:hover {text-decoration:none;}
+#article #coming-soon #sponsors li {padding-right: 16px;}
+#article h3 {border-bottom:none;}
+#article #article_tools {margin-bottom: 21px;}
+
+#article #sweeps-prizes #pkg-lead p { color: #1e1e17; font: 15px "Trebuchet MS", Arial, Helvetica, sans-serif; }
+#sponsors .spnsr-list.top {margin-top:5px;}
+#sponsors .spnsr-list li {height: 32px;}
+#article #sni-w #sni-ww div.mod-bd {padding-bottom:10px;margin-bottom:-10px;}
+#article #sni-w {margin-bottom:0;}
+#article #pkg-fineprint {margin-bottom:0;}
+#article #article_tools {margin-bottom: 21px;}
+
+

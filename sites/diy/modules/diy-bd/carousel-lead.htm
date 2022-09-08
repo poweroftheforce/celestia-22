@@ -1,0 +1,190 @@
+<div class="carousel-lead">
+	<cscript src="http://images.diynet.com/webdiy/pkgs/js/diy.carousel-lead.js" type="text/javascript"></cscript>
+	<div class="toc"></div>
+	<div class="next"><a href="#" rel="Carousel - Next">Next</a></div>
+	<div class="prev"><a href="#" rel="Carousel - Prev">Previous</a></div>
+	<ul class="clrfix">
+		<li class="clrfix">
+			<div class="img">
+				<p class="img"><img src="../sites/diy/images/400x300-lead.jpg" alt=""/></p>
+				<p class="caption">Watch Thursdays at 10pm/9c on DIY Network</p>
+			</div>
+			<div class="info">
+				<h3><a href="#">Header</a></h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+				<ul class="list">
+					<li><a href="#">Call to Action</a></li>
+				</ul>
+				<div class="media">
+					<div id="vplayer-1"></div>
+					<cscript language="javascript">var s1 = new SNI.DIY.Player.HomePageLead('vplayer-1', '51782', $.fn.player_callback);</cscript>
+					<img class="dummy-player" src="../sites/diy/images/home-page-lead.jpg"/>
+				</div>
+				<ul class="show-nav">
+					<li><a href="#">Call to Action</a></li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+	<div class="sponsor-multi-logo"><img class="temp-multi-logo" src="../sites/diy/images/diy_multi_88x31.jpg"/></div>
+</div>
+<script>
+({
+	name	: 'Carousel Lead',
+	
+	help	: 'help-carousel-lead',
+	
+	init : function() {
+		C.loadAssets({
+			'local-css' : '../sites/diy/const/css/modules/lead-carousel.css'
+		});
+	},
+	
+	controlsOpened : function() {
+		var module = C.module.current,
+			currentChild = 0,
+			numChildren = $(module).children('ul').children().length;
+				
+		function showChild(num) {
+			$(module).children('ul').children().css('display', 'none');
+			$(module).children('ul').children().eq(num).css('display', 'block');
+			C.drawControls(null, null, num);
+		};
+		
+		$(module).find('.next').click(function() {
+			currentChild += 1;
+			if ( currentChild >= $(module).children('ul').children().length ) {
+				currentChild = 0;
+			}
+			showChild(currentChild);
+		});
+
+		$(module).find('.prev').click(function() {
+			currentChild -= 1;
+			if ( currentChild <= -1 ) {
+				currentChild = $(module).children('ul').children().length - 1;
+			}
+			showChild(currentChild);
+		});
+		
+		showChild(currentChild);
+	},
+	
+	controlsClosed : function() {
+		$(module).children('ul').children().css('display', 'block');
+	},
+	
+	sections : [{
+		name : 'Lead Section',
+		elements : [{
+			name		: 'Lead Carousel',
+			loopOnce	: true,
+			start		: 1,
+			selector	: "{m}.children('ul')",
+			markup		: '<li class="clrfix"><div class="img"><p class="img"><img src="../sites/diy/images/400x300-lead.jpg" alt=""/></p><p class="caption">Watch Thursdays at 10pm/9c on DIY Network</p></div><div class="info"><h3><a href="#">Header</a></h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p><ul class="list"><li><a href="#">Call to Action</a></li></ul><div class="media"><div id="vplayer-{x}"></div><cscript language="javascript">var s{x} = new SNI.DIY.Player.HomePageLead(\'vplayer-{x}\', \'51782\', $.fn.player_callback);</cscript><img class="dummy-player" src="../sites/diy/images/home-page-lead.jpg"/></div><ul class="show-nav"><li><a href="#">Call to Action</a></li></ul></div></li>',
+			elements	: [{
+				name		: 'Lead {x} Image',
+				selector	: "{p}.children('li').eq({x}).find('.img').find('img')",
+				editables	: [{
+					alt : {
+						label : 'Lead {x} Image Alt',
+						value : ''
+					},
+					src : {
+						label : 'Lead {x} Image Source',
+						value : '../sites/diy/images/400x300-lead.jpg'
+					}
+				}]
+			}, {
+				name		: 'Lead {x} Caption',
+				selector	: "{p}.children('li').eq({x}).find('.caption')",
+				editables	: [{
+					html : {
+						label : 'Copy',
+						value : 'Watch Thursdays at 10pm/9c on DIY Network'
+					}
+				}]
+			}, {
+				name		: 'Lead {x} Header',
+				selector	: "{p}.children('li').eq({x}).find('.info').find('h3').find('a')",
+				editables	: [{
+					href : {
+						label : 'URL',
+						value : '#'
+					},
+					html : {
+						label : 'Copy',
+						value : 'Header'
+					}
+				}]
+			}, {
+				name		: 'Lead {x} Copy',
+				selector	: "{p}.children('li').eq({x}).find('.info').find('p').eq(0)",
+				editables	: [{
+					html : {
+						label : 'Copy',
+						value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}, {
+				name		: 'Lead {x} List',
+				selector	: "{p}.children('li').eq({x}).find('.list')",
+				markup		: '<li><a href="#">Call to Action</a></li>',
+				elements	: [{
+					name		: 'List Item {x}',
+					selector	: "{p}.find('li').eq({x}).find('a')",
+					editables	: [{
+						href : {
+							label : 'URL',
+							value : '#'
+						},
+						html : {
+							label : 'Copy',
+							value : 'Call to Action'
+						}
+					}]
+				}]
+			}, {
+				name		: 'Lead {x} Video Id',
+				selector	: "{p}.children('li').eq({x}).find('.media').find('cscript')",
+				extract		: /\(.*'(.*?)'.*,.*'.*'.*,.*\$\.fn\.player_callback.*\)/,
+				editables	: [{
+					html	: {
+						label	: 'Id',
+						value	: 'vplayer-1'
+					}
+				}]
+			}, {
+				name		: 'Lead {x} Video Channel',
+				selector	: "{p}.children('li').eq({x}).find('.media').find('cscript')",
+				extract		: /\(.*'.*'.*,.*'(.*?)'.*,.*\$\.fn\.player_callback.*\)/,
+				editables	: [{
+					html	: {
+						label	: 'Channel',
+						value	: '51782'
+					}
+				}]
+			}, {
+				name		: 'Lead {x} Nav',
+				selector	: "{p}.children('li').eq({x}).find('.show-nav')",
+				markup		: '<li><a href="#">Call to Action</a></li>',
+				elements	: [{
+					name		: 'List Item {x}',
+					selector	: "{p}.find('li').eq({x}).find('a')",
+					editables	: [{
+						href : {
+							label : 'URL',
+							value : '#'
+						},
+						html : {
+							label : 'Copy',
+							value : 'Call to Action'
+						}
+					}]
+				}]
+			}]
+		}]
+	}]
+		
+})
+</script>

@@ -1,0 +1,67 @@
+<div class="prize-intro intro">
+	<h2>Header</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	<p>The grand prize includes:</p>
+	<ul class="list">
+		<li>List Item 1</li>
+	</ul>
+</div>
+<script>
+({
+	name : 'Sweeps Prize Intro',
+	
+	init : function() {
+		C.sortable('.list');
+	},
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('h2')",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Copy',
+			selector	: "$({m}).find('p').eq(0)",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}, {
+			name		: 'Prize List Header',
+			selector	: "$({m}).find('p').eq(1)",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'The grand prize includes:'
+				}
+			}]
+		}, {
+			name		: 'List',
+			selector	: "$({m}).find('ul')",
+			markup		: '<li>List Item {x}</li>',
+			elements	: [{
+				name		: 'List Item {x}',
+				selector	: "$({m}).find('li').eq({x})",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+})
+</script>

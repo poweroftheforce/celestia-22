@@ -1,0 +1,67 @@
+<div class="pod project-pod concrete">
+	<div class="hd"><h4>More From This Feature</h4></div>
+	<div class="bd">
+		<div class="details">
+			<ul class="list">
+				<li><a href="#">List Item 1</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script>
+({
+	name				: 'Project Pod',
+	
+	sections	: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({module}).find('h4')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'More From This Feature'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'List',
+			selector	: "$({module}).find('.list')",
+			markup		: '<li><a href="#">List Item {x}</a></li>',
+			elements	: [{
+				name		: 'List Item {x}',
+				selector	: "$({module}).find('ul').children().eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	init: function() {
+		C.sortable('.list');
+	},
+
+	buttons: [{
+		'btn-diy-css-color': {
+			html	: 'Header Color',
+			click	: function() {
+				$('#dlg-diy-css-color')
+					.dialog('open')
+					.dialog('option', 'width', 450)
+					.dialog('option', 'height', 200)
+					.attr('module', 'pod project-pod');
+			}
+		}
+	}]
+})
+</script>

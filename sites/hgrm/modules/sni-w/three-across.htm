@@ -1,0 +1,241 @@
+<div class="pod">
+	<div class="bd three-across">
+		<h4>Header</h4>
+		<ul>
+			<li>
+				<h5><a href="#">Feature 1 Title</a></h5>
+				<a href="#"><img src="../sites/hgrm/images/160x120_med.jpg" alt="" height="120" width="160"/></a>
+				<a href="#">Feature 1 CTA</a>
+			</li>
+			<li>
+				<h5><a href="#">Feature 2 Title</a></h5>
+				<a href="#"><img src="../sites/hgrm/images/160x120_med.jpg" alt="" height="120" width="160"/></a>
+				<a href="#">Feature 2 CTA</a>
+			</li>
+			<li class="last">
+				<h5><a href="#">Feature 3 Title</a></h5>
+				<a href="#"><img src="../sites/hgrm/images/160x120_med.jpg" alt="" height="120" width="160"/></a>
+				<a href="#">Feature 3 CTA</a>
+			</li>
+		</ul>
+	</div>
+	<div class="hr"><hr/></div>
+</div>
+<script>
+({
+	name	: '3 Across',
+	
+	init: function() {
+		C.sortable('ul');
+	},
+	
+	buttons	: [{
+		'btn-swap-copy': {
+			html	: 'Swap (copy / anchor)',
+			click	: function() {
+				
+				var module = C.module.current,
+					a = $($('ul li', module).eq(0).find('a').eq(2))[0],
+					markup = '<a href="#">Feature ' + i + ' CTA</a>';
+				
+				markup = !a ? '<a href="#">Feature ' + i + ' CTA</a>' : '<p>Lorum ipsum Dolor Amet Consecutor</p>';
+				
+				$('ul li', module).each(function(i, el) {
+					$(this).find('p').remove();
+					$(this).find('a').eq(2).remove();
+					$(this).append(markup);
+				});
+				
+				C.drawControls();
+				C.save();
+			}
+		}
+	}],
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h4')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Feature 1 Section',
+		elements	: [{
+			name		: 'Title',
+			selector	: "{m}.find('li').eq(0).find('h5').find('a')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Feature 1 Title',
+					max_width	: '160px'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('li').eq(0).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: 'sites/hgtv/images/160x120.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('li').eq(0).find('p')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorum ipsum Dolor Amet Consecutor',
+					max_width	: '160px'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('li').eq(0).find('a').eq(2)",
+			affects		: "{m}.find('li').eq(0).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '160px'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Feature 2 Section',
+		elements	: [{
+			name		: 'Title',
+			selector	: "{m}.find('li').eq(1).find('h5').find('a')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Feature 1 Title',
+					max_width	: '160px'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('li').eq(1).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: 'sites/hgtv/images/160x120.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('li').eq(1).find('p')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorum ipsum Dolor Amet Consecutor',
+					max_width	: '160px'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('li').eq(1).find('a').eq(2)",
+			affects		: "{m}.find('li').eq(1).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '160px'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Feature 3 Section',
+		elements	: [{
+			name		: 'Title',
+			selector	: "{m}.find('li').eq(2).find('h5').find('a')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Feature 1 Title',
+					max_width	: '160px'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('li').eq(2).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: 'sites/hgtv/images/160x120.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('li').eq(2).find('p')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorum ipsum Dolor Amet Consecutor',
+					max_width	: '160px'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('li').eq(2).find('a').eq(2)",
+			affects		: "{m}.find('li').eq(2).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '160px'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

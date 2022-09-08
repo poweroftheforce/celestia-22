@@ -1,0 +1,96 @@
+<div class="gallery-tease clrfix">
+	<p><a href="#">Header</a></p>
+	<a href="#"><img src="../sites/hgtv/images/92x69_sm.jpg" alt="" height="69" width="92"/></a>
+	<a href="#"><img src="../sites/hgtv/images/92x69_sm.jpg" alt="" height="69" width="92"/></a>
+	<a href="#" class="gallery-link"><span class="plain">View Photo Gallery</span></a>
+	<a href="#"><img src="../sites/hgtv/images/92x69_sm.jpg" alt="" height="69" width="92"/></a>
+</div>
+<script>
+({
+	name			: 'Gallery Tease',
+	
+	sections: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('p').find('a')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Call to Action (for all)',
+			selector	: "{m}.find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Image Section',
+		elements	: [{
+			name		: 'Image 1',
+			selector	: "{m}.find('img').eq(0)",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}, {
+			name		: 'Image 2',
+			selector	: "{m}.find('img').eq(1)",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}, {
+			name		: 'Image 3',
+			selector	: "{m}.find('img').eq(2)",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}]
+	}]
+	
+})
+</script>

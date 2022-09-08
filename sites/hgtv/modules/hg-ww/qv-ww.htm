@@ -1,0 +1,71 @@
+<div class="pod qv-ww">
+	<div class="hd"><h4>Quick Vote</h4></div>
+	<div id="inputPanel" class="bd clrfix">
+		<p>MPC-question</p>
+		<form id="quick-vote-poll" method="post" action="javascript:void(0);">
+			<blockquote class="errormsg">Pick one to vote!</blockquote>
+			<ul>
+				<li class="clrfix">
+					<input type="radio" name="Rating" class="required" value="1" id="opt-1">
+					<label for="opt-1">MPC-item1-label</label>
+				</li>
+			</ul>
+			<p class="submit">
+				<button class="button" id="quick-vote-submit" type="submit"><span>Vote</span></button>
+				<span>or</span> <a id="poll-result-link" href="javascript:void(0);">View Results</a>
+			</p>
+		</form>
+	</div>
+	<div class="ft"></div>
+</div>
+<script>
+({
+	
+	name					: 'Quick Vote',
+	
+	buttons: [{
+		'btn-toggle-module-sorting': {
+			html	: 'Toggle Module Sorting',
+			click	: function() {
+				$.common.toggleControlsOpener(this);
+				var ctrl = $.common.getControlsFromButton(this);
+				var module = ctrl.module;
+				$.common.toggleModuleSorting({
+					module			: module,
+					controls	: ctrl,
+					sortables	: {
+						"$(module).find('ul')": {}
+					}
+				});
+			}
+		},
+		'btn-add-list-item': {
+			html	: 'Add Answer',
+			click	: function() {
+				addHTML({
+					btn			: this,
+					append		: '#quick-vote-poll ul',
+					html		: '<li class="clrfix"><input type="radio" name="Rating" class="required" value="#mpc_inc" id="opt-#mpc_inc"><label for="opt-#mpc_inc">MPC-item#mpc_inc-label</label></li>',
+					smart_words	: {
+						'mpc-hgww-qvww-list-item#mpc_inc-section': {
+							type			: 'section',
+							label			: 'Answer #mpc_inc Section'
+						},
+						'MPC-item#mpc_inc-label': {
+							append			: '.mpc-hgww-qvww-list-item#mpc_inc-section',
+							default_value	: 'Answer #mpc_inc',
+							type			: 'text',
+							label			: 'Answer #mpc_inc'
+						}
+					}
+				});
+			}
+		},
+		'btn-delete-list-item': {
+			html	: 'Del Answer',
+			click	: function() { $.common.deleteHTML(this, '#quick-vote-poll ul'); }
+		},
+	}]
+	
+})
+</script>

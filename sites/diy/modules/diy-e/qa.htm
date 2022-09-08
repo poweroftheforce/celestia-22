@@ -1,0 +1,120 @@
+<div class="pod qa">
+	<div class="hd">
+		<h4>Expert Q&amp;A</h4>
+		<span class="links"><a href="#">submit question</a> | <a href="#">see all</a></span>
+	</div>
+	<div class="bd">
+		<ul class="rr-qa">
+			<li class="first">
+				<p class="question"><strong class="show">Title:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+				<p class="from-who">-Susan J, OH</p>
+				<p class="answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</span></p>
+			</li>
+		</ul>
+	</div>
+</div>
+<script>
+({
+	name : 'Expert Q&A',
+	
+	init : function() {
+		C.loadAssets({
+			'rr-qa' : '../sites/diy/const/css/modules/right-rail-qa.css'
+		});
+	},
+	
+	sections : [{
+		name : 'Header Section',
+		elements : [{
+			name : 'Header',
+			selector : "{m}.find('.hd').find('h4')",
+			editables : [{
+				html : {
+					label : 'Text',
+					value : 'Expert Q&amp;A'
+				}
+			}]
+		}, {
+			name : '(submit question) Link',
+			selector : "{m}.find('.hd').find('a').eq(0)",
+			editables : [{
+				href : {
+					label : 'URL',
+					value : '#'
+				}
+			}]
+		}, {
+			name : '(see all) Link',
+			selector : "{m}.find('.hd').find('a').eq(1)",
+			editables : [{
+				href : {
+					label : 'URL',
+					value : '#'
+				}
+			}]
+		}]
+	}, {
+		name : 'QA Section',
+		elements : [{
+			name : 'QA List',
+			selector : "{m}.find('.bd').find('ul.rr-qa')",
+			markup : '<li><p class="question"><strong class="show">Title:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p><p class="from-who">-Susan J, OH</p><p class="answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</span></p></li>',
+			elements : [{
+				name : 'Question Title',
+				selector : "{p}.find('li').eq({x}).find('.show')",
+				editables : [{
+					html : {
+						label : 'Text',
+						value : 'Title:',
+						max_width : '245px'
+					}
+				}]
+			}, {
+				name : 'Question',
+				selector : "{p}.find('li').eq({x}).find('.question')",
+				prepend : true,
+				editables : [{
+					html : {
+						label : 'Text',
+						value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+						max_width : '245px'
+					}
+				}]
+			}, {
+				name : 'From Who',
+				selector : "{p}.find('li').eq({x}).find('.from-who')",
+				editables : [{
+					html : {
+						label : 'Text',
+						value : '-Susan J, OH',
+						max_width : '245px'
+					}
+				}]
+			}, {
+				name : 'Answer',
+				selector : "{p}.find('li').eq({x}).find('.answer')",
+				editables : [{
+					html : {
+						label : 'Text',
+						value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+						max_width : '245px'
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	buttons: [{
+		'btn-diy-css-color': {
+			html	: 'Header Color',
+			click	: function() {
+				$('#dlg-diy-css-color')
+					.dialog('open')
+					.dialog('option', 'width', 450)
+					.dialog('option', 'height', 200)
+					.attr('module', 'pod qa');
+			}
+		}
+	}]
+})
+</script>

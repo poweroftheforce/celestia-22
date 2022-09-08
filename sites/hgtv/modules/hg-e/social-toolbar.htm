@@ -1,0 +1,59 @@
+<div class="widget-pod social-toolbar">
+	<div id="toolbar" class="clrfix"></div>
+	<cscript src="http://w.sharethis.com/button/sharethis.js#publisher=87e14ce7-dc4d-40d2-ada1-38b20bfad22c&amp;type=website&amp;post_services=email%2Cfacebook%2Ctwitter%2Cgbuzz%2Cmyspace%2Cdigg%2Csms%2Cwindows_live%2Cdelicious%2Cstumbleupon%2Creddit%2Cgoogle_bmarks%2Clinkedin%2Cbebo%2Cybuzz%2Cblogger%2Cyahoo_bmarks%2Cmixx%2Ctechnorati%2Cfriendfeed%2Cpropeller%2Cwordpress%2Cnewsvine&amp;button=false"></cscript> 
+	<cscript src="http://hgtv.sndimg.com/webhgtv/hg20/pkgs/js/futon3.js"></cscript> 
+	<cscript>
+	(function() {
+	var subject = "Sweepstakes Subject",
+		msg = "Enter for a chance to win fun and functional gadgets in our 'That's cool! What is it?' sweepstakes.",
+		url = "http://www.hgtv.com/thats-cool-what-is-it-enter/package/index.html";
+	ftn.share(subject, msg, url, subject);
+	})();
+	</cscript>
+	<img class="dummy-image" src="../sites/hgtv/images/social-toolbar.jpg"/>
+</div>
+<script>
+({
+	name : 'Social Media Toolbar Widget',
+	
+	init : function() {
+		C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+	},
+	
+	sections : [{
+		name		: 'Email',
+		elements	: [{
+			name		: 'Subject Line',
+			selector	: "{m}.find('cscript').eq(2)",
+			extract		: /subject.=."(.*?)",/,
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Sweepstakes Subject'
+				}
+			}]
+		}, {
+			name		: 'Message',
+			selector	: "{m}.find('cscript').eq(2)",
+			extract		: /msg.=."(.*?)",/,
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Sweepstakes Subject'
+				}
+			}]
+		}, {
+			name		: 'URL',
+			selector	: "{m}.find('cscript').eq(2)",
+			extract		: /url.=."(.*?)";/,
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Sweepstakes Subject'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

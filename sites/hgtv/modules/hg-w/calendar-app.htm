@@ -1,0 +1,320 @@
+<div class="calendar-app clrfix">
+	<div class="clrfix">
+		<ul id="cal-tabs" class="clrfix">
+			<li><a href="#" id="cal-view-week" class="selected"><span>Week View</span></a></li>
+			<li><a href="#" id="cal-view-month"><span>Month View</span></a></li>
+		</ul>
+		<div id="menu-ical" class="flyout-menu">
+			<a href="#" class="open">Have ideas sent to your calendar</a>
+			<div class="dd20">
+				<p>Have Help Around the Home updates sent to your calendar program monthly by selecting from the available options below.</p>
+				<ul class="list">
+					<li><a href="http://hgtv.sndimg.com/webhgtv/2013/hath/march/calendar.ics" class="outlook">Outlook</a></li>
+					<li><a href="http://hgtv.sndimg.com/webhgtv/2013/hath/march/calendar.ics" class="ical">iCal</a></li>
+					<li><a href="http://hgtv.sndimg.com/webhgtv/2013/hath/march/calendar.ics" class="google">Google</a></li>
+					<li><a href="http://hgtv.sndimg.com/webhgtv/2013/hath/march/calendar.ics" class="yahoo">Yahoo!</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="cal-app" class="clrfix">
+		<div id="cal-data" class="clrfix">
+			<!--
+			<div id="detail-0201"><a target="_blank" href="#"><img src="http://hgtv.sndimg.com/HGTV/2013/02/13/DP_Jennifer-Jones-green-contemporary-bedroom_4x3_al.jpg"></a>
+				<h2><a target="_blank" href="#">Header</a></h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.<br/>
+					<a target="_blank" href="#">Call to Action</a></p>
+			</div>
+			-->
+		</div>
+		<ul class="clrfix" id="cal-days"><li>Sunday</li><li>Monday</li><li>Tuesday</li><li>Wednesday</li><li>Thursday</li><li>Friday</li><li>Saturday</li></ul>
+		<div id="cal-block">
+			<!--
+			note: these guys get wrapped in .cal-row and inactiv days get added before and after
+			- this happens when the user changes the month and year
+			<div id="2-1" class="day selected">
+				<div class="cal-date">1</div>
+				<div class="cal-bd"><img width="60" height="45" src="http://hgtv.sndimg.com/HGTV/2013/02/13/DP_Jennifer-Jones-green-contemporary-bedroom_4x3_sm.jpg">Header</div>
+			</div>
+			-->
+		</div>
+	</div>
+	<cscript src="http://10.76.19.200/packages/hgtv/Help Around The Home/2013/cal-app.js"></cscript>
+	<cscript>(function(){$.fn.calApp({'month':'February','year':2013});})();</cscript>
+</div>
+<script>
+({
+	name : 'Calendar App',
+	
+	init : function() {
+		/* note: assets get loaded in reverse order because they are prepended */
+		clog("Q");
+		C.loadAssets({
+			'calendar-css'	: 'http://10.76.19.200/packages/hgtv/Help Around The Home/2013/cal-app.css',
+			'calendar-js'	: 'http://10.76.19.200/packages/hgtv/Help Around The Home/2013/cal-app.js'
+		});
+
+		var d = new Date(),
+			months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		//$('#txt-change-month').val(months[d.getMonth()]);
+		//$('#txt-change-year').val(d.getFullYear());
+		
+//		clog("R");
+//		C.runJS({'calendar-js-runner':'http://10.76.19.200/packages/hgtv/Help Around The Home/2013/cal-app.js'});
+	},
+	
+	drawDays : function() {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+			month = $('#txt-change-month').val(),
+			year = parseInt($('#txt-change-year').val(), 10),
+			monthNumber = !isNaN(parseInt(month, 10)) ?
+							parseInt(month, 10) :
+							$.inArray(month, months) != -1 ? 
+							$.inArray(month, months) + 1 :
+							1;
+		
+		var THIS_MONTH = monthNumber - 1,
+			LAST_MONTH = THIS_MONTH - 1,
+			NEXT_MONTH = THIS_MONTH + 1,
+			calmonth = monthNumber.toString();
+		
+		calendar = $('#cal-app');
+		
+		$('#cal-block').html('');
+		
+		$('#cal-box').remove();
+		
+		calendarBlock = $('#cal-block');
+		
+		/* Add detail window */
+		calendarBox = '<div id="cal-box" class="small-lead clrfix"><div id="cal-nav-wrap"><div id="cal-nav" class="clrfix">';
+		calendarBox += '<span id="prev" class="prev-btn">Previous</span>';
+		calendarBox += '<span id="next" class="next-btn">Next</span>';
+		calendarBox += '</div></div><div id="cal-detail" class="clrfix"><img alt="" src="http://hgtv.sndimg.com/HGTV/2013/02/13/DP_Jennifer-Jones-green-contemporary-bedroom_4x3_al.jpg"><h2><a href="#" target="_blank">Header</a></h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.<br><a href="#" target="_blank">Call to Action</a></p></div></div>';
+		
+		calendar.prepend(calendarBox);
+//	
+//		/* Set up default day */
+//		month = month.toString();
+//		
+//		if ( month !== calmonth ) {
+//			day = '1';
+//			month = calmonth;
+//			startDate = month + '-' + day;
+//		} else {
+//			day = now.getDate();
+//			startDate = month + '-' + day;
+//			calendarBlock
+//				.find('#' + startDate)
+//				.addClass('current')
+//				.find('.cal-date')
+//				.append(' &nbsp; Today');
+//		}
+		/* get a number from 0 to 6 referencing Sun -> Sat respectively */
+		var daysInMonth = new Date(year, THIS_MONTH + 1, 0).getDate(),
+			startDayNumber = new Date(year, THIS_MONTH, 1).getDay(),
+			endDayNumber = new Date(year, THIS_MONTH, daysInMonth).getDay();
+			
+		for ( var i = 0; i < daysInMonth; i++ ) {
+			var day = i + 1;
+			$('#cal-block').append('<div id="' + monthNumber + '-' + day + '" class="day active-day"><div class="cal-date">' + day + '</div><div class="cal-bd"><img width="60" height="45" src="http://hgtv.sndimg.com/HGTV/2013/02/13/DP_Jennifer-Jones-green-contemporary-bedroom_4x3_sm.jpg">Header</div></div>');
+			$(C.module.current).find('#cal-data').append('<div id="detail-' + (monthNumber.toString().length == 1 ? '0' + monthNumber : monthNumber ) + (day.toString().length == 1 ? '0' + day : day ) + '" class="day"><a target="_blank" href="#"><img src="http://hgtv.sndimg.com/HGTV/2013/02/13/DP_Jennifer-Jones-green-contemporary-bedroom_4x3_al.jpg"></a><h2><a target="_blank" href="#">Header</a></h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.<br/><a target="_blank" href="#">Call to Action</a></p></div>');
+		}
+		
+		/* add in inactive days on each end of the calendar */
+		/* prepend inactive days before day 1 (if applicable) */
+		for ( var i=0; i<startDayNumber; i++ ) {
+			$('#cal-block').prepend('<div class="day inactive-other"></div>');
+		}
+		
+		/* append inactive days after day x (if applicable) */
+		for ( var i=endDayNumber + 1; i<7; i++ ) {
+			$('#cal-block').append('<div class="day inactive-other"></div>');
+		}
+		
+		var numChildren = $('#cal-block').children().length,
+			numWraps = numChildren / 7;
+		
+		/* prepend the wraps so we know where to start */
+		for ( var i = 0; i < numWraps; i++ ) {
+			$('#cal-block').prepend($('<div class="cal-row clrfix"/>'));
+		}
+		
+		for ( var i = (numChildren + numWraps) - 1; i >= numWraps ; i-- ) {
+			var n = parseInt(((i - numWraps) + 0) / 7, 10),
+				cr = $('#cal-block').find('.cal-row').eq(n);
+			
+			$('#cal-block').children().eq(i).prependTo(cr);
+		}
+		
+		$('#cal-block').find('.cal-row').children(':last-child').addClass('last');
+		
+		
+//		$.fn.calApp({'month':month,'year':year});
+		$('#cal-block').css({
+			height : 'auto'
+		});
+		
+		$('.cal-row').css({
+			display		: 'block',
+			position	: 'relative'
+		});
+		
+	},
+	
+	beforeReadSections : function() {
+		
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		
+		var month = $.data(C.module.current, 'month') != undefined ? $.data(C.module.current, 'month') : months[new Date().getMonth()];
+		$('#txt-change-month').val(month);
+		
+		var year = $.data(C.module.current, 'year') != undefined ? $.data(C.module.current, 'year') : new Date().getFullYear();
+		$('#txt-change-year').val(year);
+		
+		
+		$.data(C.module.current, 'data').drawDays();
+	},
+	
+	currentMonth : function( month ) {
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+			month = month != undefined ? month : months[new Date().getMonth()];
+		
+		$.data(C.module.current, 'month', month);
+		
+		return month;
+	},
+	
+	currentYear : function( year ) {
+		var year = year != undefined ? year : new Date().getFullYear();
+		
+		$.data(C.module.current, 'year', year);
+		return year;
+	},
+	
+	menu : [{
+		nodeName	: 'label',
+		html		: 'Month: ',
+		append		: [{
+			nodeName	: 'input',
+			val			: function() {
+				var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+				return months[new Date().getMonth()];
+			},
+			attr		: {
+				type	: 'text',
+				id		: 'txt-change-month'
+			},
+			keyup : function(e) {
+				if ( e.keyCode == 13 ) {
+					$.data(C.module.current, 'data').currentMonth($(this).val());
+					$.data(C.module.current, 'data').drawDays();
+				}
+			}
+		}]
+	}, {
+		nodeName	: 'br',
+	}, {
+		nodeName	: 'label',
+		html		: 'Year: ',
+		append		: [{
+			nodeName	: 'input',
+			val			: new Date().getFullYear(),
+			attr		: {
+				type	: 'text',
+				id		: 'txt-change-year'
+			},
+			keyup : function(e) {
+				if ( e.keyCode == 13 ) {
+					$.data(C.module.current, 'data').currentYear($(this).val());
+					$.data(C.module.current, 'data').drawDays();
+				}
+			}
+		}]
+	}],
+	
+	fixInputProps : function( input, value, data ) {
+		var input2 = $(input).parents('.element-wrap').find('.html').eq(0).find('.contenteditable')[0],
+			data = $.data(input2, 'data') || null,
+			options = data.options,
+			children = data.children;
+		
+		$.data(input2, 'data', {
+			options			: options,
+			children		: children,
+			childrenText2	: '<img src="' + value + '" height="45" width="60">{childrenText2}'
+		});
+//		C.drawControls();
+		
+	},
+	
+	setCalendarDetails : function( data ) {
+		var html = $(data.options.selector).parents('.day').html();
+		clog($(data.options.selector).parents('.day'), html);
+		$('#cal-detail').html(html);
+	},
+	
+	sections: [{
+		name		: 'Data Section',
+		elements	: [{
+			name		: 'Day',
+			selectors	: [{
+				selector	: "{m}.find('#cal-block').find('.cal-row').eq(0).find('.active-day').eq(0).find('.cal-bd')",
+				editables	: [{
+					html : {
+						label		: 'Text',
+						value		: 'Header',
+						onlyText	: true/*,
+						callback : function( input, value, data ) { $.data(C.module.current, 'data').fixInputProps(input, value, data); }*/
+					}
+				}]
+			}, {
+				selector	: "{m}.find('#cal-block').find('.cal-row').eq(0).find('.active-day').eq(0).find('img')",
+				editables	: [{
+					src : {
+						label : 'Src',
+						value : 'http://hgtv.sndimg.com/HGTV/2013/02/13/DP_Jennifer-Jones-green-contemporary-bedroom_4x3_sm.jpg',
+						callback : function( input, value, data ) { $.data(C.module.current, 'data').fixInputProps(input, value, data); }/*,
+						updateComplete : function() { C.drawControls(); }*/
+					}
+				}]
+			}, {
+				selector	: "{m}.find('#cal-data').children().eq(0).find('h2').find('a')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Header',
+						updateComplete : function( input, value, data ) { $.data(C.module.current, 'data').setCalendarDetails(data); }
+					}
+				}]
+			}, {
+				selector	: "{m}.find('#cal-data').children().eq(0).find('p')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
+						updateComplete : function( input, value, data ) { $.data(C.module.current, 'data').setCalendarDetails(data); }/*
+						onlyText : false*/
+					}
+				}]
+			}]
+		}]
+		
+//<div id="2-1" class="day selected">
+	//<div class="cal-date">1</div>
+//	<div class="cal-bd"><img width="60" height="45" src="http://hgtv.sndimg.com/HGTV/2013/02/13/DP_Jennifer-Jones-green-contemporary-bedroom_4x3_sm.jpg">Header</div>
+//</div>
+//		elements	: [{
+//			name		: 'Data',
+//			selector	: "{m}.find('cscript').eq(2)",
+//			editables	: [{
+//				html	: {
+//					label	: 'JSON Data Object',
+//					value	: ''
+//				}
+//			}]
+//		}]
+	}]
+	
+})
+</script>

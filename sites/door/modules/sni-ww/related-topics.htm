@@ -1,0 +1,90 @@
+<div class="related-topics">
+	<div class="mod-hd">
+		<h3>Related Topics</h3>
+	</div>
+	<div class="mod-bd">
+		<ul class="orangeBullets">
+			<li><a href="#">List Item 1</a></li>
+		</ul>
+		<hr/>
+		<h3><a href="#">Sub Header</a></h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		<p class="cta"><a href="#">Call to Action</a></p>
+	</div>
+	<div class="mod-ft"></div>
+</div>
+<script>
+({
+	name	: 'Search',
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('.mod-hd').find('h3')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Related Topics'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'List',
+			selector	: "$({m}).find('.orangeBullets')",
+			markup		: '<li><a href="#">List Item {x}</a></li>',
+			elements	: [{
+				name		: 'List Item {x}',
+				selector	: "$({m}).find('.orangeBullets').find('li').eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}, {
+		name		: 'Sub Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('.mod-bd').find('h3').find('a')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Sub Header'
+				}
+			}]
+		}, {
+			name		: 'Sub Copy',
+			selector	: "$({m}).find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label	: 'Copy',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+				}
+			}]
+		}, {
+			name		: 'Sub Call to Action',
+			selector	: "$({m}).find('p').eq(1).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label	: 'Text',
+					value	: 'Call to Action'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

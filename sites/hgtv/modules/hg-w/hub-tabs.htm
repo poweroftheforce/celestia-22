@@ -1,0 +1,59 @@
+<div class="hub-tabs">
+	<ul class="clrfix">
+		<li class="selected"><a href="#"><span>Tab 1</span></a></li>
+	</ul>
+</div>
+<script>
+({
+	name	: 'Hub Tabs Navigation',
+	
+	init : function() {
+		C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+	},
+	
+	sections : [{
+		name		: 'Tab Section',
+		elements	: [{
+			name		: 'Tab Navigation List',
+			selector	: "{m}.children('ul')",
+			markup		: '<li><a href="#"><span>Tab {x}</span></a></li>',
+			elements	: [{
+				name		: 'Tab {x} Copy',
+				selector	: "{p}.children('li').eq({x}).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Tab {x}'
+					}
+				}]
+			}, {
+				name		: 'Tab {x} URL',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				editables	: [{
+					href : {
+						label : 'URL',
+						value : '#'
+					}
+				}]
+			}, {
+				name		: 'Tab {x} Class? ("selected")',
+				selector	: "{p}.children('li').eq({x})",
+				editables	: [{
+					class : {
+						label : 'Class Name',
+						value	: '',
+						type	: 'select',
+						selections	: [{
+							name	: '(select or type names)',
+							value	: 'cnone'
+						}, {
+							name	: 'selected',
+							value	: 'selected'
+						}]
+					}
+				}]
+			}]
+		}]
+	}]
+})
+</script>

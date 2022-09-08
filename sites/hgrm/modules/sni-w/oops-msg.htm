@@ -1,0 +1,37 @@
+<div class="pod">
+	<div class="bd oops-msg">
+		<style>.oops-msg {background: none repeat scroll 0 0 #FEDDD8;border: 1px solid #E6ADA4;height:auto;padding: 1em 1em 0;}</style>
+		<h3>Oops!</h3>
+		<p>Your entry was unsuccessfully submitted. <a href="javascript:history.back();">Please try again.</a></p>
+	</div>
+</div>
+<script>
+({
+	
+	name : 'Oops (page) Introduction Message',
+	
+	sections : [{
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h3')",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Oops!'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p')",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Your entry was unsuccessfully submitted.'
+				}
+			}]
+		}]
+	}]
+	
+});
+</script>

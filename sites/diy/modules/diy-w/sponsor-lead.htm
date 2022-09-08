@@ -1,0 +1,84 @@
+<div class="sponsor-lead clrfix">
+	<div class="sponsor clrfix">
+		<div class="sponsor-multi-logo"><img class="temp-multi-logo" src="../sites/diy/images/diy_multi_88x31.jpg"/></div>
+		<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</h3>
+	</div>
+</div>
+<script>
+({
+	
+	name	: 'Sponsor Lead',
+
+	sections : [{
+		name		: 'Copy Section',
+		elements	: [{
+			name		: 'Copy',
+			selector		: "$({m}).find('h3')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}],
+	
+	init : function() {
+		C.loadAssets({ 'packages-css' : '../sites/diy/const/packages.css' });
+	},
+	
+	checkIntro : function() {
+		$('#sel-logos option[value="' + $(C.module.current).find('.sponsor-multi-logo img').attr('src') + '"]').attr('selected', 'selected');
+	},
+	
+	controlsDrawn : function() {
+		$.data(C.module.current, 'data').checkIntro();
+	},
+	
+	menu : [{
+		nodeName	: 'ul',
+		addClass	: 'clrfix',
+		append		: [{
+			nodeName	: 'li',
+			addClass	: 'logos-wrap',
+			append		: [{
+				nodeName	: 'label',
+				html		: 'Preview with Logo (select size): ',
+				append		: [{
+					nodeName	: 'select',
+					id			: 'sel-logos',
+					append		: [
+						{ nodeName : 'option', val : '', html : 'Select Option' },
+						{ nodeName : 'option', val : '../sites/diy/images/diy_multi_88x31.jpg', html : '88 x 31' },
+						{ nodeName : 'option', val : '../sites/diy/images/diy_multi_68x40.jpg', html : '68 x 40' },
+						{ nodeName : 'option', val : '../sites/diy/images/diy_multi_115x24.jpg', html : '115 x 24' },
+						{ nodeName : 'option', val : '../sites/diy/images/diy_multi_135x20.jpg', html : '135 x 20' },
+						{ nodeName : 'option', val : '', html : 'No Logo' }
+					],
+					change : function() {
+						if ( $(this).val() == '' ) {
+							$(C.module.current).find('.sponsor-multi-logo').html('');
+						} else {
+							$(C.module.current).find('.sponsor-multi-logo').html('<img class="temp-multi-logo" src="' + $(this).val() + '"/>');
+						}
+						C.save();
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	buttons: [{
+		'btn-diy-css-color': {
+			html	: 'Header Color',
+			click	: function() {
+				$('#dlg-diy-css-color')
+					.dialog('open')
+					.dialog('option', 'width', 450)
+					.dialog('option', 'height', 200)
+					.attr('module', 'sponsor-lead');
+			}
+		}
+	}]
+})
+</script>

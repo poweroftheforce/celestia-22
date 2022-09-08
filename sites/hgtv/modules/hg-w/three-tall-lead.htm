@@ -1,0 +1,154 @@
+<div class="static-lead three-tall-lead clrfix">
+	<style>
+	#hg-w .three-tall-lead { border-bottom: none; }
+	#hg-w .three-tall-lead h2 { font-size:123.1%; font-weight:normal; margin-bottom:7px; padding:0;}
+	#hg-w .three-tall-lead .img-triad { border:1px solid #A7BFA9; margin-bottom:7px; padding:2px;}
+	#hg-w .three-tall-lead img { display: inline; border:none; margin:0; padding:0; height: 260px; width: 196px;}
+	#hg-w .three-tall-lead a + a img { margin-left: 4px;}
+	#hg-w .three-tall-lead li { float:left; line-height:1.5; margin-right:1px; width:200px;}
+	#hg-w .three-tall-lead li.last { margin-right:0;}
+	</style>
+	<div class="img-triad clrfix">
+		<a href="#"><img src="../sites/hgtv/images/196x260.png" alt=""/></a>
+		<a href="#"><img src="../sites/hgtv/images/196x260.png" alt=""/></a>
+		<a href="#"><img src="../sites/hgtv/images/196x260.png" alt=""/></a>
+	</div>
+	<ul>
+		<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</a></li>
+		<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</a></li>
+		<li class="last"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</a></li>
+	</ul>
+</div>
+<script>
+({
+	name : 'Three Tall Lead',
+	
+	init : function() {
+//		C.sortable('.img-triad');
+		C.sortable('ul', {
+//			start : function( e, ui ) {
+//				$.data(ui.item, 'oldIndex', $(ui.item).index());
+//			},
+//			sort : function( e, ui ) {
+//				
+//				var oldIndex = $.data(ui.item, 'oldIndex');
+//				var item = $(C.module.current).children('.img-triad').children().eq(oldIndex);
+//				
+//				item.css({
+//					position: 'absolute',
+//					left : $(ui.item).position().left,
+//					top : $(ui.item).position().top - 269
+//				});
+//			},
+//			stop : function( e, ui ) {
+//				var oldIndex = $.data(ui.item, 'oldIndex');
+//				var item = $(C.module.current).children('.img-triad').children().eq(oldIndex);
+//				
+//				item.css({
+//					position : 'relative',
+//					left:'auto',
+//					top:'auto'
+//				});
+//				
+//				if ( oldIndex == 0 ) {
+//					$(C.module.current).children('.img-triad').append(item);
+//				} else {
+//					$(C.module.current).children('.img-triad').children().eq(oldIndex - 1).before(item);
+//				}
+//			}
+		});
+	},
+	
+	sections : [{
+		name : 'Left Lead',
+		elements : [{
+			name : 'Image',
+			selector : "{m}.find('img').eq(0)",
+			editables : [{
+				alt : {
+					label : 'Alt',
+					value : ''
+				},
+				src : {
+					label : 'Source',
+					value : '../sites/hgtv/images/196x260.png'
+				}
+			}]
+		}, {
+			name : 'Call to Action',
+			selector : "{m}.children('ul').find('a').eq(0)",
+			affects : "{m}.children('.img-triad').find('a').eq(0)",
+			editables : [{
+				href : {
+					label : 'URL',
+					value : '#'
+				},
+				html : {
+					label : 'Text',
+					value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}, {
+		name : 'Left Lead',
+		elements : [{
+			name : 'Image',
+			selector : "{m}.find('img').eq(1)",
+			editables : [{
+				alt : {
+					label : 'Alt',
+					value : ''
+				},
+				src : {
+					label : 'Source',
+					value : '../sites/hgtv/images/196x260.png'
+				}
+			}]
+		}, {
+			name : 'Call to Action',
+			selector : "{m}.children('ul').find('a').eq(1)",
+			affects : "{m}.children('.img-triad').find('a').eq(1)",
+			editables : [{
+				href : {
+					label : 'URL',
+					value : '#'
+				},
+				html : {
+					label : 'Text',
+					value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}, {
+		name : 'Right Lead',
+		elements : [{
+			name : 'Image',
+			selector : "{m}.find('img').eq(2)",
+			editables : [{
+				alt : {
+					label : 'Alt',
+					value : ''
+				},
+				src : {
+					label : 'Source',
+					value : '../sites/hgtv/images/196x260.png'
+				}
+			}]
+		}, {
+			name : 'Call to Action',
+			selector : "{m}.children('ul').find('a').eq(2)",
+			affects : "{m}.children('.img-triad').find('a').eq(2)",
+			editables : [{
+				href : {
+					label : 'URL',
+					value : '#'
+				},
+				html : {
+					label : 'Text',
+					value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}]
+})
+</script>

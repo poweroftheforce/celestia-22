@@ -1,0 +1,82 @@
+<div class="pod sponsor-pod rr-feature-list">
+	<div class="hd">
+		<h4>Header</h4>
+	</div>
+	<div class="bd clrfix">
+		<a href="#"><img class="thumb" src="../sites/hgtv/images/92x69_sm.jpg" alt=""/></a>
+		<ul class="list">
+			<li><a href="#">Call to Action</a></li>
+		</ul>
+	</div>
+	<div class="ft"></div>
+</div>
+<script>
+({
+	
+	name	: 'Sponsor Pod',
+	
+	sections: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h4')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Image',
+			selector	: "{m}.find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}, {
+			name		: 'Image Link',
+			selector	: "{m}.find('.bd').find('a').eq(0)",
+			editables	: [{
+				href	: {
+					label		: 'URL',
+					value		: '#'
+				}
+			}]
+		}, {
+			name		: 'List',
+			selector	: "{m}.find('.bd')children('.list')",
+			markup		: '<li><a href="#">Call to Action</a></li>',
+			elements	: [{
+				name		: 'Call to Action',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label		: 'URL',
+						value		: '#'
+					},
+					html	: {
+						label		: 'Text',
+						value		: 'Call to Action'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+})
+</script>

@@ -1,0 +1,79 @@
+<div class="fd-search-wrap">
+	<h3>Header</h3>
+	<div class="fd-search clrfix">
+		<div id="fd-search-inner">
+			<form name="third_party_search" action="http://www.frontdoor.com/HGTVSearch.aspx?int=INT_10" method="post">
+				<p class="input">
+					<label for="fd-search-query">Search by City, State and ZIP code</label>
+					<input type="text" name="txtSearch" id="fd-search-query" value="Maimi, FL" />
+				</p>
+				<p class="submit"><input type="image" src="http://images.frontdoor.com/FDOOR/packages/new-template/images/search-submit-button.png" alt="Search"/></p>
+			</form>
+		</div>
+	</div>
+	<cscript>
+	/* allows label to lay on top of search bar, but disappear when there is content or user focuses on search bar. */
+	(function($) {
+	$(function() {
+	$('.fd-search')
+		.addClass('ready')
+		.find('form')
+		.each(function() {
+			$form = $(this);
+			$label = $form.find('p.input label');
+			$input = $form.find('p.input input');
+			
+			$label.hide();
+			
+			$input
+				.attr('title', $label.text())
+				.addClass('ready')
+				.focus(function() { $label.hide(); })
+				.blur(function() { if($input.val() == '') $label.show(); })
+				.blur();
+		});
+	});
+	});
+	</cscript>
+</div>
+<script>
+({
+	
+	name	: 'Search',
+	
+	init	: function() {
+		$('.fd-search')
+			.addClass('ready')
+			.find('form')
+			.each(function() {
+				$form = $(this);
+				$label = $form.find('p.input label');
+				$input = $form.find('p.input input');
+				
+				$label.hide();
+				
+				$input
+					.attr('title', $label.text())
+					.addClass('ready')
+					.focus(function() { $label.hide(); })
+					.blur(function() { if($input.val() == '') $label.show(); })
+					.blur();
+			});
+	},
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({m}).find('h3')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

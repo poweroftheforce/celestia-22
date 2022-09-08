@@ -1,0 +1,74 @@
+<div class="related-link clrfix">
+	<a href="#"><img src="../sites/hgtv/images/92x69_sm.jpg" width="92" height="69" alt=""/></a>
+	<p><a href="#">Header</a></p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<p class="more"><a href="#">Call to Action</a></p>
+</div>
+<script>
+({
+	name			: 'Related Link',
+	
+	sections: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('p').eq(0).find('a')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header',
+					max_width	: '300px'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Image',
+			selector	: "{m}.find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p').eq(1)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+					max_width	: '300px'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('p').eq(2).find('a')",
+			affects		: "{m}.find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '300px'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

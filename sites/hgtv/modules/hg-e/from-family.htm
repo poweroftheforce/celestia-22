@@ -1,0 +1,82 @@
+<div class="pod from-family">
+	<style>
+	#hg-e .pod .bd img.thumb { display: block; float: left; margin-bottom: 7px; margin-right: 7px; }
+	#hg-e .pod p, #hg-e .pod p { line-height: 1.4em; }
+	</style>
+	<div class="hd"><h4>From Our HGTV Family</h4></div>
+	<div class="bd clrfix">
+		<a href="#"><img src="../sites/hgtv/images/92x69_sm.jpg" class="thumb" max_width="92" height="69" alt=""/></a>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien ligula, ornare.</p>
+		<a href="#">Call to Action</a>
+	</div>
+	<div class="ft"></div>	
+</div>
+<script>
+({
+	
+	name	: 'From Our HGTV Family',
+	
+	sections: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h4')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'From Our HGTV Family',
+					max_width	: '336px'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Image',
+			selector	: "{m}.find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien ligula, ornare.',
+					max_width	: '220px'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('.bd a').eq(1)",
+			affects		: "{m}.find('a')",
+			editables	: [{
+				href	: {
+					label		: 'URL',
+					value		: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '220px'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

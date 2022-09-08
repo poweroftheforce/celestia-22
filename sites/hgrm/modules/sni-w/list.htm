@@ -1,0 +1,78 @@
+<div class="lead list">
+	<div class="bd">
+		<div class="wrap right"><a href="#"><img src="../sites/hgrm/images/400x300.png" alt="" height="300" width="400"/></a> </div>
+		<h4><a href="#"><strong>Kitchen Countertop Options</strong></a></h4>
+		<p>Sed do eiusmod tempor incide idunt ut labaliqua consecturer.<span class="cta"><a href="#">View 14 photos</a></span></p>
+		<h5>Sed Consecturer</h5>
+		<ul class="list">
+			<li><a href="#">List Item 1</a></li>
+		</ul>
+	</div>
+	<div class="hr"><hr/></div>
+</div>
+<script>
+({
+	name	: 'Lead List',
+	
+	init: function() {
+		C.sortable('.list', function(e, ui) {});
+	},
+	
+	sections : [{
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h4').find('strong')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Kitchen Countertop Options',
+					max_width	: '197px'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgrm/images/400x300.png'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p')",
+			editables	: {
+				html	: {
+					label		: 'Text',
+					value		: 'Sed do eiusmod tempor incide idunt ut labaliqua consecturer.',
+					max_width	: '197px'
+				}
+			}
+		}, {
+			name		: 'List',
+			selector	: "{m}.find('.list')",
+			markup		: '<li><a href="#">List Item {x}</a></li>',
+			elements	: [{
+				name		: 'List Item {x}',
+				selector	: "{p}.children().eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+})
+</script>

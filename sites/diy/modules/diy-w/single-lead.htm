@@ -1,0 +1,126 @@
+<div class="single-lead clrfix"> <img src="../sites/diy/images/400x300-lead.jpg" width="400" height="300" alt=""/>
+	<style>.single-lead .description ul {margin-left:14px;}</style>
+	<div class="description">
+		<h2><a href="#">Header</a></h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+		<p class="link"><a href="#">Call to Action</a></p>
+	</div>
+</div>
+<script>
+({
+	name : 'Single Lead',
+	
+	sections : [{
+		name		: 'Feature Section',
+		elements	: [{
+			name		: 'Image',
+			selector	: "{m}.find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/diy/images/400x300-lead.jpg'
+				}
+			}]
+		}, {
+			name		: 'Header',
+			selector	: "{m}.find('h2').find('a')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header',
+					max_width	: '295px'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('.link').find('a')",
+			affects		: "{m}.find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label	: 'Text',
+					value	: 'Call to Action'
+				}
+			}]
+		}, {
+			name		: 'List',
+			selector	: "{m}.find('.list')",
+			markup		: '<li><a href="#">Call to Action</a></li>',
+			elements	: [{
+				name		: 'Call to Action',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				affects		: "{m}.find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'Call to Action'
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	controlsDrawn : function() {
+		$.data(C.module.current, 'data').checkModule();
+	},
+	
+	checkModule : function() {
+		if ( !$(C.module.current).find('.list')[0] ) {
+			$('#btn-single-lead-show-list').html('Show List');
+		} else {
+			$('#btn-single-lead-show-list').html('Hide List');
+		}
+	},
+	
+	menu : [{
+		nodeName	: 'button',
+		id			: 'btn-single-lead-show-list',
+		html		: 'Show List',
+		click		: function() {
+			
+			function swapContent( html ) {
+				var oldHTML = $(C.module.current).find('.description').children().eq($(C.module.current).find('.description').children().length - 1);
+				C.undoManager.register(undefined, function() {
+					/* UNDO function */
+					swapContent(oldHTML);
+				}, [], 'Undo::swapContent()', undefined, function() {
+					/* REDO function */
+					swapContent(html);
+				}, [], 'Redo::swapContent()');
+				$(oldHTML).remove();
+				$(C.module.current).find('.description').append(html);
+				C.drawControls();
+				C.save();
+				$.data(C.module.current, 'data').checkModule();
+			};
+			
+			if ( !$(C.module.current).find('.list')[0] ) {
+				swapContent('<ul class="list"><li><a href="#">Call to Action</a></li></ul>');
+			} else {
+				swapContent('<p class="link"><a href="#">Call to Action</a></p>');
+			}
+		}
+	}]
+	
+})
+</script>

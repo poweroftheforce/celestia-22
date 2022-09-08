@@ -1,0 +1,57 @@
+<div class="hub clrfix">
+	<ul class="button-nav">
+		<li><a href="#" class="selected"><span>Main</span></a></li>
+	</ul>
+</div>
+<script>
+({
+	name	: 'Hub Navigation',
+	
+	init	: function() {
+		C.sortable('.button-nav');
+	},
+	
+	sections: [{
+		name		: 'Navigation Section',
+		selector	: "{m}",
+		elements	: [{
+			name		: 'Nav Items',
+			selector	: "{m}.children('.button-nav')",
+			markup		: '<li><a href="#"><span>Btn {x}</span></a></li>',
+			elements	: [{
+				name		: 'Nav Item {x}',
+				selectors : [{
+					selector	: "{p}.children('li').eq({x}).find('span')",
+					editables	: [{
+						html	: {
+							label	: 'Text',
+							value	: 'Btn {x}'
+						}
+					}]
+				}, {
+					selector	: "{m}.find('li').eq({x}).find('a')",
+					editables	: [{
+						href	: {
+							label	: 'URL',
+							value	: '#'
+						},
+						class	: {
+							label	: 'Class Name',
+							value	: '',
+							type	: 'select',
+							selections	: [{
+								name	: '(select or type names)',
+								value	: 'cnone'
+							}, {
+								name	: 'selected',
+								value	: 'selected'
+							}]
+						}
+					}]
+				}]
+			}]
+		}]
+	}]
+
+})
+</script>

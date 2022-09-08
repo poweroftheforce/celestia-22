@@ -1,0 +1,62 @@
+<div class="banner">
+	<style type="text/css">.banner a {background: url("../sites/hgrm/images/banner.png") no-repeat 0 0;}</style>
+	<h1><a href="#">Package Title</a></h1>
+</div>
+<script>
+({
+	name		: 'Banner',
+	
+	sections : [{
+		name		: 'Title Section',
+		elements	: [{
+			name		: 'Title',
+			selector	: "{m}.find('a')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Package Title'
+				},
+				href	: {
+					label	: 'Package URL',
+					value	: '#'
+				}
+			}]
+		}, {
+			name		: 'Banner Image',
+			selector		: "{m}.find('style')",
+			extract_text	: /\((?:'|")?(.*?)(?:'|")?\)/,
+			replace_text	: '.banner a {background: url("{replace}") no-repeat 0 0;}',
+			editables	: [{
+				html	: {
+					label	: 'Src',
+					value	: '../sites/hgrm/images/banner.png'
+				}
+			}]
+		}]
+	}],
+	
+	menu : [{
+		nodeName	: 'label',
+		append		: [{
+			nodeName	: 'span',
+			html		: 'Set Banner Height (ex. 100): '
+		}, {
+			nodeName	: 'input',
+			attr		: {
+				type		: 'text',
+				id			: 'txt-banner-height',
+				name		: 'txt-banner-height'
+			},
+			keyup		: function(e) {
+				if ( e.keyCode == 13 ) {
+					var height = parseInt($(this).val(), 10);
+					if ( !isNaN(height) ) {
+						$('.banner a').css('height', height + 'px');
+					}
+				}
+			}
+		}]
+	}]
+	
+})
+</script>

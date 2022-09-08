@@ -1,0 +1,120 @@
+<div class="pod toi-v2">
+	<div class="hd"><h4>Header</h4></div>
+	<div class="bd">
+		<ul class="list">
+			<li><a href="#">Call to Action</a></li>
+		</ul>
+		<div class="epi-content">
+			<p><a href="#"><strong>Header</strong></a></p>
+			<p>Lorem ipsum dolor sit amet.</p>
+			<p><a href="#">Get Details</a></p>
+		</div>
+	</div>
+	<div class="ft"></div>
+</div>
+<script>
+({
+	name					: 'Topics of Interest',
+	
+	init: function() {
+		C.sortable('.list');
+	},
+	
+	controlsOpened : function() {
+		if ( $(C.module.current).find('.epi-content')[0] == undefined ) {
+			$('#dlg-controls .epi-content').hide();
+		}
+	},
+	
+	sections: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h4')",
+			editables	: [{
+				html	: {
+					label		: 'Title',
+					value		: 'More From This Feature'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'List',
+			selector	: "{m}.find('.list')",
+			markup		: '<li><a href="#">Call to Action</a></li>',
+			elements	: [{
+				name		: 'List Item {x}',
+				selector	: "{p}.find('li').eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'Call to Action'
+					}
+				}]
+			}]
+		}]
+	}, {
+		name		: 'EPI Content',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.epi-content').find('p').eq(0).find('strong')",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('.epi-content').find('p').eq(1)",
+			editables	: [{
+				html : {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet.'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('.epi-content').find('a').eq(1)",
+			affects		: "{m}.find('.epi-content').find('a')",
+			editables	: [{
+				href : {
+					label	: 'URL',
+					value	: '#'
+				},
+				html : {
+					label	: 'Text',
+					value	: 'Get Details'
+				}
+			}]
+		}]
+	}],
+	
+	buttons : [{
+		'btn-show-hide-epi-content' : {
+			html	: 'Show/Hide EPI Content',
+			click	: function() {
+				if ( $(C.module.current).find('.epi-content')[0] ) {
+					$(C.module.current).find('.epi-content').remove();
+				} else {
+					$(C.module.current).find('.bd').append('<div class="epi-content"><p><a href="#"><strong>Header</strong></a></p><p>Lorem ipsum dolor sit amet.</p><p><a href="#">Get Details</a></p></div>');
+				}
+				C.drawControls();
+				C.save();
+				if ( $(C.module.current).find('.epi-content')[0] == undefined ) {
+					$('#dlg-controls .epi-content').hide();
+				} else {
+					$('#dlg-controls .epi-content').show();
+				}
+			}
+		}
+	}]
+	
+})
+</script>

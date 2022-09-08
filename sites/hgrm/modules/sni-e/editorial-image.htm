@@ -1,0 +1,76 @@
+<div class="pod">
+	<div class="bd editorial-image">
+		<h5>Header</h5>
+		<div class="wrap"><img src="../sites/hgrm/images/92x69_sm.jpg" height="69" width="92"/></div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.<a href="#" class="cta">Call to Action</a></p>
+	</div>
+</div>
+<script>
+({
+
+	name			: 'Editorial + Image',
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('h5')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header',
+					max_width	: '321px'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Image',
+			selector	: "{m}.find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label		: 'Src',
+					value		: '../sites/hgrm/images/92x69_sm.jpg',
+					max_width	: '321px',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for = 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for = 92 * 69');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('p')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+					max_width	: '321px'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to action',
+					max_width	: '321px'
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

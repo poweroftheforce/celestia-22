@@ -1,0 +1,97 @@
+<span class="module-container">
+    <button type="button" class="btn btn-primary">Primary</button>
+</span>
+<script>
+({
+    name	: 'Test Module',
+    
+    help : 'help-test-module',
+    
+    structure : [
+        { tagName : 'button', children : [] }
+    ],
+    
+    checkIntro : function() {
+        
+        // var intro = '';
+        // $('.inputs-wrap .generic-introduction, .inputs-wrap .sweeps-enter-prize-page-introduction, .inputs-wrap .sweeps-rules-page-introduction, .inputs-wrap .sweeps-oops-page-introduction, .inputs-wrap .hath-introduction, .inputs-wrap .logos-wrap').hide();
+        // if ( $(C.module.current).find('h2')[0] ) {
+        //     if ( $(C.module.current).find('.sponsor-multi-logo')[0] ) {
+        //         $('.inputs-wrap .generic-introduction, .inputs-wrap .logos-wrap').show();
+        //         intro = 'generic';
+        //     } else {
+        //         if ( $(C.module.current).find('a')[0] ) {
+        //             /* oops intro */
+        //             $('.inputs-wrap .sweeps-oops-page-introduction').show();
+        //             intro = 'oops';
+        //             C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+        //         } else {
+        //             /* sweeps enter/prize intro */
+        //             $('.inputs-wrap .sweeps-enter-prize-page-introduction').show();
+        //             intro = 'sweeps';
+        //             C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+        //         }
+        //     }
+        // } else {
+        //     if ( $(C.module.current).find('.sponsor-multi-logo')[0] ) {
+        //         /* hath intro */
+        //         $('.inputs-wrap .hath-introduction, .inputs-wrap .logos-wrap').show();
+        //         intro = 'hath';
+        //     } else {
+        //         /* rules intro */
+        //         $('.inputs-wrap .sweeps-rules-page-introduction').show();
+        //         intro = 'rules';
+        //         C.loadAssets({ 'sweeps-css' : '../sites/hgtv/const/sweeps.css' });
+        //     }
+        // }
+        // $('#sel-intros option[value="' + intro + '"]').attr('selected', 'selected');
+        // $('#sel-logos option[value="' + $(C.module.current).find('.sponsor-multi-logo img').attr('src') + '"]').attr('selected', 'selected');
+    },
+    
+    /* init is only called when the module is first loaded */
+    init : function() {
+        // $.data(C.module.current, 'data').checkIntro();
+
+        // var ary = [];
+        // function getDecendants( parent, ary ) {
+        //     $.each(parent.children(), function() {
+        //         var obj = {
+        //             tagName : this.tagName.toLowerCase(),
+        //             children : []
+        //         };
+        //         ary.push(obj);
+        //         getDecendants($(this), obj.children);
+        //     });
+        // }
+        // getDecendants($(C.module.current), ary);
+        
+        // clog('comparing modules :: test : into.htm->init()', C.compareModules(ary, $.data(C.module.current, 'data').structure));
+    },
+    
+    controlsDrawn : function() {
+        // $.data(C.module.current, 'data').checkIntro();
+    },
+    
+    sections : [{
+		name		: 'Main',
+		elements	: [{
+			name		: 'Text',
+			selector	: "{m}.find('button')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Foo'
+				}
+			}]
+		}]
+	}],
+    
+    /*
+        moving to the new menu property
+        that utilizes my famous json2HTML method
+            - 87 lines of genius
+    */
+    menu : [{
+    }]
+})
+</script>

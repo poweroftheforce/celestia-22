@@ -1,0 +1,211 @@
+.loading { margin:4em auto; width:30px;}
+#thanks-msg, #vote-results, #show-vote .catefory { display:none;}
+.form-errors { margin-top:14px;}
+
+#site-wrapper .tentpole-container { margin-bottom: 14px; }
+.static-lead p.description { padding-right: 0; }
+
+.vote p { font-family:Trebuchet MS; font-size:131%;}
+.form-errors .hd p { font:13px/1.7 arial,helvetica,clean,sans-serif;}
+#show-vote { border:1px solid #DAE7E3; margin:14px; padding:14px 0; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+#show-vote h2, #show-vote p {  margin:0 14px 7px;}
+#show-vote ul { margin-bottom:14px;}
+#show-vote li { clear:left; cursor:pointer; padding:7px 14px;}
+#show-vote li.selected { background:#F1F6F2}
+#show-vote label { color:#386CB4; cursor:pointer; font-family:Trebuchet MS; font-size:138.5%;}
+#show-vote label:hover { text-decoration:underline;}
+#show-vote .status { font-size:85%; margin-left:14px; margin-right:14px;}
+#show-vote .status em { font-style:normal; text-transform:uppercase;}
+#show-vote .rad-btn { float:left; margin:56px 8px 0 0;}
+#show-vote .choice-img { float:left;/* height:120px;*/ margin-right:15px; position:relative;/* width:160px;*/}
+#show-vote .desc { padding-top:34px;}
+#show-vote .desc p { margin:0;}
+#show-vote .desc a { color:#EF4141; font-weight:bold;}
+#show-vote .cnt { text-align:center;}
+#show-vote button.button span {background:url("http://hgtv.sndimg.com/webhgtv/hg20/imgs/hgtv_photogallery_sprite.png") no-repeat scroll left 0; display:block; font-family:"trebuchet ms",sans-serif; font-size:12px; font-weight:bold; line-height:29px; background-position:right -692px; margin:0; padding:0 38px 0 0;}
+#show-vote button.button em {background:url("http://hgtv.sndimg.com/webhgtv/hg20/imgs/hgtv_photogallery_sprite.png") no-repeat scroll right 0; cursor:pointer; display:block; height:29px; margin:0 0 0 -2px; text-align:left;background-position:left -692px; padding-left:21px;}
+#show-vote button.button:hover span { background-position: right -721px;}
+#show-vote button.button:hover span em { background-position: left -721px;}
+#show-vote button.button:active span { background-position: right -750px;}
+#show-vote button.button:active span em { background-position: left -750px;}
+
+/*.form-errors { margin:0 14px;}*/
+
+#vote-form { margin-top:14px;}
+#show-vote #vote-ft { color:#999; margin:0 auto;/* width:187px;*/ width:204px;}
+#vote-ft .txt { float:left; width:102px;}
+#vote-count { background: url(images/vote-count-bg.png) no-repeat scroll 0 0; float:left; height:8px; margin:6px 0 5px 4px; position:relative; width:98px;}
+#vote-count .bd { background: url(images/vote-count-bg.png) no-repeat scroll 0 0; height:8px; left:0; position:absolute; top:0; width:98px; text-indent:-999em; overflow:hidden;}
+#vote-count .bd.first { background-position: -90px -8px;}
+#vote-count .bd.second { background-position: -80px -8px;}
+#vote-count .bd.third { background-position: -70px -8px;}
+#vote-count .bd.fourth { background-position: -60px -8px;}
+#vote-count .bd.fifth { background-position: -50px -8px;}
+#vote-count .bd.sixth { background-position: -40px -8px;}
+#vote-count .bd.seventh { background-position: -30px -8px;}
+#vote-count .bd.eighth { background-position: -20px -8px;}
+#vote-count .bd.ninth { background-position: -10px -8px;}
+#vote-count .bd.tenth { background-position: 0 -8px;}
+
+#vote-results { border:1px solid #DAE7E3; margin:14px; padding:14px 0; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+#vote-results h2, #vote-results p { margin:0 14px 14px;}
+#vote-results .hd { border-bottom:1px solid #DAE7E3;}
+
+.ft-msg { margin:14px; position:relative;}
+.ft-msg .hd, .ft-msg .ft { height:10px; width:602px;}
+.ft-msg .hd span, .ft-msg .ft span { display:block; float:left; height:10px;}
+.ft-msg .hd .l { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-tl.png) no-repeat 0 0;}
+.ft-msg .hd .c { width:582px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-tc.png) repeat-x 0 0;}
+.ft-msg .hd .r { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-tr.png) no-repeat 0 0;}
+.ft-msg .bd-outer { width:593px; padding-right:9px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-mr.png) repeat-y 100% 0;}
+.ft-msg .bd { padding-left:9px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-ml.png) repeat-y 0 0;}
+.ft-msg .bd .content { padding:14px; background-color: #f1f6f2;}
+.ft-msg h3 { color:#EF4141; font-family:Trebuchet MS; font-size:123.1%; font-weight:normal;}
+.ft-msg .ft .l { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-bl.png) no-repeat 0 0;}
+.ft-msg .ft .c { width:582px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-bc.png) repeat-x 0 0;}
+.ft-msg .ft .r { width:10px; background:url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/dd20-br.png) no-repeat 0 0;}
+.ft-msg h3 a.close { display:block;position:absolute;right:16px; top:18px;width:12px;height:12px;cursor:pointer;background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups-200.png) no-repeat 0 0;_width:13px;_height:13px;_background:transparent url(http://hgtv.sndimg.com/webhgtv/hg20/imgs/ie/close-x-ie6.gif) no-repeat 0 0;z-index:3;_font-size:0;}
+
+#hg-w .recommend-lead { margin:7px 14px;}
+.recommend-lead .thumb { float:left;}
+#hg-w .recommend-lead .content { clear:none;}
+.recommend-lead h3 { font-family:Trebuchet MS; font-size:138.5%; font-weight:normal;}
+
+#package-nav {margin:14px;}
+
+div.intro.sweeps {margin:14px 14px 0;}
+#hg-we.sweeps {margin-top:14px;}
+#hg-ww .pod .epi-content { border-top:1px solid #DAE7E3; margin-top:7px; padding-top:7px;}
+#hg-ww .pod .epi-content p { line-height:1.7;}
+
+#hg-we .nl-bd { border-bottom:none;}
+#hg-we .nl-bd legend, #hg-we .nl-bd .nl-optional h3 { color:#444; font:normal 161.6%/1 "Trebuchet MS",sans-serif; margin-bottom:7px; *text-indent:-3px;}
+#hg-we .nl-bd .ftnt { color:#ADADAD; font-size:77%;}
+
+.center-mod { background:#F1F6F2; clear:both; margin:7px auto; position:relative; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; _width:406px;}
+.fieldset .center-mod .hd { background:none; padding:0;}
+#sweepsEntryForm .center-mod .bd { border:none; padding:4px 14px;}
+.user-alert { color:#444;}
+.futon-menu {/* float:left; margin-top:21px;*/ line-height:26px; position:relative; z-index:200;}
+.futon-menu .dd20 { left:auto; right:0; line-height:1.7; background-color: white; border: 1px solid #E1E6E5; box-shadow: 3px 3px 13px rgba(127, 127, 127, 0.45); clear: both; padding: 10px 7px; width: 430px; z-index: 999; }
+.futon-menu .dd20 .dd20-hd, .futon-menu .dd20 .dd20-ft { width:368px;}
+.futon-menu .dd20 .dd20-hd .c, .futon-menu .dd20 .dd20-ft .c {width:348px;}
+.futon-menu .dd20 .dd20-bd-outer { width:359px;}
+.futon-menu .dd20 .dd20-bd .content { padding:6px 13px 13px;}
+.futon-menu .dd20 .dd20-bd .content p { margin-bottom:7px;}
+.futon-menu .dd20 .dd20-bd h3 a.close { background:url("http://hgtv.sndimg.com/webhgtv/hg20/imgs/sp-popups-200.png") no-repeat scroll 0 0 transparent; cursor:pointer; display:block; height:12px; position:absolute; right:14px; top:14px; width:12px; z-index:3;}
+
+#hg-w #hg-we .dd-list dt.dd-dt a { height: 20px; line-height: 23px; }
+.dd-list dt.dd-dt a.focus {color:#EF4141;}
+.dd-list dd .dd-bd ul.dd-ul li.dd-li a.hilite{color: #fff;background-color: #EF4141;text-decoration:none;margin-top: -3px;margin-bottom: -1px;padding-top:3px;padding-bottom:1px;}
+
+#hg-we .nl-bd .dd-list { width:189px;}
+#hg-we .nl-bd .futon-select { width:87px; z-index: 50}
+.dd-list dd { display:none; margin-left:-31px;}
+.futon-select dd { margin-left:-133px;}
+.futon-select dd .dd-bd {height:262px; max-height:262px;}
+.futon-select dd .dd-bd ul.dd-ul {height:132px;overflow: visible; position:absolute; top:30px; width:237px;}
+#hg-we .futon-select dd .dd-bd ul.dd-ul li.dd-li {float:left; margin-right:0; width:39px;}
+.futon-select dd .dd-bd ul.dd-ul li.dd-li a {padding-left:10px;}
+
+/* =============================================================================
+   Enter Page
+   ========================================================================== */
+
+.small-lead { border-bottom:1px solid #DAE7E3; line-height:1.7; margin:0; padding:0 14px;}
+.small-lead a { font-size:100%;}
+
+#hg-we .nl-bd { border-bottom:none;}
+#hg-we .nl-bd legend, #hg-we .nl-bd .nl-optional h3 { color:#444; font:normal 161.6%/1 "Trebuchet MS",sans-serif; margin-bottom:7px; *text-indent:-3px;}
+#hg-we .nl-bd .ftnt, .spnsr-prize .ftnt { color:#ADADAD; font-size:77%;}
+
+.nl-bd .nl-your-info > li { float:none; display:inline-block; vertical-align:top; margin-right:-4px; zoom:1; *display:inline;}
+#hg-we .nl-bd .nl-your-info { border-bottom:1px solid #DDD; padding-bottom:10px;}
+#hg-we .nl-bd .nl-optional { margin-bottom:0;}
+.nl-bd .nl-optional ul { float:left; width:203px;}
+.nl-bd .nl-optional .sponsor-offer { border-bottom:1px solid #DDDDDD; float:none; margin-bottom:14px; width:auto;}
+.nl-bd .nl-list li { border-bottom:none; margin-bottom:0;}
+.nl-bd .sponsor-offer li.last { padding-bottom:0;}
+.nl-bd .nl-cols { border-bottom:1px solid #DDDDDD; margin-bottom:14px;}
+#hg-we .nl-bd .nl-optional input { float:left; width:18px;}
+#hg-we .nl-bd .nl-optional label { float:left; width:161px; margin: -5px 0 5px;}
+#hg-we .nl-bd .nl-optional .sponsor-offer label { float:none; width:auto; margin: -5px 0 5px;}
+.nl-bd p { margin-bottom:7px;}
+.nl-bd .nl-optional .sponsor-dropdowns { display:none; float:none; margin:8px 0 0 18px; width:auto;}
+.nl-bd .nl-optional .sponsor-dropdowns .text-box { margin-top:3px;}
+p.checkall label { color: #386CB4; cursor: pointer;}
+
+.spnsr { border:1px solid #DAE7E3; margin:21px 14px 14px; padding:14px; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+.spnsr-prod { float:right; margin:0 0 10px 10px; }
+/*.facebook-like iframe { width:50px !important;}*/
+
+#hg-e .widget-pod { margin:14px 0; width:349px;}
+#hg-e #toolbar { border:none; margin:0; padding-left:6px;}
+#hg-e .sharing { float:none;}
+#hg-e .sharing li { border:none;}
+
+#hg-w p.mini-rules { border-top: 1px solid #DAE7E3; margin: 14px 0 35px; padding: 14px; font: 11px/17px arial; color: #ADADAD; }
+
+/* =============================================================================
+   Newsletter Sign Up Lead
+   ========================================================================== */
+
+#hg-bd-wrap .small-lead.nl-signup-lead { padding-bottom: 14px; position: relative;}
+#hg-bd-wrap .small-lead.nl-signup-lead h2 { padding-top: 4px; }
+#hg-bd-wrap .small-lead.nl-signup-lead .rounded-input { width: 304px; float: right; border:1px solid #C0D4CB; height:29px; padding:7px; -webkit-border-radius:3px; border-radius:3px; }
+#hg-bd-wrap .small-lead.nl-signup-lead .rounded-input .input { float: left; width: 234px; margin: 4px 14px 0 0; }
+#hg-bd-wrap .small-lead.nl-signup-lead .rounded-input input { width: 100%; font-size: 18px;  line-height: 21px; border: 0; color: #A3C0B9 }
+#hg-bd-wrap .small-lead.nl-signup-lead .rounded-input button { float: left; }
+#newsletter-signup .loading { display: none; margin: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: RGBA( 255, 255, 255, .75)}
+#newsletter-signup .loading p { text-align: center; line-height: 100%; height: 100%; margin-top: 90px }
+#newsletter-signup .loading p img { float: none; display: inline; }
+#newsletter-signup .nl-error { display: none; color: #f00 }
+#newsletter-signup .success { display: none; }
+
+/* =============================================================================
+   Prize flyout
+   ========================================================================== */
+.futon-menu .dd20.prize-flyout .dd20-hd, .futon-menu .dd20 .dd20-ft { width:440px;}
+.futon-menu .dd20.prize-flyout .dd20-hd .c, .futon-menu .dd20 .dd20-ft .c {width:420px;}
+.futon-menu .dd20.prize-flyout .dd20-bd-outer { width:431px;}
+.futon-menu .dd20.prize-flyout .content p { margin-left: 176px; line-height: 18px}
+.futon-menu .dd20.prize-flyout .content p.img { margin-left: 0; float: left; }
+
+/* =============================================================================
+   Sweeps Reminder
+   ========================================================================== */
+
+#sweeps-reminder { border:1px solid #C0D4CB; margin-top:14px; padding:7px 14px 14px; -webkit-border-radius:4px; border-radius:4px;}
+#sweeps-reminder h3 { font-size:161.5%; font-weight:normal;}
+#sweeps-reminder p { margin-bottom:7px;}
+.rounded-input { background:#fff; border:1px solid #C0D4CB; height:29px; padding:7px; -webkit-border-radius:3px; border-radius:3px;}
+#sweeps-reminder .input, #sweeps-reminder-thanks .input { float:left; width:297px;}
+#sweeps-reminder .input input, #sweeps-reminder-thanks .input input { border:0; color:#444; font-size:146.5%; height:24px; line-height:24px; padding:3px 0; width:100%;}
+#sweeps-reminder button, #sweeps-reminder-thanks button { margin-left:7px; white-space:nowrap; width:auto;}
+#sweeps-reminder input.input-hint, #sweeps-reminder-thanks input.input-hint {color:#9cbbb4;}
+#sweeps-reminder input.error, #sweeps-reminder-thanks input.error { border:1px solid #f00; color:#999; -webkit-border-radius:3px; border-radius:3px;}
+#sweeps-reminder .fail, #sweeps-reminder-thanks .fail { color:#f00;}
+#sweeps-reminder-thanks p { margin-bottom:14px;}
+#sweeps-reminder-thanks .input { width:477px;}
+
+/* =============================================================================
+   Prize Page
+   ========================================================================== */
+
+#spnsr-gallery { margin: 0 14px;}
+#spnsr-gallery h2 { margin:0;}
+#spnsr-prize-top h2 { margin:0 8px 7px;}
+.spnsr-prize { border-bottom:none; margin:0; padding:13px 0 6px;}
+.spnsr-prize + .spnsr-prize { border-top:1px solid #DAE7E3;}
+#spnsr-prize-top .spnsr-prize + .spnsr-prize { padding:13px 0 0;}
+#dream-home #spnsr-prize-top, #video #spnsr-prize-top { background:none;}
+#dream-home #spnsr-prize-top .hd, #dream-home #spnsr-prize-top .ft { background:none;}
+/*.spnsr-list li { margin:0;}
+.spnsr-list li + li { margin:14px 0 0;}*/
+
+/* =============================================================================
+   Short Rules
+   ========================================================================== */
+
+.short-rules{border-top: 1px solid #dae7e3;clear:both;margin:14px 0 0;padding:14px;}
+.short-rules p{color: #ADADAD;font: 11px/17px arial,sans-serif;margin: 14px;}

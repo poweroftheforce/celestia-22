@@ -1,0 +1,347 @@
+<div class="three-feature clrfix">
+	<div class="hd">
+		<h3>Header</h3>
+	</div>
+	<div class="bd clrfix">
+		<div class="panel story-cartridge">
+			<h3 class="slug">Header</h3>
+			<div class="photo"><a class="thumb" href="#"><img src="../sites/diy/images/160x120_med.jpg" height="120" width="160" alt=""/></a></div>
+			<p><a href="#">Call to Action</a></p>
+		</div>
+		<div class="panel story-cartridge">
+			<h3 class="slug">Header</h3>
+			<div class="photo"><a class="thumb" href="#"><img src="../sites/diy/images/160x120_med.jpg" height="120" width="160" alt=""/></a></div>
+			<p><a href="#">Call to Action</a></p>
+		</div>
+		<div class="panel story-cartridge last">
+			<h3 class="slug">Header</h3>
+			<div class="photo"><a class="thumb" href="#"><img src="../sites/diy/images/160x120_med.jpg" height="120" width="160" alt=""/></a></div>
+			<p><a href="#">Call to Action</a></p>
+		</div>
+	</div>
+</div>	
+<script>
+({
+	
+	name	: 'Three Feature',
+	
+	init: function() {
+		C.sortable('.bd');
+	},
+	
+	sections : [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.hd').find('h3')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Feature 1 Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.slug').eq(0)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header',
+					max_width	: '185px'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('.photo').eq(0).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/diy/images/160x120_med.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+			}
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('.panel').eq(0).find('p a')",
+			affects		: "{m}.find('.photo').eq(0).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '185px'
+				}
+			}]
+		}, {
+			name		: 'List',
+			selector	: "{m}.find('.panel').eq(0).find('.list')",
+			markup		: '<li><a href="#">Call to Action</a></li>',
+			elements	: [{
+				name		: 'Call to Action',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				affects		: "{m}.find('.photo').eq(0).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'Call to Action'
+					}
+				}]
+			}]
+		}]
+	}, {
+		name		: 'Feature 2 Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.slug').eq(1)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header',
+					max_width	: '185px'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('.photo').eq(1).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/diy/images/160x120_med.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+			}
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('.panel').eq(1).find('p a')",
+			affects		: "{m}.find('.photo').eq(1).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '185px'
+				}
+			}]
+		}, {
+			name		: 'List',
+			selector	: "{m}.find('.panel').eq(1).find('.list')",
+			markup		: '<li><a href="#">Call to Action</a></li>',
+			elements	: [{
+				name		: 'Call to Action',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				affects		: "{m}.find('.photo').eq(1).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'Call to Action'
+					}
+				}]
+			}]
+		}]
+	}, {
+		name		: 'Feature 3 Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.slug').eq(2)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header',
+					max_width	: '185px'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('.photo').eq(2).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/diy/images/160x120_med.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_med', 'check image suffix; should be _med for 160 * 120');
+			}
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('.panel').eq(2).find('p a')",
+			affects		: "{m}.find('.photo').eq(2).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '185px'
+				}
+			}]
+		}, {
+			name		: 'List',
+			selector	: "{m}.find('.panel').eq(2).find('.list')",
+			markup		: '<li><a href="#">Call to Action</a></li>',
+			elements	: [{
+				name		: 'Call to Action',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				affects		: "{m}.find('.photo').eq(2).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'URL',
+						value	: '#'
+					},
+					html	: {
+						label	: 'Text',
+						value	: 'Call to Action'
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	init : function() {
+		C.loadAssets({ 'packages-css' : '../sites/diy/const/packages.css' });
+	},
+	
+	controlsDrawn : function() {
+		$.data(C.module.current, 'data').checkModule();
+	},
+	
+	checkModule : function() {
+		
+		if ( !$(C.module.current).find('.list')[0] ) {
+			$('#btn-three-feature-show-list').html('Use List');
+		} else {
+			$('#btn-three-feature-show-list').html('Use CTA');
+		}
+		
+		if ( !$(C.module.current).find('.hd')[0] ) {
+			$('#btn-three-feature-show-header').html('Show Main Header');
+		} else {
+			$('#btn-three-feature-show-header').html('Hide Main Header');
+		}
+	},
+	
+	menu : [{
+		nodeName	: 'button',
+		id			: 'btn-three-feature-show-header',
+		html		: 'Hide Main Header',
+		click		: function() {
+			
+			var data = $.data(C.module.current, 'data');
+					
+			function insertHeader( html ) {
+				$(C.module.current).prepend(html);
+				data.checkModule();
+				C.drawControls();
+				C.save();
+			};
+			
+			function removeHeader() {
+				
+				if ( $(C.module.current).find('.hd')[0] ) {
+					var oldHeader = $(C.module.current).find('.hd');
+					
+					C.undoManager.register(undefined, function() {
+						/* UNDO function */
+						
+						if ( !$(C.module.current).find('.hd')[0] ) {
+							insertHeader(oldHeader);
+						}
+					}, [], 'Undo::removeHeader()', undefined, function() {
+						/* REDO function */
+						removeHeader();
+					}, [], 'Redo::removeHeader()');
+					$(C.module.current).find('.hd').remove();
+					data.checkModule();
+					C.drawControls();
+					C.save();
+				};
+			}
+			
+			if ( $(C.module.current).find('.hd').children().length > 0 ) {
+				removeHeader();
+			} else {
+				insertHeader('<div class="hd"><h3>Header</h3></div>');
+			}
+		}
+	}, {
+		nodeName	: 'button',
+		id			: 'btn-three-feature-show-list',
+		html		: 'Use List',
+		click		: function() {
+			
+			function swapContent( html1, html2, html3 ) {
+				
+				var oldHTML1 = $(C.module.current).find('.panel').eq(0).children().eq($(C.module.current).find('.panel').eq(0).children().length - 1),
+					oldHTML2 = $(C.module.current).find('.panel').eq(1).children().eq($(C.module.current).find('.panel').eq(1).children().length - 1),
+					oldHTML3 = $(C.module.current).find('.panel').eq(2).children().eq($(C.module.current).find('.panel').eq(2).children().length - 1);
+				
+				C.undoManager.register(undefined, function() {
+					/* UNDO function */
+					swapContent(oldHTML1, oldHTML2, oldHTML3);
+				}, [], 'Undo::swapContent()', undefined, function() {
+					/* REDO function */
+					swapContent(html1);
+				}, [], 'Redo::swapContent()');
+				$(oldHTML1).add(oldHTML2).add(oldHTML3).remove();
+				$(C.module.current).find('.panel').eq(0).append(html1);
+				$(C.module.current).find('.panel').eq(1).append(html2);
+				$(C.module.current).find('.panel').eq(2).append(html3);
+				C.drawControls();
+				C.save();
+				$.data(C.module.current, 'data').checkModule();
+			};
+			
+			if ( !$(C.module.current).find('.list')[0] ) {
+				swapContent('<ul class="list"><li><a href="#">Call to Action</a></li></ul>', '<ul class="list"><li><a href="#">Call to Action</a></li></ul>', '<ul class="list"><li><a href="#">Call to Action</a></li></ul>');
+			} else {
+				swapContent('<p><a href="#">Call to Action</a></p>', '<p><a href="#">Call to Action</a></p>', '<p><a href="#">Call to Action</a></p>');
+			}
+		}
+	}]
+	
+})
+</script>

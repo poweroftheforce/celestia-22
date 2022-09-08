@@ -1,0 +1,327 @@
+<div class="pod two-col one-row clrfix">
+	<div class="col">
+		<h3><a href="#">Header</a></h3>
+		<p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg"/></a></p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	</div>
+	<div class="col">
+		<h3><a href="#">Header</a></h3>
+		<p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg"/></a></p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	</div>
+</div>
+<script>
+({
+	name : 'Two Column Feature',
+	
+	sections : [{
+		name : 'Single Row Section',
+		elements : [{
+			name : 'Left Column Header',
+			selector : "{m}.children('.col').eq(0).children('h3')",
+			editables : [{
+				html : {
+					label : 'Text',
+					value : 'Header'
+				}
+			}]
+		}, {
+			name : 'Left Column Linked Header',
+			selector : "{m}.children('.col').eq(0).children('h3').children('a')",
+			affects : "{m}.children('.col').eq(0).find('a')",
+			editables : [{
+				href : {
+					label : 'URL',
+					value : '#'
+				},
+				html : {
+					label : 'Text',
+					value : 'Header'
+				}
+			}]
+		}, {
+			name : 'Left Column Image',
+			selector : "{m}.children('.col').eq(0).children('p').eq(0).find('img')",
+			editables : [{
+				alt : {
+					label : 'Alt',
+					value : ''
+				},
+				src : {
+					label : 'Src',
+					value : '../sites/diy/images/92x69_sm.jpg'
+				}
+			}]
+		}, {
+			name : 'Left Column Copy',
+			selector : "{m}.children('.col').eq(0).children('p').eq(1)",
+			editables : [{
+				html : {
+					label : 'Text',
+					value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}, {
+			name : 'Left Column List',
+			selector : "{m}.children('.col').eq(0).children('.list')",
+			markup		: '<li><a href="#">Call to Action</a></li>',
+			elements	: [{
+				name		: 'Left Column List Item {x}',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				editables : [{
+					href : {
+						label : 'Text',
+						value : '#'
+					},
+					html : {
+						label : 'Text',
+						value : 'Call to Action'
+					}
+				}]
+			}]
+		}, {
+			name : 'Right Column Header',
+			selector : "{m}.children('.col').eq(1).children('h3').children('a')",
+			affects : "{m}.children('.col').eq(1).find('a')",
+			editables : [{
+				href : {
+					label : 'URL',
+					value : '#'
+				},
+				html : {
+					label : 'Text',
+					value : 'Header'
+				}
+			}]
+		}, {
+			name : 'Right Column Image',
+			selector : "{m}.children('.col').eq(1).children('p').eq(0).find('img')",
+			editables : [{
+				alt : {
+					label : 'Alt',
+					value : ''
+				},
+				src : {
+					label : 'Src',
+					value : '../sites/diy/images/92x69_sm.jpg'
+				}
+			}]
+		}, {
+			name : 'Right Column Copy',
+			selector : "{m}.children('.col').eq(1).children('p').eq(1)",
+			editables : [{
+				html : {
+					label : 'Text',
+					value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}, {
+			name : 'Right Column List',
+			selector : "{m}.children('.col').eq(1).children('.list')",
+			markup		: '<li><a href="#">Call to Action</a></li>',
+			elements	: [{
+				name		: 'Right Column List Item {x}',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				editables : [{
+					href : {
+						label : 'Text',
+						value : '#'
+					},
+					html : {
+						label : 'Text',
+						value : 'Call to Action'
+					}
+				}]
+			}]
+		}]
+	}, {
+		name : 'Header Section',
+		elements : [{
+			name : 'Header',
+			selector : "{m}.find('.hd').find('h3')",
+			editables : [{
+				html : {
+					label : 'Text',
+					value : 'Header'
+				}
+			}]
+		}]
+	}, {
+		name : 'Left Column Section',
+		elements : [{
+			name : 'Left Column List',
+			selector : "{m}.find('.col').eq(0).children('ul')",
+			markup : '<li><p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg" alt=""></a></p><p><a href="#">Call to Action</a></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></li>',
+			elements : [{
+				name : 'Left Item {x} Image',
+				selector : "{p}.children('li').eq({x}).find('img')",
+				editables : [{
+					alt : {
+						label : 'Alt',
+						value : ''
+					},
+					src : {
+						label : 'Src',
+						value : '../sites/diy/images/92x69_sm.jpg'
+					}
+				}]
+			}, {
+				name : 'Left Item {x} Call to Action',
+				selector : "{p}.children('li').eq({x}).find('p').eq(1).find('a')",
+				affects : "{p}.children('li').eq({x}).find('a')",
+				editables : [{
+					href : {
+						label : 'URL',
+						value : '#'
+					},
+					html : {
+						label : 'Text',
+						value : 'Call to Action'
+					}
+				}]
+			}, {
+				name : 'Left Item {x} Copy',
+				selector : "{p}.children('li').eq({x}).find('p').eq(2)",
+				editables : [{
+					html : {
+						label : 'Text',
+						value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}]
+		}]
+	}, {
+		name : 'Right Column Section',
+		elements : [{
+			name : 'Right Column List',
+			selector : "{m}.find('.col').eq(1).children('ul')",
+			markup : '<li><p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg" alt=""></a></p><p><a href="#">Call to Action</a></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></li>',
+			elements : [{
+				name : 'Right Item {x} Image',
+				selector : "{p}.children('li').eq({x}).find('img')",
+				editables : [{
+					alt : {
+						label : 'Alt',
+						value : ''
+					},
+					src : {
+						label : 'Src',
+						value : '../sites/diy/images/92x69_sm.jpg'
+					}
+				}]
+			}, {
+				name : 'Right Item {x} Call to Action',
+				selector : "{p}.children('li').eq({x}).find('p').eq(1).find('a')",
+				affects : "{p}.children('li').eq({x}).find('a')",
+				editables : [{
+					href : {
+						label : 'URL',
+						value : '#'
+					},
+					html : {
+						label : 'Text',
+						value : 'Call to Action'
+					}
+				}]
+			}, {
+				name : 'Right Item {x} Copy',
+				selector : "{p}.children('li').eq({x}).find('p').eq(2)",
+				editables : [{
+					html : {
+						label : 'Text',
+						value : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	init : function() {
+		C.loadAssets({ 'packages-css' : '../sites/diy/const/packages.css' });
+	},
+	
+	controlsDrawn : function() {
+		$.data(C.module.current, 'data').checkModule();
+	},
+	
+	checkModule : function() {
+		$('.inputs-wrap .single-row-section, .inputs-wrap .header-section, .inputs-wrap .left-column-section, .inputs-wrap .right-column-section').show();
+		$('.inputs-wrap .left-column-header').hide();
+		
+		if ( !$(C.module.current).hasClass('one-row') ) {
+			$('#btn-two-col-swap-content').html('Change to Single Row / 2 Title');
+			$('.inputs-wrap .single-row-section').hide();
+		} else {
+			$('#btn-two-col-swap-content').html('Change to Multi Row / 1 Header');
+			$('.inputs-wrap .header-section, .inputs-wrap .left-column-section, .inputs-wrap .right-column-section').hide();
+			
+			/* does the header text have an anchor or not? */
+			if ( !$(C.module.current).children('.col').children('h3').children('a')[0] ) {
+				$('.inputs-wrap .left-column-header').show();
+			}
+		}
+		
+		if ( $($(C.module.current).children('.col')[0]).find('h3')[0] && !$($(C.module.current).children('.col')[0]).find('ul')[0] ) {
+			$('#btn-two-col-swap-list').html('Change to List');
+		} else {
+			$('#btn-two-col-swap-list').html('Change to Image / Copy');
+		}
+		
+	},
+	
+	menu : [{
+		nodeName	: 'button',
+		id			: 'btn-two-col-swap-content',
+		html		: 'Change to Multi Row / 1 Header',
+		click		: function() {
+			
+			if ( !$(C.module.current).hasClass('one-row') ) {
+				$(C.module.current).addClass('one-row');
+				C.swapContent([{
+					node : $(C.module.current),
+					html : '<div class="col"><h3><a href="#">Header</a></h3><p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg"/></a></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div><div class="col"><h3><a href="#">Header</a></h3><p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg"/></a></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></div>'
+				}], {
+					beforeUndo : function() { $(C.module.current).removeClass('one-row') },
+					beforeRedo : function() { $(C.module.current).addClass('one-row') }
+				});
+			} else {
+				$(C.module.current).removeClass('one-row');
+				C.swapContent([{
+					node : $(C.module.current),
+					html : '<div class="hd"><h3>Header</h3></div><div class="col"><ul><li><p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg"/></a></p><p><a href="#">Call to Action</a></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></li></ul></div><div class="col"><ul><li><p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg"/></a></p><p><a href="#">Call to Action</a></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p></li></ul></div>'
+				}], {
+					beforeUndo : function() { $(C.module.current).addClass('one-row') },
+					beforeRedo : function() { $(C.module.current).removeClass('one-row') }
+				});
+			}
+			
+		}
+	}, {
+		nodeName	: 'button',
+		id			: 'btn-two-col-swap-list',
+		html		: 'Change to List',
+		click		: function() {
+			
+			if ( $($(C.module.current).children('.col')[0]).find('h3')[0] && !$($(C.module.current).children('.col')[0]).find('ul')[0] ) {
+				C.swapContent([{
+					node : $($(C.module.current).children('.col')[0]),
+					html : '<h3>Header</h3><ul class="list"><li><a href="#">Call to Action</a></li></ul>'
+				}, {
+					node : $($(C.module.current).children('.col')[1]),
+					html : '<h3>Header</h3><ul class="list"><li><a href="#">Call to Action</a></li></ul>'
+				}], $.data(C.module.current, 'data').checkModule());
+			} else {
+				C.swapContent([{
+					node : $($(C.module.current).children('.col')[0]),
+					html : '<h3><a href="#">Header</a></h3><p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg"/></a></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>'
+				}, {
+					node : $($(C.module.current).children('.col')[1]),
+					html : '<h3><a href="#">Header</a></h3><p class="img"><a href="#"><img src="../sites/diy/images/92x69_sm.jpg"/></a></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>'
+				}], $.data(C.module.current, 'data').checkModule());
+			}
+			
+		}
+	}]
+	
+})
+</script>

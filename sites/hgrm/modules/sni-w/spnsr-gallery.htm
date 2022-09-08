@@ -1,0 +1,124 @@
+<div class="pod spnsr-gallery">
+	<style>.spnsr-gallery h4 {font-weight: bold;}.spnsr-prize + .spnsr-prize {border-top: 1px dotted #CCCCCC;padding-top: 1em;}.spnsr-prize img {display: block;margin-bottom: 1em;}.spnsr-prod {float: right;margin-left: 1em;}</style>
+	<div class="spnsr-prize">
+		<h4>Header</h4>
+		<a href="#" target="_blank"><img src="http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/ll_1.gif" alt=""/></a>
+		<div class="spnsr-prod"><a href="#" target="_blank"><img src="http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/RX-bc12_lumber-liquidators_s160x120.jpg" alt=""/></a></div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p> 
+		<p><a href="#" target="_blank">Lorem ipsum dolor</a> &bull; <span>1.800.366.4204</span></p>
+	</div>
+	<div class="hr"><hr></div>
+</div>
+<script>
+({
+	
+	name : 'Prize (page) Sponsor Gallery',
+	
+	init : function() {
+		C.sortable();
+	},
+	
+	htmlAdded : function() {
+		$(C.module.current).append($(C.module.current).find('.hr'));
+	},
+	
+	buttons : [{
+		'btn-add-section-header' : {
+			html : 'Add Section Header',
+			click : function() {
+				$(C.module.current).find('.hr').before($('<h4>Header</h4>'));
+				C.drawControls();
+				C.save();
+			}
+		}
+	}],
+	
+	sections : [{
+		name		: 'Body Section',
+		elements	: [{
+			name		: 'Sponsor List',
+			selector	: "{m}",
+			markup		: '<div class="spnsr-prize"><h4>Header</h4><a href="#" target="_blank"><img src="http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/ll_1.gif" alt=""/></a><div class="spnsr-prod"><a href="#" target="_blank"><img src="http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/RX-bc12_lumber-liquidators_s160x120.jpg" alt=""/></a></div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p> <p><a href="#" target="_blank">Lorem ipsum dolor</a> &bull; <span>1.800.366.4204</span></p></div>',
+			elements	: [{
+				name		: 'Header',
+				selector	: "{m}.find('.spnsr-prize').eq({x}).find('h4')",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: 'Header'
+					}
+				}],
+				callback : function( input, value ) {
+					/* on drawControls for input */
+					var btn = $('<button/>')
+								.html('Show/Hide Header')
+								.click(function() {
+									/* TODO: implement undo */
+									$($(input).data('data')['options']['selector']).remove();
+								});
+					$(input).parent().append(btn);
+				}
+			}, {
+				name		: 'Sponsor {x} Logo',
+				selector	: "{m}.find('.spnsr-prize').eq({x}).find('img').eq(1)",
+				editables	: [{
+					alt : {
+						label	: 'Alt',
+						value	: ''
+					},
+					src : {
+						label	: 'Src',
+						value	: 'http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/RX-bc12_lumber-liquidators_s160x120.jpg'
+					}
+				}]
+			}, {
+				name		: 'Sponsor {x} Image',
+				selector	: "{m}.find('.spnsr-prize').eq({x}).find('img').eq(0)",
+				editables	: [{
+					alt : {
+						label	: 'Alt',
+						value	: ''
+					},
+					src : {
+						label	: 'Src',
+						value	: 'http://www.sndimg.com/webhgrm/rm10/pkgs/2012/bc/sweeps/img/ll_1.gif'
+					}
+				}]
+			}, {
+				name		: 'Sponsor {x} Copy',
+				selector	: "{m}.find('.spnsr-prize').eq({x}).find('p').eq(0)",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}, {
+				name		: 'Sponsor {x} Call to Action',
+				selector	: "{m}.find('.spnsr-prize').eq({x}).find('p').eq(1).find('a')",
+				affects		: "{m}.find('.spnsr-prize').eq({x}).find('a')",
+				editables	: [{
+					href : {
+						label	: 'URL',
+						value	: '#'
+					},
+					html : {
+						label	: 'Text',
+						value	: 'Lorem ipsum dolor'
+					}
+				}]
+			}, {
+				name		: 'Sponsor {x} Phone Number',
+				selector	: "{m}.find('.spnsr-prize').eq({x}).find('p').eq(1).find('span')",
+				editables	: [{
+					html : {
+						label	: 'Text',
+						value	: '1.800.366.4204'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+})
+</script>

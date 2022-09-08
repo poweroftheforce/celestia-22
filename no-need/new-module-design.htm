@@ -1,0 +1,84 @@
+<div class="carousel-lead">
+	<ul class="list">
+		<li>
+			<p>P1</p>
+			<ul class="list">
+				<li><a href="#">Call to Action</a></li>
+			</ul>
+		</li>
+	</ul>
+	<div class="sec1"></div>
+	<div class="sec2"></div>
+	<div class="sec3">
+		<ul class="clrfix">
+			<li>
+				<p>paragraph in LI 0</p>
+				<ul class="list">
+					<li><a href="#">Call to Action</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<p>paragraph</p>
+</div>
+<script>
+({
+	name	: 'Carousel Lead',
+	
+	init : function() {},
+
+	sections: [{
+		name : 'test section',
+		sections : [{
+			name : 'sec 1'
+		}, {
+			name : 'sec 2'
+		}, {
+			name : 'sec 3',
+			elements : [{
+				name : 'Sec 3 > UL',
+				selector : "$({m}).find('.sec3').children('ul')",
+				markup : '<li><p>paragraph in LI {x}</p><ul class="list"><li><a href="#">Call to Action</a></li></ul></li>',
+				elements : [{
+					name : 'p in LI {x}',
+					selector : "{p}.children('li').eq({x}).find('p')",
+					editables : [{ html: { label:'html', value:'paragraph in LI {x}' } }]
+				}, {
+					name : 'list in LI {x}',
+					selector : "{p}.children('li').eq({x}).children('ul')",
+					markup : '<li><a href="#">Call to Action</a></li>',
+					elements : [{
+						name : 'CTA {x}',
+						selector : "{p}.children('li').eq({x}).children('a')",
+						editables : [{ html: { label:'html', value:'CTA {x}' } }]
+					}]
+				}]
+			}]
+		}],
+		elements : [{
+			name : 'El 2',
+			selector : "$({m}).children('p')",
+			editables : [{ html: { label:'html', value:'paragraph' } }]
+		}, {
+			name : 'list A',
+			selector : "$({m}).children('ul')",
+			markup : '<li><p>P1</p><ul class="list"><li><a href="#">Call to Action</a></li></ul></li>',
+			elements : [{
+				name : 'p in LI {x}',
+				selector : "{p}.children('li').eq({x}).find('p')",
+				editables : [{ html: { label:'html', value:'paragraph in LI {x}' } }]
+			}, {
+				name : 'list Item {x} UL',
+				selector : "{p}.children('li').eq({x}).children('ul')",
+				markup : '<li><a href="#">Call to Action</a></li>',
+				elements : [{
+					name : 'Call to Action',
+					selector : "{p}.children('li').eq({x}).children('a')",
+					editables : [{ html: { label:'html', value:'CTA {x}' } }]
+				}]
+			}]
+		}]
+	}]
+		
+})
+</script>

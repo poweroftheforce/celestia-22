@@ -1,0 +1,18 @@
+Fixes
+
+
+
+
+
+
+
+WANTS
+
+hide module - like html comment <!-- module -->
+
+
+make inter-changables
+inter-changables is where you can drag a section of a module to another section of that module changing or replacing the information of the destination with the source information.
+
+when pulling up SEO and entering in a franchise name (blank before), have a prompt display asking if the user wishes to move THIS package into a franchise
+

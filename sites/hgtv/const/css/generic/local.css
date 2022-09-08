@@ -1,0 +1,178 @@
+
+.ui-widget-content a.disabled {color:#CCC;cursor:default;text-decoration:none;}
+
+
+/* BEGIN Menu */
+
+
+.ui-accordion .ui-accordion-content img { padding: 5px; }
+.ui-accordion .ui-accordion-content { overflow-y: scroll !important; }
+
+
+#well-menu-wrap { position: relative; }
+#well-menu-wrap ul { height: 200px !important; }
+/*
+.well-selector-wrap ul input,
+.well-selector-wrap ul textarea { width: 100px; margin-top: 2px; }
+*/
+#well-menu-wrap ul label { font-size: 0.6em; }
+#image-wrap { background: #FFF; border: 1px outset #000; -moz-border-radius: 8px 0 0 8px; border-radius: 8px 0 0 8px; margin-left: 0; opacity: 0; filter:Alpha(Opacity=0); padding: 10px; position: absolute; margin-top: 1px; width: 0; }
+/* hidden image to get the width */
+#well-menu-wrap ul a img {  }
+
+#well-menu-wrap .ui-accordion-content .hr {  }
+#well-menu-wrap .ui-accordion-content li:last-child {  }
+
+/* END Menu */
+
+/* BEGIN: dlg Help */
+
+#dlg-help .bd > div { display: none; }
+#dlg-help .bd > div.main-menu { display: block; }
+
+#dlg-help { font-size: 12px; }
+#dlg-help h2 { color: #00F; }
+#dlg-help .desc { color: #F33; font-size: 11px; }
+#dlg-help cite { color: #AAA; font-size: 10px; }
+#dlg-help .notes li { font-size: 11px; list-style: disc outside; margin-left: 15px; }
+#dlg-help .footnote { color: #000; font-size: 10px; }
+#dlg-help .footnote a { color: #339; }
+
+/* END: dlg Help */
+
+/* BEGIN: Context Menu */
+
+#context-menu { background: #FFF; border: 1px solid #DDD; color: #000; }
+#context-menu .hd { margin: -10px -8px 0 0; }
+#context-menu .bd { padding: 0 10px 10px; }
+
+#context-menu .module-button { display: none; }
+
+/* END: Context Menu */
+
+
+/* BEGIN Sortables */
+.ui-state-highlight { border: 1px solid #099;  }
+/* END Sortables */
+
+
+
+#choose-site-wrap,
+.create-open-wrap {  }
+.ui-dialog-content label { color: #66F; font-size: 11px; }
+.ui-dialog-content label span {  }
+
+
+
+#btn-back-to-choose-site { color: #03F;  }
+
+.existing-packages-wrap,
+.existing-files-wrap {  }
+
+#btn-load-existing-file {  }
+
+.extra-links {  }
+.extra-links li {  }
+.extra-links a,
+.extra-links a:link,
+.extra-links a:visited,
+.extra-links a:active { color: #03F; }
+.extra-links a:hover {  }
+/* END: Dlg Create / Open */
+
+
+/* BEGIN: Dlg Main Menu */
+#dlg-main-menu .tools-bar {  }
+/* END: Dlg Main Menu */
+
+/* BEGIN: dlg Controls */
+
+.controls-section-wrap { }
+.controls-section-wrap .current { background: #DFD; border: 1px solid #0F0; }
+.controls-section-wrap .warning { border-color: #FF3; }
+.controls-section-wrap .required { border-color: #F00; }
+.controls-section-wrap label {  }
+.dynamic-wrap h3,
+.element-wrap h3 {  }
+.element-wrap,
+.dynamic-wrap { }
+.dynamic-wrap .element-wrap {}
+
+.element-wrap .element-wrap,
+.element-wrap .dynamic-wrap {}
+
+.controls-section-wrap .hr {}
+.controls-section-wrap .dynamic-wrap .hr {}
+
+.controls h2 {}
+.controls .info {}
+
+#textarea-toolbar-wrap span {background:#FFF;border:1px outset #000;}
+#textarea-toolbar-wrap a,
+#textarea-toolbar-wrap a:link,
+#textarea-toolbar-wrap a:active,
+#textarea-toolbar-wrap a:visited {}
+#textarea-toolbar-wrap a:hover {}
+#textarea-toolbar-wrap li {}
+
+.contenteditable{}
+#editing-element { /*background-color: #F00;*/ border: 1px dotted #F00;}
+/* END: dlg Controls */
+
+
+
+/* BEGIN: dlg Save */
+#dlg-save-as .package,
+#dlg-save-as .template {}
+/* END: dlg Save */
+
+
+
+/* BEGIN: dlg Set Source */
+#txt-set-source {}
+#set-source #btn-set-source-wrap {}
+/* END: dlg Set Source */
+
+
+
+/* BEGIN: dlg SEO */
+.seo-wrap {}
+.seo-wrap * {}
+.seo-wrap span {}
+.seo-wrap input {}
+/* END: dlg SEO */
+
+
+
+#dlg-confirmation .body p {font:12px Arial, Helvetica, sans-serif;color:#000;}
+
+#controls-opener{background:#0CF;}
+#unknown-module{background:#F00;}
+
+
+#bs-creation-controls h4 {border-bottom:1px solid #000;}
+
+
+
+
+#dlg-bs-bg-color {border:1px solid #000;background-color:#FFF;}
+#dlg-bs-bg-color div {background-color:#C8E2E0;}
+
+#dlg-bs-overlay-color {border:1px solid #000;background-color:#FFF;}
+#dlg-bs-overlay-color div {background-color:#C8E2E0;}
+
+
+.ui-widget-content a {color:#386CB4;}
+.ui-widget-content .ui-accordion-header a {color:#000;}
+.ui-dialog .small {font-size:10px;}
+
+#dlg-set-source .CodeMirror { border: 1px inset #000; height: 310px; width: 575px; }
+#view-source .CodeMirror { border: 1px inset #000; height: 430px; width: 575px; }
+#view-source .CodeMirror-scroll { height: 430px; }
+
+
+/* SPECIAL for Calendar App */
+/*#cal-app {border-top:none;}*/
+#cal-app img.dummy-calendar,
+#hg-bd .social-toolbar img {background-color:transparent;border:none;display:inline;padding:0;}
+

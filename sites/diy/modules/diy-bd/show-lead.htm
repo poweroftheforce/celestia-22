@@ -1,0 +1,146 @@
+<div class="show-lead">
+	<style type="text/css">.show-lead h1.mini-lead {background: url("../sites/diy/images/mini-lead.jpg") no-repeat 0 0;}</style>
+	<h1 class="mini-lead">Package Title</h1>
+</div>
+<script>
+({
+	name	: 'DIY Banner',
+	
+	notes : function() {
+		/*
+			gets inserted dynamically with project_viewer.php if defined in config
+			<ul id="hub-nav" class="menu button-nav clrfix">
+				<li><a href="#" class="selected"><span>Tab 1</span></a></li>
+				<li><a href="#" class=""><span>Dolor Sit</span></a></li>
+				<li><a href="#" class=""><span>Dolor Sit</span></a></li>
+			</ul>
+		*/
+	},
+	
+	init : function() {
+		C.sortable('#hub-nav');
+	},
+	
+	controlsDrawn : function() {
+		if ( $(C.module.current).find('#hub-nav')[0] ) {
+			$('.inputs-wrap .btn-show-hide-nav').html('Hide Nav');
+		}
+	},
+	
+	menu : [{
+		nodeName	: 'label',
+		append		: [{
+			nodeName	: 'span',
+			html		: 'Set Banner Height (ex. 100): '
+		}, {
+			nodeName	: 'input',
+			attr		: {
+				type		: 'text',
+				id			: 'txt-banner-height',
+				name		: 'txt-banner-height'
+			},
+			keyup		: function(e) {
+				if ( e.keyCode == 13 ) {
+					var height = parseInt($(this).val(), 10);
+					if ( !isNaN(height) ) {
+						$('.show-lead h1.mini-lead').css('height', height + 'px');
+					}
+				}
+			}
+		}]
+	}],
+	
+	sections: [{
+		name		: 'Title Section',
+		elements	: [{
+			name		: 'Title',
+			selector	: "{m}.find('h1')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Package Title'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				}
+			}]
+		}, {
+			name			: 'Image',
+			selector		: "{m}.find('style')",
+			extract			: /\("*(.*?)"*\)/,
+			editables		: [{
+				html	: {
+					label	: 'Src',
+					value	: '../sites/diy/images/mini-lead.jpg'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Navigation Section',
+		selector	: "{m}.find('#hub-nav')",
+		elements	: [{
+			name		: 'List',
+			selector	: "{m}.find('#hub-nav')",
+			markup		: '<li><a href="#"><span>Tab {x}</span></a></li>',
+			elements	: [{
+				name		: 'Nav Item {x}',
+				selectors	: [{
+					selector	: "{p}.children('li').eq({x}).find('span')",
+					editables	: [{
+						html	: {
+							label	: 'Copy',
+							value	: 'Nav Item {x}'
+						}
+					}],
+					selector	: "{p}.children('li').eq({x}).find('a')",
+					editables	: [{
+						href	: {
+							label	: 'URL',
+							value	: '#'
+						},
+						class	: {
+							label		: 'Class',
+							value	: '',
+							type	: 'select',
+							selections	: [{
+								name	: '(select or type names)',
+								value	: 'cnone'
+							}, {
+								name	: 'selected',
+								value	: 'selected'
+							}]
+						}
+					}]
+				}]
+			}]
+		}]
+	}],
+	
+	buttons	: [{
+		'btn-show-hide-nav'	: {
+			html	: 'Show Nav',
+			click	: function() {
+				var nav = $('#hub-nav', C.module.current);
+				if ( nav[0] ) {
+					nav.remove();
+					C.drawControls();
+					C.save();
+					$('.inputs-wrap .btn-show-hide-nav').html('Show Nav');
+				} else {
+					$(C.module.current).append('<ul id="hub-nav" class="menu button-nav clrfix"><li><a href="#" class="selected"><span>Tab 1</span></a></li></ul>');
+					C.drawControls();
+					C.save();
+					$('.inputs-wrap .btn-show-hide-nav').html('Hide Nav');
+				}
+				
+			}
+		}
+	}]
+})
+</script>

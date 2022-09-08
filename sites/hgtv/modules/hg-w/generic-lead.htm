@@ -1,0 +1,378 @@
+<div class="generic-lead clrfix">
+	<div class="bd clrfix">
+		<div class="feature">
+			<h3 class="slug">Header</h3>
+			<a class="lead-img" href="#"><img src="../sites/hgtv/images/266x200_al.jpg" height="200" width="266" alt=""/></a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+			<p><a href="#">Call to Action</a></p>
+		</div>
+		<div class="secondary">
+			<div class="feature-cartridge">
+				<div class="bd clrfix">
+					<h3 class="slug">Secondary Title</h3>
+					<a href="#" class="thumb"><img src="../sites/hgtv/images/92x69_sm.jpg" width="92" height="69" alt=""/></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<p><a href="#">Call to Action</a></p>
+				</div>
+			</div>
+			<hr/>
+			<div class="pod basic-cartridge">
+				<h3 class="slug">Third Feature Title</h3>
+				<ul class="list">
+					<li><a href="#">List Item 1</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+({
+	name	: 'Generic Lead',
+	
+	init : function( module ) {
+		C.sortable('.list');
+		C.sortable('.secondary', {
+			start	: function(e, ui) {
+				$(ui.item).parents('.secondary').find('hr').remove();
+			},
+			stop	: function(e, ui) {
+				/* automatically gets saved */
+				$($(ui.item).parents('.secondary').children().eq(0)).after('<hr/>');
+				$(ui.item).parents('.secondary').children().eq(0)
+					.removeClass('pod basic-cartridge')
+					.addClass('feature-cartridge');
+				$(ui.item).parents('.secondary').children().eq(2)
+					.removeClass('feature-cartridge')
+					.addClass('pod basic-cartridge');
+			}
+		});
+	},
+	
+	controlsOpened : function() {
+		/* possible video player detected */
+		var div = $(module).find('.feature').find('div')[0]
+		if ( div ) {
+			if ( $(div).attr('id') === 'vplayer-lead' ) {
+				$(div).append('<img class="dummy-image" src="../sites/hgtv/images/video-player-generic-lead.png"/>');
+			}
+		}
+	},
+	
+	controlsDrawn : function() {},
+	
+	menu : [{
+		nodeName	: 'ul',
+		addClass	: 'clrfix',
+		append		: [{
+			nodeName	: 'li',
+			append		: [{
+				nodeName	: 'label',
+				html		: 'Switch Primary Feature (video): ',
+				append		: [{
+					nodeName	: 'select',
+					id			: 'sel-feature',
+					append		: [
+						{ nodeName : 'option', val : '', html : 'Select Option' },
+						{ nodeName : 'option', val : 'image', html : 'Image' },
+						{ nodeName : 'option', val : 'video', html : 'Video Player' }
+					],
+					change : function() {
+						function swapFeature( type, undoHTML ) {
+							
+							var old_html = $(C.module.current).find('.feature').html(),
+								imageHTML = '<h3 class="slug">Header</h3><a class="lead-img" href="#"><img src="../sites/hgtv/images/266x200_al.jpg" height="200" width="266" alt=""/></a><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p><p><a href="#">Call to Action</a></p>',
+								videoHTML = '<h3 class="slug">Header</h3><div id="vplayer-lead"></div><img class="dummy-image" src="../sites/hgtv/images/video-player-generic-lead.png"/><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p><p><a href="#" target="">Call to Action</a></p><cscript type="text/javascript">$(function(){ var cid = 31661; var snap = new SNI.HGTV.Player.FullSizeNoPlaylist(\'vplayer-lead\', cid, \'\', \'\', {enableSyncAdFix: 0, dimensions: { width: 266, height: 173 }, flashvars: { autoPlay: false, enableRelatedInfoIcon: false, enableNowPlayingOverlay: false, playerSize: "Inline", enableHomePageMode : true }}); });</cscript>',
+							
+								html = type == 'image' ? imageHTML
+											: type == 'video' ? videoHTML
+											: type == 'undo' ? undoHTML
+												/* default to generic */
+												: imageHTML;
+							/* setup undoManager incase the user made a mistake in swapping out the third feature */
+							Celestia.undoManager.register(undefined, function() {
+								/* UNDO function */
+								swapFeature('undo', old_html);
+							}, [], 'Undo::Dynamic Lead - swapFeature', undefined, function() {
+								/* REDO function */
+								swapFeature('undo', html);
+							}, [], 'Redo::Dynamic Lead - swapFeature');
+							
+							$(C.module.current).find('.feature').html(html);
+							C.drawControls();
+							C.save();
+						};
+						swapFeature($(this).val() != undefined ? $(this).val() : 'image');
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	sections	: [{
+		/* Feature Section */
+		name		: 'Feature Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.feature').find('h3')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header',
+					max_width	: '272px'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('.feature').find('.lead-img').find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					type	: 'text',
+					value	: ''
+				},
+				src	: {
+					label	: 'Image URL',
+					value	: '../sites/hgtv/images/266x200_al.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_al', 'check image suffix; should be _al for 266 * 200');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_al', 'check image suffix; should be _al for 266 * 200');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.find('.feature').find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+					max_width	: '272px'
+				}
+			}]
+		}, {
+			name		: 'Video Player',
+			selector	: "{m}.find('.feature').find('cscript')",
+			extract	: /(\d{5})/,
+//			replace	: "(function($){$(function(){ var cid = {replace}; var snap = new SNI.HGTV.Player.FullSizeNoPlaylist('vplayer-lead', cid, '', '', {enableSyncAdFix: 0, dimensions: { width: 266, height: 173 }, flashvars: { autoPlay: false, enableRelatedInfoIcon: false, enableNowPlayingOverlay: false, playerSize: 'Inline', enableHomePageMode : true }}); });})(jQuery);",
+			editables	: [{
+				html	: {
+					noHighlight	: true,
+					label		: 'Player Id',
+					value		: '00000'
+				}
+			}]
+		}, {
+			name		: 'CTA',
+			selector	: "{m}.find('.feature').find('p').eq(1).find('a')",
+			/* affects: "" - also set the href attribute for all other anchors within this selector */
+			affects		: "{m}.find('.feature').find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#',
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '272px'
+				}
+			}]
+		}]
+	}, {
+		/* Secondary Section */
+		name		: 'Secondary Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.secondary').children().eq(0).find('.slug')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('.secondary').children().eq(0).children().eq(0).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69_sm.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value, data ) {
+				Celestia.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}, {
+			name	: 'Copy',
+			selector	: "{m}.find('.secondary').children().eq(0).children().eq(0).find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+					max_width	: '193px',
+					left		: '422px'
+				}
+			}]
+		}, {
+			name	: 'Call to Action',
+			selector	: "{m}.find('.secondary').children().eq(0).children().eq(0).find('p').eq(1).find('a')",
+			affects		: "{m}.find('.secondary').children().eq(0).children().eq(0).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '193px',
+					left		: '422px'
+				}
+			}]
+		}, {
+			name	: 'List',
+			/* this list is dynamic */
+			selector	: "{m}.find('.secondary').children().eq(0).find('.list')",
+			markup			: '<li><a href="#">List Item {x}</a></li>',
+			elements			: [{
+				name			: 'Call to Action',
+				/* sample markup to be added upon "add" */
+				
+				selector		: "{p}.children().eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'List Item {x} Href',
+						value	: '#'
+					},
+					html	: {
+						label	: 'List Item {x}',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}, {
+		/* Third Section */
+		name		: 'Third Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.secondary').children().eq(2).find('.slug')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.find('.secondary').children().eq(2).children().eq(0).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69_sm.jpg'
+				}
+			}]
+		}, {
+			name	: 'Copy',
+			selector	: "{m}.find('.secondary').children().eq(2).children().eq(0).find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+					max_width	: '193px',
+					left		: '422px'
+				}
+			}]
+		}, {
+			name	: 'Call to Action',
+			selector	: "{m}.find('.secondary').children().eq(2).children().eq(0).find('p').eq(1).find('a')",
+			affects		: "{m}.find('.secondary').children().eq(2).children().eq(0).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '193px',
+					left		: '422px'
+				}
+			}]
+		}, {
+			name	: 'List',
+			/* this list is dynamic */
+			selector	: "{m}.find('.secondary').children().eq(2).find('.list')",
+			markup			: '<li><a href="#">List Item {x}</a></li>',
+			elements			: [{
+				name			: 'Call to Action',
+				/* sample markup to be added upon "add" */
+				
+				selector		: "{p}.children().eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'List Item {x} Href',
+						value	: '#'
+					},
+					html	: {
+						label	: 'List Item {x}',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	buttons : [{
+		'btn-swap-third-feature': {
+			html	: 'Swap Third Feature',
+			click : function() {
+				
+				function swapContent( html ) {
+					/* get DIV.secondary && the 3rd feature's HTML to save */
+					var secondary = $(C.module.current).find('.secondary'),
+						old_html = secondary.children()[2];
+					
+					/* insert the new HTML */
+					$(secondary.children()[2]).before(html);
+					
+					/* setup undoManager incase the user made a mistake in swapping out the third feature */
+					Celestia.undoManager.register(undefined, function() {
+						/* UNDO function */
+						swapContent(old_html);
+					}, [], 'Undo::Swap 3rd Feature', undefined, function() {
+						/* REDO function */
+						swapContent(html);
+					}, [], 'Redo::Swap 3rd Feature');
+					
+					/* make certain there are only 2 sub features, redraw the controls and save */
+					$(secondary.children()[3]).remove();
+					C.drawControls();
+					Celestia.save();
+				};
+				
+				/* do we need to swap out the 3rd feature? */
+				var secondary = $(C.module.current).find('.secondary');
+				if ( $(secondary.children()[2]).attr('class').indexOf('basic-cartridge') != -1 ) {
+					swapContent('<div class="feature-cartridge"><div class="bd clrfix"><h3 class="slug">Third Feature Title</h3><a href="#" class="thumb"><img src="../sites/hgtv/images/92x69_sm.jpg" height="69" width="92" alt=""/></a><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p><p><a href="#">Call to Action</a></p></div></div>');
+				} else {
+					swapContent('<div class="pod basic-cartridge"><h3 class="slug">Third Feature Title</h3><ul class="list"><li><a href="#">List Item 1</a></li></ul></div>');
+				}
+			}
+		}
+	}]
+})
+</script>

@@ -1,0 +1,77 @@
+<div class="intro hath-intro">
+	<div id="cnt_sponsor"><span class="sponsor-multi-logo"><img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_88x31.jpg"/></span></div>
+	<h1 class="topic-title">Ideas for January</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+</div>
+<script>
+({
+	name	: 'Introduction',
+	
+	init : function() {
+		C.loadAssets({
+			'calendar-css' : 'http://web.hgtv.com/webhgtv/2013/hath/local.css'
+		});
+	},
+	
+	sections: [{
+		name		: 'HATH Copy Section',
+		elements	: [{
+			name		: 'Introduction Header',
+			selector	: "{m}.find('h1')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Ideas for January'
+				}
+			}]
+		}, {
+			name		: 'Introduction Copy',
+			selector	: "{m}.find('p')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}],
+	
+	buttons: [{
+		'btn-nologo': {
+			html	: 'No Logo',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('');
+				$('.temp', '#hgtvIntro').find('img').parent().html('');
+			}
+		},
+		'btn-88x31': {
+			html	: '88 x 31',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('<img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_88x31.jpg"/>');
+				$('.temp', '#hgtvIntro').find('img').parent().html('<img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_88x31.jpg"/>');
+			}
+		},
+		'btn-68x40': {
+			html	: '68 x 40',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('<img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_68x40.jpg"/>');
+				$('.temp', '#hgtvIntro').find('img').parent().html('<img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_68x40.jpg"/>');
+			}
+		},
+		'btn-115x24': {
+			html	: '115 x 24',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('<img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_115x24.jpg"/>');
+				$('.temp', '#hgtvIntro').find('img').parent().html('<img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_115x24.jpg"/>');
+			}
+		},
+		'btn-135x20': {
+			html	: '135 x 20',
+			click	: function() {
+				$('.sponsor-multi-logo', '#editor').html('<img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_135x20.jpg"/>');
+				$('.temp', '#hgtvIntro').find('img').parent().html('<img class="temp-multi-logo" src="../sites/hgtv/images/hg_multi_135x20.jpg"/>');
+			}
+		}
+	}]
+})
+</script>

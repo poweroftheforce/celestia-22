@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CSS Document */
+
+.non-rel-anchor { border: 1px solid #009; }
+.third-party-anchor { border: 1px solid #63F; }
+.third-party-no-target-anchor { border: 1px solid #B00; }
+.percent-20-anchor { border: 1px solid #F06; }

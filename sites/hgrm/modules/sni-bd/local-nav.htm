@@ -1,0 +1,39 @@
+<div class="local-nav">
+	<ul>
+		<li><a href="#" class="sel">Btn 1</a></li>
+	</ul>
+</div>
+<script>
+({
+	
+	name : 'Local Navigation',
+	
+	sections : [{
+		name		: 'Nav Section',
+		elements	: [{
+			name		: 'Nav',
+			selector	: "{m}.find('ul')",
+			markup		: '<li><a href="#">Btn {x}</a></li>',
+			elements	: [{
+				name		: 'Button {x}',
+				selector	: "{p}.children('li').eq({x}).find('a')",
+				editables	: [{
+					class : {
+						label	: 'Class',
+						value	: ''
+					},
+					href : {
+						label	: 'URL',
+						value	: '#'
+					},
+					html : {
+						label	: 'Text',
+						value	: 'Btn {x}'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+});
+</script>

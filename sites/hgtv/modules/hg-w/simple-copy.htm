@@ -1,0 +1,30 @@
+<div class="intro simple-copy clrfix">
+	<div class="bd">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+	</div>
+</div>
+<script>
+({
+	name	: 'Simple Copy',
+	
+	sections: [{
+		name		: 'Copy Section',
+		elements	: [{
+			name		: 'Copy',
+			selector	: "{m}.find('.bd')",
+			markup		: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>',
+			elements	: [{
+				name		: 'Copy',
+				selector	: "{p}.find('p').eq({x})",
+				editables	: [{
+					html	: {
+						label	: 'Text',
+						value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+					}
+				}]
+			}]
+		}]
+	}]
+	
+})
+</script>

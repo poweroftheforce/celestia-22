@@ -1,0 +1,163 @@
+<div class="pod two-across">
+	<style>.two-across { margin: 10px 0 14px 14px; }.two-across .bd h3{margin-bottom:14px;}</style>
+	<div class="hd"></div>
+	<div class="bd">
+		<ul class="clrfix">
+			<li class="mod2">
+				<h3><a href="#">Header</a></h3>
+				<a href="#"><img class="thumb" src="../sites/hgtv/images/120x90_tz.jpg" alt=""/></a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+				<p><a href="#">Did it Work?</a></p>
+			</li>
+			<li>
+				<h3><a href="#">Header</a></h3>
+				<a href="#"><img class="thumb" src="../sites/hgtv/images/120x90_tz.jpg" alt=""/></a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+				<p><a href="#">Call to Action</a></p>
+			</li>
+		</ul>
+	</div>
+	<div class="ft"></div>
+</div>
+<script>
+({
+	name	: 'Two Across',
+	
+	init: function() {
+		C.sortable('ul.clrfix');
+	},
+	
+	sections: [{
+		name		: 'Left Feature',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.children('.bd').find('li').eq(0).find('h3').find('a')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.children('.bd').find('li').eq(0).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'URL',
+					value	: '../sites/hgtv/images/120x90_tz.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_tz', 'check image suffix; should be _tz for 120 * 90');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_tz', 'check image suffix; should be _tz for 120 * 90');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.children('.bd').find('li').eq(0).find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+					max_width	: '139px'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			affects		: "{m}.children('.bd').find('li').eq(0).find('a')",
+			selector	: "{m}.children('.bd').find('li').eq(0).find('p a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label	: 'Text',
+					value	: 'Call to Action'
+				}
+			}]
+		}]
+	}, {
+		name		: 'Right Feature',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.children('.bd').find('li').eq(1).find('h3').find('a')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "{m}.children('.bd').find('li').eq(1).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'URL',
+					value	: '../sites/hgtv/images/120x90_tz.jpg',
+					callback : function( input, value, data ) {
+						Celestia.checkImageSize(input, value, '_tz', 'check image suffix; should be _tz for 120 * 90');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				Celestia.checkImageSize(input, value, '_tz', 'check image suffix; should be _tz for 120 * 90');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "{m}.children('.bd').find('li').eq(1).find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+					max_width	: '139px'
+				}
+			}]
+		}, {
+			name		: 'Call to Action',
+			selector	: "{m}.children('.bd').find('li').eq(1).find('p a')",
+			affects		: "{m}.children('.bd').find('li').eq(1).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label	: 'Text',
+					value	: 'Call to Action'
+				}
+			}]
+		}]
+	}],
+	
+	buttons: [{
+		'btn-hide-section-headers'	: {
+			html	: 'Hide Section Headers',
+			click	: function() {
+				var module = C.module.current;
+				if ( $('h3', module)[0] ) {
+					$('h3', module).remove();
+					C.drawControls();
+					$('.inputs-wrap .btn-hide-section-headers').html('Show Section Headers');
+				} else {
+					$('ul li', module).each(function(i, el) {
+						$(this).prepend('<h3>Feature ' + (i + 1) + ' Title</h3>');
+					});
+					C.drawControls();
+					$('.inputs-wrap .btn-hide-section-headers').html('Hide Section Headers');
+				}
+				C.save();
+			}
+		}
+	}]
+})
+</script>

@@ -1,0 +1,845 @@
+<div class="entry-form clrfix">
+	<div id="nl-bd" class="nl-bd">
+		<form name="sweepsEntryForm" id="sweepsEntryForm" action="http://sweeps.hgtv.com/SweepsTransaction/entry.do" method="post">
+			<input type="hidden" name="fvContestId" value=""/>
+			<input type="hidden" name="fvEntryType" value="STANDARD"/>
+			<input type="hidden" name="fvRId" value=""/>
+			<div class="bd first">
+				<fieldset class="nl-your-info fieldset">
+					<legend>Entry Form</legend>
+					<p><small>These fields are required.</small></p>
+					<ul class="clrfix">
+						<li>
+							<label for="fvFirst"><span>First Name:</span></label>
+							<div class="text-box clrfix">
+								<input type="text" class="text" id="fvFirst" name="fvFirst" size="25" maxlength="30" tabindex="1" autofocus/>
+							</div>
+						</li>
+						<li>
+							<label for="fvLastName"><span>Last Name:</span></label>
+							<div class="text-box clrfix">
+								<input type="text" class="text" id="fvLast" name="fvLast" size="25" maxlength="30" tabindex="2"/>
+							</div>
+						</li>
+						<li>
+							<label for="fvEmail"><span>Your Email:</span></label>
+							<div class="text-box clrfix">
+								<input type="text" class="text" id="fvEmail" class="example" name="fvEmail" size="25" maxlength="50" tabindex="3" placeholder="ex. jane@hgtv.com"/>
+							</div>
+						</li>
+						<li>
+							<label for="fvEmailConfirm"><span>Confirm Email:</span></label>
+							<div class="text-box clrfix">
+								<input type="text" class="text" id="fvEmailConfirm" name="fvEmailConfirm" size="25" maxlength="50" tabindex="4"/>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<label for="fvAddress1"><span>Address:</span></label>
+							<div class="text-box lg clrfix">
+								<input type="text" class="text" id="fvAddress1" name="fvAddress1" size="25" maxlength="60" tabindex="5"/>
+							</div>
+							<small>(Street address only. No P.O Boxes, please.)</small>
+						</li>
+						<li>
+							<label for="fvCity"><span>City:</span></label>
+							<div class="text-box clrfix">
+								<input type="text" class="text" id="fvCity" name="fvCity" size="25" maxlength="30" class="med" tabindex="6"/>
+							</div>
+						</li>
+					</ul>
+					<ul class="clrfix">
+						<li class="half float">
+							<label for="fvState"><span>State:</span></label>
+							<div class="text-box sm clrfix">
+								<select id="fvState" name="fvState" tabindex="7">
+									<option class="select-title" value="">Select State</option>
+									<option value="AK">AK</option><option value="AL">AL</option>
+									<option value="AR">AR</option><option value="AZ">AZ</option>
+									<option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DC">DC</option>
+									<option value="FL">FL</option><option value="GA">GA</option>
+									<option value="HI">HI</option><option value="IA">IA</option><option value="ID">ID</option>
+									<option value="IL">IL</option><option value="IN">IN</option><option value="KS">KS</option><option value="KY">KY</option>
+									<option value="LA">LA</option><option value="MA">MA</option><option value="MD">MD</option><option value="ME">ME</option>
+									<option value="MI">MI</option><option value="MN">MN</option><option value="MO">MO</option>
+									<option value="MS">MS</option><option value="MT">MT</option><option value="NC">NC</option>
+									<option value="ND">ND</option><option value="NE">NE</option><option value="NH">NH</option><option value="NJ">NJ</option>
+									<option value="NM">NM</option><option value="NV">NV</option><option value="NY">NY</option><option value="OH">OH</option>
+									<option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option>
+									<option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option>
+									<option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VA">VA</option>
+									<option value="WA">WA</option><option value="WI">WI</option>
+									<option value="WY">WY</option>
+								</select>
+							</div>
+						</li>
+						<li class="half float">
+							<label for="fvZip"><span>Zip Code:</span></label>
+							<div class="text-box sm clrfix">
+								<input type="text" class="text" id="fvZip" class="example" name="fvZip" maxlength="5" tabindex="8" placeholder="5 digits"/>
+							</div>
+						</li>
+					</ul>
+					<ul class="clrfix">
+						<li>
+							<label for="fvEvePhone"><span>Phone:</span></label>
+							<div class="text-box clrfix">
+								<input type="text" class="text" id="fvEvePhone" name="fvEvePhone" maxlength="14" class="med example" tabindex="10" placeholder="ex. (123) 456-7890"/>
+							</div>
+						</li>
+						<li class="half">
+							<label><span>Gender:</span></label>
+							<div class="text-box clrfix">
+								<ul class="clrfix radio-grp">
+									<li class="radio half float">
+										<input type="radio" name="fvGender" id="female" value="f" tabindex="11"/>
+										<label for="female" class="sm">Female</label>
+									</li>
+									<li class="radio half float">
+										<input type="radio" name="fvGender" id="male" value="m" tabindex="12"/>
+										<label for="male" class="sm">Male</label>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<label for="fvBirthYear"><span>Birth Year:</span></label>
+							<div class="text-box clrfix">
+								<input type="text" class="text" id="fvBirthYear" name="fvBirthYear" maxlength="4" class="med example" tabindex="13" placeholder="ex. 1973"/>
+							</div>
+						</li>
+						<li style="clear:left;">
+							<label for="fvOptIn31"><span>Cable / Service Provider</span></label>
+							<div class="clrfix">
+								<select id="fvOptIn31" name="fvOptIn31" tabindex="14">
+									<option class="select-title" value="">Select Provider</option>
+									<option value="att">AT&amp;T U-verse </option><option value="atlbrd">Atlantic Broadband</option><option value="brescm">Bresnan</option>
+									<option value="bright">Bright House</option><option value="cable1">Cable One</option><option value="cablev">Cablevision/Optimum</option>
+									<option value="chart">Charter</option><option value="comcas">Comcast/Xfinity</option><option value="cox">Cox</option>
+									<option value="direct">DirecTV</option><option value="dish">Dish Network</option><option value="insigh">Insight</option>
+									<option value="knolog">Knology</option><option value="media">Mediacom</option><option value="rcn">RCN</option>
+									<option value="serele">Service Electric</option><option value="sudden">Suddenlink</option><option value="time">Time Warner Cable</option>
+									<option value="veriz">Verizon FiOS</option><option value="wide">WOW!</option><option value="other">Other</option>
+								</select>
+							</div>
+						</li>
+						<li class="last remember-me">
+							<label>
+								<input type="checkbox" id="chk-remember" name="chk-remember" tabindex="15"/>
+								&nbsp;Remember me for next time. <a href="javascript:;" class="whats-this">What is this?</a></label>
+							<div class="remember-me-help clrfix">
+								<h2>Remember Me</h2>
+								<div class="btn-close"><a href="javascript:;">Close</a></div>
+								<p>Next time you visit, it will be even easier to enter! Just click on your name in the "Welcome Back" message and your information will be added automatically. Then click the "Enter for a chance to win! button"*</p>
+								<p class="footnote">* This feature is supported in Internet Explorer 8 and above, Firefox, Chrome and Safari.</p>
+							</div>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+			<div class="hr"><hr/></div>
+			<div class="bd">
+				<fieldset class="nl-optional fieldset">
+					<legend>Inspiration in Your Inbox</legend>
+					<p><small>These fields are optional.</small></p>
+					<p class="note">Select, subscribe and enjoy our free HOME-inspired newsletters</p>
+					<div class="nl-cols clrfix">
+						<ul class="nl-list inspiration-left">
+							<li>
+								<input type="checkbox" id="fvOptIn01" name="fvOptIn01" value="hgtv_inspiration"/>
+								<label for="fvOptIn01">HGTV Inspiration</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn02" name="fvOptIn02" value="hgtv_outdoors"/>
+								<label for="fvOptIn02">HGTV Outdoors</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn03" name="fvOptIn03" value="hgtv_kitchenbath"/>
+								<label for="fvOptIn03">HGTV Kitchen &amp; Bath</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn04" name="fvOptIn04" value="hpro_screeningroom"/>
+								<label for="fvOptIn04">HGTV Screening Room</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn05" name="fvOptIn05" value="hpro_consumer"/>
+								<label for="fvOptIn05">HGTV Remodels</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn06" name="fvOptIn06" value="hgtv_marketplace"/>
+								<label for="fvOptIn06">HGTV Shopping</label>
+							</li>
+						</ul>
+						<ul class="nl-list inspiration-right">
+							<li>
+								<input type="checkbox" id="fvOptIn07" name="fvOptIn07" value="fd_news"/>
+								<label for="fvOptIn07">HGTV's FrontDoor News</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn08" name="fvOptIn08" value="hgtv_gardens"/>
+								<label for="fvOptIn08">HGTV Gardens</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn09" name="fvOptIn09" value="diy_news"/>
+								<label for="fvOptIn09">DIY Network News</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn10" name="fvOptIn10" value="sn_sweepstakes"/>
+								<label for="fvOptIn10">Sweepstakes Updates</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn11" name="fvOptIn11" value="sn_partners"/>
+								<label for="fvOptIn11">Special Offers from Our Partners</label>
+							</li>
+						</ul>
+					</div>
+				</fieldset>
+			</div>
+			<div class="hr"><hr/></div>
+			<div class="bd">
+				<fieldset>
+					<legend>Offers from Our Family Websites</legend>
+					<p><small>These fields are optional.</small></p>
+					<p class="note">Select, subscribe and enjoy our free FOOD-inspired newsletters</p>
+					<div class="nl-cols clrfix">
+						<ul class="nl-list from-our-family-left">
+							<li>
+								<input type="checkbox" id="fvOptIn12" name="fvOptIn12" value="fn_news"/>
+								<label for="fvOptIn12">Food Network News</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn13" name="fvOptIn13" value="fn_rotd"/>
+								<label for="fvOptIn13">Food Network Recipe of the Day</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn14" name="fvOptIn14" value="fn_healthy"/>
+								<label for="fvOptIn14">Food Network Healthy Eating</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn15" name="fvOptIn15" value="foodcom_news"/>
+								<label for="fvOptIn15">Food.com News</label>
+							</li>
+						</ul>
+						<ul class="nl-list from-our-family-right">
+							<li>
+								<input type="checkbox" id="fvOptIn16" name="fvOptIn16" value="cc_news"/>
+								<label for="fvOptIn16">Cooking Channel News</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn17" name="fvOptIn17" value="f2_news"/>
+								<label for="fvOptIn17">Friday Feed from Cooking Channel</label>
+							</li>
+							<li>
+								<input type="checkbox" id="fvOptIn18" name="fvOptIn18" value="fn_store"/>
+								<label for="fvOptIn18">Food Network Store Deals and Updates</label>
+							</li>
+						</ul>
+					</div>
+					<p class="note">Select, subscribe and enjoy our free TRAVEL &amp; ENTERTAINMENT-inspired newsletters</p>
+					<div class="nl-cols clrfix">
+						<ul class="nl-list from-our-family-002-left">
+							<li>
+								<input type="checkbox" id="fvOptIn19" name="fvOptIn19" value="tc_news"/>
+								<label for="fvOptIn19">Travel Channel News</label>
+							</li>
+							<li class="last">
+								<input type="checkbox" id="fvOptIn20" name="fvOptIn20" value="tc_deals"/>
+								<label for="fvOptIn20">Travel Channel Deals</label>
+							</li>
+						</ul>
+						<ul class="nl-list from-our-family-002-right">
+							<li>
+								<input type="checkbox" id="fvOptIn21" name="fvOptIn21" value="tc_destinations"/>
+								<label for="fvOptIn21">Travel Channel Daily Escape Weekly Wrap-Up</label>
+							</li>
+							<li class="last">
+								<input type="checkbox" id="fvOptIn22" name="fvOptIn22" value="gac_news"/>
+								<label for="fvOptIn22">Great American Country Weekly</label>
+							</li>
+						</ul>
+					</div>
+				</fieldset>
+			</div>
+			<div class="hr"><hr/></div>
+			<div class="bd">
+				<p class="ftnt">By entering, information collected will be used in accordance with our <a href="http://www.scrippsnetworksinteractive.com/privacy-policy/" target="_blank">Privacy Policy</a>.</p>
+				<p class="find">
+					<button type="submit" class="button"><span><em>Enter For a Chance to Win</em></span></button>
+				</p>
+			</div>
+		</form>
+	</div>
+	<cscript src="http://hgtv.sndimg.com/webhgtv/2013/dream-home/sweeps/jquery.validate.min.js"></cscript>
+	<cscript src="http://hgtv.sndimg.com/webhgtv/2013/sweeps/sweeps.full.js"></cscript>
+	<cscript>
+	SNI.Sweeps({
+		lockedPage		: 'http://www.hgtv.com/unable-to-complete-your-request/package/index.html'
+	});
+	</cscript>
+</div>
+<script>
+({
+	name : 'Sweeps Enter Form',
+	
+	init : function() {
+		C.loadAssets({
+			'sweeps-css' : '../sites/hgtv/const/sweeps.css'
+		});
+	},
+	
+	setField : function( input, value ) {
+		$(input).attr({
+			name : value
+		}).parent().prev()
+			.attr({
+				for : value
+			});
+		/* we don't want to pound the save on keyup */
+		var t = new Date().getTime();
+		if ( t > (Celestia.key_stroke_time + 1000) ) {
+			/* incase the user typed a url into a field */
+			Celestia.disableLinks();
+			Celestia.save();
+		}
+		Celestia.key_stroke_time = t;
+	},
+	
+	sections : [{
+		name : 'Entry Form',
+		elements : [{
+			name : 'Contest Id',
+			selector	: "{m}.find('input[name=\"fvContestId\"]')",
+			editables	: [{
+				value : {
+					noHighlight : true,
+					label : 'Id',
+					value : ''
+				}
+			}]
+		}, {
+			name : 'Legend',
+			selector	: "{m}.find('.nl-your-info').find('legend')",
+			editables	: [{
+				html : {
+					label : 'Text',
+					value : 'Entry Form'
+				}
+			}]
+		}, {
+			name : 'Small Print',
+			selector	: "{m}.find('.nl-your-info').find('p').eq(0).find('small')",
+			editables	: [{
+				html : {
+					label : 'Text',
+					value : 'These fields are required.'
+				}
+			}]
+		}, {
+			name		: 'First Name Field',
+			selectors	: [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(0).children('li').eq(0).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'First Name:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(0).children('li').eq(0).find('input')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvFirst',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'Last Name Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(0).children('li').eq(1).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Last Name:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(0).children('li').eq(1).find('input')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvLast',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'Email Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(0).children('li').eq(2).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Your Email:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(0).children('li').eq(2).find('input')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvEmail',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'Confirm Email Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(0).children('li').eq(3).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Confirm Email:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(0).children('li').eq(3).find('input')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvEmailConfirm',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'Address Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(1).children('li').eq(0).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Address:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(1).children('li').eq(0).find('input')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvAddress1',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'City Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(1).children('li').eq(1).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'City:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(1).children('li').eq(1).find('input')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvCity',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'State Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(2).children('li').eq(0).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'State:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(2).children('li').eq(0).find('select')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvState',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'Zip Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(2).children('li').eq(1).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Zip Code:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(2).children('li').eq(1).find('input')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvZip',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'Phone Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(3).children('li').eq(0).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Phone:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(3).children('li').eq(0).find('input')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvEvePhone',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'Gender Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(3).children('li').eq(1).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Gender:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(3).children('li').eq(1).find('input').eq(0)",
+				editables	: [{
+					name : {
+						label : 'Id',
+						value : 'fvGender',
+						callback : function( input, value, data ) {
+							//$.data(C.module.current, 'data').setField(data.options.selector, value);
+							
+							$(data.options.selector).parents('.radio-grp').find('input').attr({
+								name : value
+							});
+							/* we don't want to pound the save on keyup */
+							var t = new Date().getTime();
+							if ( t > (Celestia.key_stroke_time + 1000) ) {
+								/* incase the user typed a url into a field */
+								Celestia.disableLinks();
+								Celestia.save();
+							}
+							Celestia.key_stroke_time = t;
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'Birth Year Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(3).children('li').eq(2).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Birth Year:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(3).children('li').eq(2).find('input')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvBirthYear',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}, {
+			name : 'Cable Provider Field',
+			selectors : [{
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(3).children('li').eq(3).find('span')",
+				editables	: [{
+					html : {
+						label : 'Text',
+						value : 'Cable / Service Provider:'
+					}
+				}]
+			}, {
+				selector	: "{m}.find('.nl-your-info').find('ul').eq(3).children('li').eq(3).find('select')",
+				editables	: [{
+					id : {
+						label : 'Id',
+						value : 'fvOptIn31',
+						callback : function( input, value, data ) {
+							$.data(C.module.current, 'data').setField(data.options.selector, value);
+						}
+					}
+				}]
+			}]
+		}]
+	}, {
+		name : 'Newsletter Section',
+		elements : [{
+			name : 'Inpiration List (left)',
+			selector : "{m}.find('.inspiration-left')",
+			markup : '<li><input type="checkbox" id="fvOptIn" name="fvOptIn" value="hgtv_inspiration"/><label for="fvOptIn">HGTV Inspiration</label></li>',
+			elements : [{
+				name : 'Inpiration NL (left) {x}',
+				selectors : [{
+					selector : "{p}.children('li').eq({x}).find('label')",
+					editables : [{
+						for : {
+							label : 'Id',
+							value : 'fvOptIn',
+							callback : function( input, value, data ) {
+								$(data.options.selector).prev().attr({
+									name : value,
+									id : value
+								});
+							}
+						},
+						html : {
+							label : 'Copy',
+							value : 'HGTV Inspiration'
+						}
+					}]
+				}, {
+					selector : "{p}.children('li').eq({x}).find('input')",
+					editables : [{
+						value : {
+							label : 'Value',
+							value : 'hgtv_inspiration'
+						}
+					}]
+				}]
+			}]
+		}, {
+			name : 'Inpiration List (right)',
+			selector : "{m}.find('.inspiration-right')",
+			markup : '<li><input type="checkbox" id="fvOptIn" name="fvOptIn" value="fd_news"/><label for="fvOptIn">HGTV\'s FrontDoor News</label></li>',
+			elements : [{
+				name : 'Inpiration NL (right) {x}',
+				selectors : [{
+					selector : "{p}.children('li').eq({x}).find('label')",
+					editables : [{
+						for : {
+							label : 'Id',
+							value : 'fvOptIn',
+							callback : function( input, value, data ) {
+								$(data.options.selector).prev().attr({
+									name : value,
+									id : value
+								});
+							}
+						},
+						html : {
+							label : 'Copy',
+							value : 'HGTV\'s FrontDoor News'
+						}
+					}]
+				}, {
+					selector : "{p}.children('li').eq({x}).find('input')",
+					editables : [{
+						value : {
+							label : 'Value',
+							value : 'fd_news'
+						}
+					}]
+				}]
+			}]
+		}, {
+			name : 'From Our Family List 001 (left)',
+			selector : "{m}.find('.from-our-family-left')",
+			markup : '<li><input type="checkbox" id="fvOptIn" name="fvOptIn" value="fn_news"/><label for="fvOptIn">Food Network News</label></li>',
+			elements : [{
+				name : 'From Our Family NL 001 (left) {x}',
+				selectors : [{
+					selector : "{p}.children('li').eq({x}).find('label')",
+					editables : [{
+						for : {
+							label : 'Id',
+							value : 'fvOptIn',
+							callback : function( input, value, data ) {
+								$(data.options.selector).prev().attr({
+									name : value,
+									id : value
+								});
+							}
+						},
+						html : {
+							label : 'Copy',
+							value : 'Food Network News'
+						}
+					}]
+				}, {
+					selector : "{p}.children('li').eq({x}).find('input')",
+					editables : [{
+						value : {
+							label : 'Value',
+							value : 'fn_news'
+						}
+					}]
+				}]
+			}]
+		}, {
+			name : 'From Our Family List 001 (right)',
+			selector : "{m}.find('.from-our-family-right')",
+			markup : '<li><input type="checkbox" id="fvOptIn" name="fvOptIn" value="cc_news"/><label for="fvOptIn">Cooking Channel News</label></li>',
+			elements : [{
+				name : 'From Our Family NL 001 (right) {x}',
+				selectors : [{
+					selector : "{p}.children('li').eq({x}).find('label')",
+					editables : [{
+						for : {
+							label : 'Id',
+							value : 'fvOptIn',
+							callback : function( input, value, data ) {
+								$(data.options.selector).prev().attr({
+									name : value,
+									id : value
+								});
+							}
+						},
+						html : {
+							label : 'Copy',
+							value : 'Cooking Channel News'
+						}
+					}]
+				}, {
+					selector : "{p}.children('li').eq({x}).find('input')",
+					editables : [{
+						value : {
+							label : 'Value',
+							value : 'cc_news'
+						}
+					}]
+				}]
+			}]
+		}, {
+			name : 'From Our Family List 002 (left)',
+			selector : "{m}.find('.from-our-family-002-left')",
+			markup : '<li><input type="checkbox" id="fvOptIn" name="fvOptIn" value="tc_news"/><label for="fvOptIn">Travel Channel News</label></li>',
+			elements : [{
+				name : 'From Our Family NL 002 (left) {x}',
+				selectors : [{
+					selector : "{p}.children('li').eq({x}).find('label')",
+					editables : [{
+						for : {
+							label : 'Id',
+							value : 'fvOptIn',
+							callback : function( input, value, data ) {
+								$(data.options.selector).prev().attr({
+									name : value,
+									id : value
+								});
+							}
+						},
+						html : {
+							label : 'Copy',
+							value : 'Travel Channel News'
+						}
+					}]
+				}, {
+					selector : "{p}.children('li').eq({x}).find('input')",
+					editables : [{
+						value : {
+							label : 'Value',
+							value : 'tc_news'
+						}
+					}]
+				}]
+			}]
+		}, {
+			name : 'From Our Family List 002 (right)',
+			selector : "{m}.find('.from-our-family-002-right')",
+			markup : '<li><input type="checkbox" id="fvOptIn" name="fvOptIn" value="tc_destinations"/><label for="fvOptIn">Travel Channel Daily Escape Weekly Wrap-Up</label></li>',
+			elements : [{
+				name : 'From Our Family NL 002 (right) {x}',
+				selectors : [{
+					selector : "{p}.children('li').eq({x}).find('label')",
+					editables : [{
+						for : {
+							label : 'Id',
+							value : 'fvOptIn',
+							callback : function( input, value, data ) {
+								$(data.options.selector).prev().attr({
+									name : value,
+									id : value
+								});
+							}
+						},
+						html : {
+							label : 'Copy',
+							value : 'Travel Channel Daily Escape Weekly Wrap-Up'
+						}
+					}]
+				}, {
+					selector : "{p}.children('li').eq({x}).find('input')",
+					editables : [{
+						value : {
+							label : 'Value',
+							value : 'tc_destinations'
+						}
+					}]
+				}]
+			}]
+		}]
+	}, {
+		name : 'Submit Section',
+		elements : [/*{
+			name		: 'Foot Note',
+			selector	: "{m}.find('.ftnt')",
+			editables	: [{
+				html : {
+					label : 'Text',
+					value : 'By entering, information collected will be used in accordance with our <a href="http://www.scrippsnetworksinteractive.com/privacy-policy/" target="_blank">Privacy Policy</a>.'
+				}
+			}]
+		}, */{
+			name		: 'Submit Button',
+			selector	: "{m}.find('button').find('em')",
+			editables	: [{
+				html : {
+					label : 'Text',
+					value : 'Enter For a Chance to Win'
+				}
+			}]
+		}]
+	}]
+})
+</script>

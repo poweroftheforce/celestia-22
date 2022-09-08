@@ -1,0 +1,444 @@
+<div class="generic-lead clrfix">
+	<div class="hd clrfix">
+		<div class="sponsor clrfix">
+			<div class="sponsor-multi-logo"><img class="temp-multi-logo" src="../sites/diy/images/diy_multi_88x31.jpg"/></div>
+			<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</h3>
+		</div>
+	</div>
+	<div class="bd clrfix">
+		<div class="feature">
+			<h3 class="slug">Header</h3>
+			<a class="lead-img" href="#"><img src="../sites/diy/images/266x200_al.jpg" height="200" width="266" alt=""/></a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+			<p><a href="#">Call to Action</a></p>
+		</div>
+		<div class="secondary">
+			<div class="feature-cartridge">
+				<div class="bd clrfix">
+					<h3 class="slug">Header</h3>
+					<a href="#" class="thumb"><img src="../sites/diy/images/92x69_sm.jpg" width="92" height="69" alt=""/></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+					<p><a href="#">Call to Action</a></p>
+				</div>
+			</div>
+			<hr />
+			<div class="pod basic-cartridge">
+				<h5>Header</h5>
+				<ul class="list">
+					<li><a href="#">List Item 1</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+({
+	name	: 'Generic Lead',
+	
+	sections	: [{
+		name		: 'Header Section',
+		elements	: [{
+			name		: 'Copy',
+			selector		: "{m}.find('.hd').find('h3')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.'
+				}
+			}]
+		}]
+	}, {
+		/* Feature Section */
+		name		: 'Feature Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "{m}.find('.feature').find('h3')",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Header',
+					max_width	: '272px'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "$({module}).find('.feature').find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					type	: 'text',
+					value	: ''
+				},
+				src	: {
+					label	: 'Image URL',
+					value	: '../sites/hgtv/images/266x200.jpg',
+					callback : function( input, value, data ) {
+						C.checkImageSize(input, value, '_al', 'check image suffix; should be _al for 200 * 266');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				C.checkImageSize(input, value, '_al', 'check image suffix; should be _al for 200 * 266');
+			}
+		}, {
+			name		: 'Copy',
+			selector	: "$({module}).find('.feature').find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+					max_width	: '272px'
+				}
+			}]
+		}, {
+			name		: 'CTA',
+			selector	: "$({module}).find('.feature').find('p').eq(1).find('a')",
+			/* affects: "" - also set the href attribute for all other anchors within this selector */
+			affects		: "$({module}).find('.feature').find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#',
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '272px'
+				}
+			}]
+		}]
+	}, {
+		/* Secondary Section */
+		name		: 'Secondary Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({module}).find('.secondary').children().eq(0).find('.slug')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Header',
+			selector	: "$({module}).find('.secondary').children().eq(0).find('h5')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "$({module}).find('.secondary').children().eq(0).children().eq(0).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69.jpg',
+					callback : function( input, value, data ) {
+						C.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+					}
+				}
+			}],
+			callback : function( input, value ) {
+				C.checkImageSize(input, value, '_sm', 'check image suffix; should be _sm for 92 * 69');
+			}
+		}, {
+			name	: 'Copy',
+			selector	: "$({module}).find('.secondary').children().eq(0).children().eq(0).find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+					max_width	: '193px',
+					left		: '422px'
+				}
+			}]
+		}, {
+			name	: 'Call to Action',
+			selector	: "$({module}).find('.secondary').children().eq(0).children().eq(0).find('p').eq(1).find('a')",
+			affects		: "$({module}).find('.secondary').children().eq(0).children().eq(0).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '193px',
+					left		: '422px'
+				}
+			}]
+		}, {
+			name	: 'List',
+			/* this list is dynamic */
+			selector	: "$({module}).find('.secondary').children().eq(0).find('.list')",
+			markup			: '<li><a href="#">List Item {x}</a></li>',
+			elements			: [{
+				name			: 'Call to Action',
+				/* sample markup to be added upon "add" */
+				
+				selector		: "$({module}).find('.secondary').children().eq(0).find('.list').children().eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'List Item {x} Href',
+						value	: '#'
+					},
+					html	: {
+						label	: 'List Item {x}',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}, {
+		/* Third Section */
+		name		: 'Third Section',
+		elements	: [{
+			name		: 'Header',
+			selector	: "$({module}).find('.secondary').children().eq(2).find('.slug')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Header',
+			selector	: "$({module}).find('.secondary').children().eq(2).find('h5')",
+			editables	: [{
+				html	: {
+					label	: 'Text',
+					value	: 'Header'
+				}
+			}]
+		}, {
+			name		: 'Image',
+			selector	: "$({module}).find('.secondary').children().eq(2).children().eq(0).find('img')",
+			editables	: [{
+				alt	: {
+					label	: 'Alt',
+					value	: ''
+				},
+				src	: {
+					label	: 'Src',
+					value	: '../sites/hgtv/images/92x69.jpg'
+				}
+			}]
+		}, {
+			name	: 'Copy',
+			selector	: "$({module}).find('.secondary').children().eq(2).children().eq(0).find('p').eq(0)",
+			editables	: [{
+				html	: {
+					label		: 'Text',
+					value		: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.',
+					max_width	: '193px',
+					left		: '422px'
+				}
+			}]
+		}, {
+			name	: 'Call to Action',
+			selector	: "$({module}).find('.secondary').children().eq(2).children().eq(0).find('p').eq(1).find('a')",
+			affects		: "$({module}).find('.secondary').children().eq(2).children().eq(0).find('a')",
+			editables	: [{
+				href	: {
+					label	: 'URL',
+					value	: '#'
+				},
+				html	: {
+					label		: 'Text',
+					value		: 'Call to Action',
+					max_width	: '193px',
+					left		: '422px'
+				}
+			}]
+		}, {
+			name	: 'List',
+			/* this list is dynamic */
+			selector	: "$({module}).find('.secondary').children().eq(2).find('.list')",
+			markup			: '<li><a href="#">List Item {x}</a></li>',
+			elements			: [{
+				name			: 'Call to Action',
+				/* sample markup to be added upon "add" */
+				
+				selector		: "$({module}).find('.secondary').children().eq(2).find('.list').children().eq({x}).find('a')",
+				editables	: [{
+					href	: {
+						label	: 'List Item {x} Href',
+						value	: '#'
+					},
+					html	: {
+						label	: 'List Item {x}',
+						value	: 'List Item {x}'
+					}
+				}]
+			}]
+		}]
+	}],
+	
+	init: function() {
+		C.sortable('.list');
+		C.sortable('.secondary', {
+			start	: function(e, ui) {
+				$(ui.item).parents('.secondary').find('hr').remove();
+			},
+			stop	: function(e, ui) {
+				/* automatically gets saved */
+				$($(ui.item).parents('.secondary').children().eq(0)).after('<hr/>');
+			}
+		});
+		C.loadAssets({ 'packages-css' : '../sites/diy/const/packages.css' });
+	},
+	
+	checkIntro : function() {
+		
+		if ( !$(C.module.current).find('.hd')[0] ) {
+			$('#btn-hide-generic-lead-intro').html('Show Intro Text');
+			$('.inputs-wrap .header-section').hide();
+		} else {
+			$('#btn-hide-generic-lead-intro').html('Hide Intro Text');
+			$('.inputs-wrap .header-section').show();
+		}
+		$('#sel-logos option[value="' + $(C.module.current).find('.sponsor-multi-logo img').attr('src') + '"]').attr('selected', 'selected');
+	},
+	
+	controlsDrawn : function() {
+		$.data(C.module.current, 'data').checkIntro();
+	},
+	
+	menu : [{
+		nodeName	: 'ul',
+		addClass	: 'generic-lead-menu clrfix',
+		append		: [{
+			nodeName	: 'li',
+			addClass	: 'logos-wrap',
+			append		: [{
+				nodeName	: 'label',
+				html		: 'Preview with Logo (select size): ',
+				append		: [{
+					nodeName	: 'select',
+					id			: 'sel-logos',
+					append		: [
+						{ nodeName : 'option', val : '', html : 'Select Option' },
+						{ nodeName : 'option', val : '../sites/diy/images/diy_multi_88x31.jpg', html : '88 x 31' },
+						{ nodeName : 'option', val : '../sites/diy/images/diy_multi_68x40.jpg', html : '68 x 40' },
+						{ nodeName : 'option', val : '../sites/diy/images/diy_multi_115x24.jpg', html : '115 x 24' },
+						{ nodeName : 'option', val : '../sites/diy/images/diy_multi_135x20.jpg', html : '135 x 20' },
+						{ nodeName : 'option', val : '', html : 'No Logo' }
+					],
+					change : function() {
+						if ( $(this).val() == '' ) {
+							$(C.module.current).find('.sponsor-multi-logo').html('');
+						} else {
+							$(C.module.current).find('.sponsor-multi-logo').html('<img class="temp-multi-logo" src="' + $(this).val() + '"/>');
+						}
+						C.save();
+					}
+				}]
+			}]
+		}, {
+			nodeName	: 'li',
+			append		: [{
+				nodeName	: 'button',
+				id			: 'btn-hide-generic-lead-intro',
+				html		: 'Hide Intro Text',
+				click		: function() {
+					
+					var data = $.data(C.module.current, 'data');
+					
+					function insertIntro( html ) {
+						$(C.module.current).prepend(html);
+						data.checkIntro();
+						C.drawControls();
+						C.save();
+					};
+					
+					function removeIntro() {
+						
+						if ( $(C.module.current).find('.hd')[0] ) {
+							var oldIntro = $(C.module.current).find('.hd');
+							
+							C.undoManager.register(undefined, function() {
+								/* UNDO function */
+								
+								if ( !$(C.module.current).find('.hd')[0] ) {
+									insertIntro(oldIntro);
+								}
+							}, [], 'Undo::Swap 3rd Feature', undefined, function() {
+								/* REDO function */
+								removeIntro();
+							}, [], 'Redo::Swap 3rd Feature');
+							$(C.module.current).find('.hd').remove();
+							data.checkIntro();
+							C.drawControls();
+							C.save();
+						};
+					}
+					
+					if ( $(C.module.current).find('.hd').children().length > 0 ) {
+						removeIntro();
+					} else {
+						insertIntro('<div class="hd clrfix"><div class="sponsor clrfix"><div class="sponsor-multi-logo"><img class="temp-multi-logo" src="../sites/diy/images/diy_multi_88x31.jpg"/></div><h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</h3></div></div>');
+					}
+				}
+			}]
+		}, {
+			nodeName	: 'li',
+			append		: [{
+				nodeName	: 'button',
+				html		: 'Intro Text Color',
+				click		: function() {
+					$('#dlg-diy-css-color')
+						.dialog('open')
+						.dialog('option', 'width', 450)
+						.dialog('option', 'height', 200)
+						.attr('module', 'sponsor-lead');
+				}
+			}]
+		}, {
+			nodeName	: 'li',
+			append		: [{
+				nodeName	: 'button',
+				html		: 'Swap 3rd Feature Content',
+				click		: function() {
+					function swapContent( html ) {
+						/* get DIV.secondary && the 3rd feature's HTML to save */
+						var secondary = $(C.module.current).find('.secondary'),
+							old_html = secondary.children()[2];
+						
+						/* insert the new HTML */
+						$(secondary.children()[2]).before(html);
+						
+						/* setup undoManager incase the user made a mistake in swapping out the third feature */
+						C.undoManager.register(undefined, function() {
+							/* UNDO function */
+							swapContent(old_html);
+						}, [], 'Undo::Swap 3rd Feature', undefined, function() {
+							/* REDO function */
+							swapContent(html);
+						}, [], 'Redo::Swap 3rd Feature');
+						
+						/* make certain there are only 2 sub features, redraw the controls and save */
+						$(secondary.children()[3]).remove();
+						C.drawControls();
+						C.save();
+					};
+					
+					var secondary = $(C.module.current).find('.secondary');
+					if ( $(secondary.children()[2]).attr('class').indexOf('basic-cartridge') != -1 ) {
+						swapContent('<div class="feature-cartridge"><div class="bd clrfix"><h3 class="slug">Header</h3><a href="#" class="thumb"><img src="../sites/diy/images/92x69_sm.jpg" width="92" height="69" alt=""/></a><p>Default copy goes here.</p><p><a href="#">Call to Action</a></p></div></div>');
+					} else {
+						swapContent('<div class="pod basic-cartridge"><h5>Header</h5><ul class="list"><li><a href="#">List Item 1</a></li></ul></div>');
+					}
+				}
+			}]
+		}]
+	}]
+	
+})
+</script>

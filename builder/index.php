@@ -2,12 +2,6 @@
 
 session_start();
 
-
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-
-
 /*echo phpinfo();*/
 
 // disable magic quotes
@@ -26,9 +20,6 @@ if (get_magic_quotes_gpc()) {
     }
     unset($process);
 }
-
-
-
 
 $con = new mysqli("localhost:3306", "root", "json2html");
 if ( !$con ) {

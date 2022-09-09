@@ -22,22 +22,24 @@ if (get_magic_quotes_gpc()) {
 }
 
 $con = new mysqli("localhost:3306", "root", "json2html");
-if ( !$con ) {
-	die('Could not connect: ' . mysql_error());
+if ($con->connect_error) {
+	die('Could not connect: ' . $con->connect_error);
 }
 
 
 // Create database
 $sql = "CREATE DATABASE IF NOT EXISTS db_celestia";
 
-if ($con->query($sql) === TRUE) {
-	echo "Database created";
-} else {
-	echo "Error creating database: " . $con->error;
+if (!mysqli_select_db($con, "db_celestia")) {
+	if ($con->query($sql) === TRUE) {
+		echo "Database created";
+	} else {
+		echo "Error creating database: " . $con->error;
+	}
 }
 
 // Create table
-$con->select_db("world");
+$con->select_db("db_celestia");
 
 $sql = "CREATE TABLE Users
 (
@@ -52,12 +54,9 @@ KEY id_2 (id)
 )";
 
 // Execute query
-// mysql_query($sql, $con);
 $con->query($sql);
 
-// mysqli_close($con);
 $con->close();
-
 
 // Connect to MySQL
 $con = mysqli_connect('localhost:3306', 'root', 'json2html');
@@ -70,7 +69,7 @@ $db_selected = mysqli_select_db($con, 'db_celestia');
 
 if ( !$db_selected ) {
   // If we couldn't, then it either doesn't exist, or we can't see it.
-  $sql = 'CREATE DATABASE db_celestia';
+  $sql = 'CREATE DATABASE IF NOT EXISTS db_celestia';
 
   if ( mysqli_query($con, $sql) ) {
       //echo "Database db_celestia created successfully\n";

@@ -564,5 +564,5 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 
 
 .ui-button-icon-only .ui-icon {position:relative;top:-3px;left:-1px;}
-.ui-combobox-toggle {top:4px;height:24px;}
+.ui-combobox-toggle {top:-1px;height:25px;}
 .ui-combobox-toggle .ui-icon {background-image:url("images/ui-icons_2e83ff_256x240.png");left:5px;margin-left:0;top:12px;}

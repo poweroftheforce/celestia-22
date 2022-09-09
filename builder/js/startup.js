@@ -2503,15 +2503,15 @@ $.extend(Celestia, {
 									$(this).removeClass('required');
 								}
 								
-								Celestia.positionEditingElement( el, options.selector, options.max_width, options.left );
+								Celestia.positionEditingElement(el, options.selector, options.max_width, options.left);
 									
-								if ( callback ) {
+								if (callback) {
 									var skip = callback.call(this, this, val, data) || false;
 								}
 								
-								if ( !skip ) {
+								if (!skip) {
 									
-									if ( options.replace_text ) {
+									if (options.replace_text) {
 										val = options.replace_text.replace(/{replace}/, val);
 									}
 									
@@ -2521,9 +2521,9 @@ $.extend(Celestia, {
 						
 									if ( attr === 'html' ) {
 										var v = children ? val.replace(/\[((.|\n)*?)\]/g, '<$1>') : val;
-//										clog('data.childrenText2 ', data.childrenText2, v);
-										el.html(data.childrenText2.replace(/{childrenText2}/g, v));
-//										el.html(v);
+										clog('data.childrenText2 ', data.childrenText2, v);
+										// el.html(data.childrenText2.replace(/{childrenText2}/g, v));
+										el.html(v);
 									} else {
 										el.attr(attr, val);
 										
